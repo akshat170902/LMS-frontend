@@ -1,1 +1,27 @@
-<p>course-list works!</p>
+<style>
+    .fixed-card {
+      width: 18rem;
+      height: 45rem;
+    }
+    .fixed-image {
+      width: 100%;
+      height: 20rem;
+      object-fit: contain;
+    }
+  </style>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-md-4" *ngFor="let category of categories">
+        <div class="card mb-4 fixed-card">
+          <div class="card-body">
+            <img [src]="category.image" class="card-img-top fixed-image" alt="...">
+            <h5 class="card-title">{{category.title}}</h5>
+            <p class="card-text">{{category.description}}</p>
+            <a href="#" class="btn btn-primary">Buy Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
