@@ -1,1 +1,75 @@
-<p>login-page works!</p>
+<!-- Section: Design Block -->
+<section class="">
+    <!-- Jumbotron -->
+    <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+      <div class="container" style="max-width: 75%;">
+        <div class="row gx-lg-5 align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h1 class="my-5 display-3 fw-bold ls-tight">
+              Learning <br />
+              <span class="text-primary">Management System</span>
+            </h1>
+          
+          </div>
+  
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <div class="card">
+              <div class="card-body py-5 px-md-5">
+                <h3>login</h3>
+                <form #loginForm="ngForm">
+                 
+  
+                  <!-- Email input -->
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="email" id="form3Example3" [(ngModel)]="userData.email" #fEmail="ngModel" name="email" placeholder="email-id" required class="form-control" />
+                    <div class="class-danger" *ngIf="fEmail.invalid &&(fEmail.touched || fEmail.dirty)">
+                      <span *ngIf="fEmail.errors?.['required']">This is required</span>
+                
+                  </div>
+                  </div>
+  
+                  <!-- Password input -->
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="password" id="form3Example4" [(ngModel)]="userData.password" #fPassword="ngModel"
+                    name="password" placeholder="password" required minlength="8" class="form-control" />
+                    <div class="class-danger"
+                    *ngIf="fPassword.invalid &&(fPassword.touched || fPassword.dirty)">
+                    <span *ngIf="fPassword.errors?.['required']">This is required</span>
+                    <span *ngIf="fPassword.errors?.['minlength']">Mininum length required 8</span>
+                </div>
+                  </div>
+  
+                  <!-- Submit button -->
+                  <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
+                    Sign in
+                  </button>
+                   <!-- Cancel button -->
+                  <button type="submit" data-mdb-button-init data-mdb-ripple-init class="custom_button btn btn-primary btn-block mb-4">
+                    Cancel
+                  </button>
+
+                  <div class="form-check d-flex justify-content-center mb-4">
+                    <label>No account?</label>
+                    <a  style="padding-left: 10px;" href="#">Signup</a>                 
+                   </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Jumbotron -->
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+  
