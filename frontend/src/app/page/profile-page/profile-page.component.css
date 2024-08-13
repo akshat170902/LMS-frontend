@@ -1,50 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+
 /* Navbar Customization */
-/* General Styles */
-body {
-    background-color: #f4f4f4;
-    font-family: Arial, sans-serif;
-}
-
-.container {
-    max-width: 600px;
-}
-
-/* Profile Section Styles */
-.profile-item {
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.profile-photo {
-    width: 60px;
-    height: 60px;
-}
-
-.profile-info {
-    flex-grow: 1;
-}
-
-.name {
-    font-weight: 600;
-    font-size: 18px;
-    margin-bottom: 5px;
-}
-
-.id {
-    color: #777;
-    font-size: 14px;
-    margin: 0;
-}
-
-
 .navbar {
     background-color: #010514;
     border-radius: 5px;
-    padding: 5px 5px;
-    margin-bottom: 10px;
+    padding: 10px 20px;
 }
 
 .navbar-collapse {
@@ -89,49 +49,43 @@ body {
 }
 
 
+body {
+    font-family: 'Maven Pro', sans-serif
+}
 
 body{
-	background-color: #fff;
+  background-color: #eee;
 }
-.main{
-	width: 740px;
-	background-color: #fff;
+
+.add{
+
+  border-radius: 20px;
 }
-.one{
-	background-color: #232428;
-	border-radius: 5px;
+
+.card{
+
+  border:none;
+  border-radius: 10px;
+  transition: all 1s;
+  cursor: pointer;
 }
-.dotdot{
-	font-size: 13px !important;
-	font-weight: lighter !important;
-	color: #76787b;
+
+.card:hover{
+
+   -webkit-box-shadow: 3px 5px 17px -4px #777777; 
+box-shadow: 3px 5px 17px -4px #777777;
 }
-.name{
-	font-size: 15px;
-	color: #b7b7b7;
-	font-weight: 600;
+
+.ratings i {
+
+  color: green;
 }
-.mail{
-	font-size: 8px;
-	font-weight: 500;
-	color: #5a5d64;
-}
-.total{
-	font-size: 6px;
-	font-weight: 500;
-	color: #8a8b8f;
-}
-.money{
-	font-size: 18px;
-	font-weight: 600;
-	color: #dedbdb;
-}
-.details{
-	font-size: 8px;
-	font-weight: 500;
-	color: #0606b5;
-}
-.right{
-	font-size: 12px;
-	color: #0606b5;
+
+.apointment button{
+
+  border-radius: 20px;
+  background-color: #eee;
+  color: #000;
+  border-color: #eee;
+  font-size: 13px;
 }
