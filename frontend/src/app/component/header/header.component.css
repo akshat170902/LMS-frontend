@@ -1,58 +1,57 @@
 .jumbotron-container {
-    position: relative; /* Ensure the gradient overlay and content can be positioned over the image */
-    overflow: hidden; /* Hide any overflow to keep the layout clean */
+    position: relative;
+    overflow: hidden;
     width: 100%;
-    height: 60vh; /* Adjust height as needed */
+    height: 60vh;
     display: flex;
-    align-items: flex-end; /* Align items to the bottom of the container */
-  }
-  
-  .background-image {
+    align-items: flex-end;
+}
+
+.background-image {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure the image covers the container */
-    z-index: -1; /* Ensure the image is below the gradient and content */
-  }
-  
-  .gradient-overlay {
+    object-fit: cover;
+    z-index: -1;
+}
+
+.gradient-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.387), rgba(0, 0, 0, 0.7)); /* Gradient from top to bottom */
-    z-index: 0; /* Ensure the gradient is above the image but below the content */
-  }
-  
-  .content {
-    position: relative; /* Ensure content is above the gradient */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.387), rgba(0, 0, 0, 0.7));
+    z-index: 0;
+}
+
+.content {
+    position: relative;
     width: 100%;
-    padding: 2rem 10rem; /* Adjust padding as needed */
+    padding: 2rem 10rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Push content to the bottom */
-    color: white; /* Adjust text color for readability */
-    z-index: 1; /* Ensure content is above the gradient */
-  }
-  
-  .text-wrapper {
-    text-align: center; /* Center-align text (optional) */
-  }
-  
-  .content h1, 
-  .content p, 
-  .content a {
-    color: white; /* Ensure text and button are readable */
-  }
-  
-  .content a.btn {
-    background-color: rgba(0, 123, 255, 0.7); /* Semi-transparent background for the button */
-  }
-  
-  .content a.btn:hover {
-    background-color: rgba(0, 123, 255, 1); /* Solid background on hover */
-  }
-  
+    justify-content: flex-end;
+    color: white;
+    z-index: 1;
+}
+
+.text-wrapper {
+    text-align: center;
+}
+
+.content h1,
+.content p,
+.content a {
+    color: white;
+}
+
+.content a.btn {
+    background-color: rgba(0, 123, 255, 0.7);
+}
+
+.content a.btn:hover {
+    background-color: rgba(0, 123, 255, 1);
+}
