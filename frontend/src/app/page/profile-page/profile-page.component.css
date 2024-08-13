@@ -1,0 +1,45 @@
+body{
+	background-color: #fff;
+}
+.main{
+	width: 740px;
+	background-color: #fff;
+}
+.one{
+	background-color: #232428;
+	border-radius: 5px;
+}
+.dotdot{
+	font-size: 13px !important;
+	font-weight: lighter !important;
+	color: #76787b;
+}
+.name{
+	font-size: 15px;
+	color: #b7b7b7;
+	font-weight: 600;
+}
+.mail{
+	font-size: 8px;
+	font-weight: 500;
+	color: #5a5d64;
+}
+.total{
+	font-size: 6px;
+	font-weight: 500;
+	color: #8a8b8f;
+}
+.money{
+	font-size: 18px;
+	font-weight: 600;
+	color: #dedbdb;
+}
+.details{
+	font-size: 8px;
+	font-weight: 500;
+	color: #0606b5;
+}
+.right{
+	font-size: 12px;
+	color: #0606b5;
+}
