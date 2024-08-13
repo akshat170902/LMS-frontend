@@ -77,9 +77,30 @@
 p a {
     color: #ffffff;
     text-decoration: none;
+    position: relative;
     display: inline-block;
 }
 
-p a:hover {
-    text-decoration: underline;
+
+p a::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.3s ease, left 0.3s ease;
+    transform: translateX(0%);
+}
+
+
+p a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+
+p a {
+    padding-bottom: 0.5rem;
 }
