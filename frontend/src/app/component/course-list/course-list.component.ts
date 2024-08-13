@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 export class CourseListComponent {
     categories: any[]=[];
     constructor(private dataService : DataService){
-      this.dataService.getCategories().subscribe(response=>{
+      this.dataService.getCategories("all").subscribe(response=>{
         this.categories=response;
         console.log(response);
       })

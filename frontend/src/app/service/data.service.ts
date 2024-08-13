@@ -6,10 +6,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-
+  public type:string="all";
   constructor(private httpClient: HttpClient) { 
   }
-  getCategories() : Observable<any[]>{
+  getCategories(type:string) : Observable<any[]>{
 
     return this.httpClient.get<any[]>("https://fakestoreapi.com/products");
   }

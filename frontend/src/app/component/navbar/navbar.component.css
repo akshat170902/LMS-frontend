@@ -5,7 +5,9 @@
   .navbar-brand {
     font-weight: bold;
 }
-
+.navbar{
+    background-color: #e6ecff;
+}
 .navbar-nav .nav-item .nav-link {
     font-size: 1.1rem;
     padding: 0.5rem 1rem;
