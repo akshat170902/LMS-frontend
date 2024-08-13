@@ -1,0 +1,4 @@
+.form-white.input-group>.form-control:focus {
+    border-color: #fff;
+    box-shadow: inset 0 0 0 1px #fff;
+  }
