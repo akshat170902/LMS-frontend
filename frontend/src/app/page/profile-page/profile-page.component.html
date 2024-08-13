@@ -1,9 +1,11 @@
 <app-navbar></app-navbar>
+
 <head>
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 <body>
 
@@ -12,14 +14,14 @@
             <div class="row align-items-center flex-row-reverse">
                 <div class="col-lg-6">
                     <div class="about-text go-to">
-                        <h3 class="dark-color">Name</h3>
-                        <h6 class="theme-color lead">User-Id</h6>
+                        <h3 class="dark-color">{{user.name}}</h3>
+                        <h6 class="theme-color lead">{{user.id}}</h6>
                         <p></p>
                         <div class="row about-list">
                             <div class="col-md-6">
                                 <div class="media">
                                     <label>Birthday:</label>
-                                    <p>4th april 1998</p>
+                                    <p>{{user.role}}</p>
                                 </div>
                                 <div class="media">
                                     <label>Age:</label>
@@ -369,6 +371,5 @@ Navbar  -->
            
     
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
 </body>
