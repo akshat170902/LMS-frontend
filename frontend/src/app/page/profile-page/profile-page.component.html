@@ -1,7 +1,6 @@
-
 <head>
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
@@ -11,16 +10,12 @@
     <section class="section about-section gray-bg" id="about">
         <app-navbar></app-navbar>
         <div class="container row">
-            <div class="col-md-3">
-                <app-sidebar></app-sidebar>
-            </div>
 
             <div class="row align-items-center flex-row-reverse col-md-9">
                 <div class="col-lg-6">
                     <div class="about-text go-to">
                         <h3 class="dark-color">{{user.name}}</h3>
-                        <h6 class="theme-color lead">{{user.id}}</h6>
-                        <p></p>
+                        <h6 class="theme-color lead"><div class="media"><label>User_Id: </label><p>{{user.id}}</p></div></h6>
                         <div class="row about-list">
                             <div class="col-md-6">
                                 <div class="media">
@@ -31,33 +26,14 @@
                                     <label>Age:</label>
                                     <p>22 Yr</p>
                                 </div>
-                               <!-- <div class="media">
-                                  <label>Residence</label>
-                                    <p>Canada</p>
-                                </div>
-             -->
-                                <!-- <div class="media">
-                                    <label>Address</label>
-                                    <p>California, USA</p>
-                                </div> -->
-                            </div>
-                            <div class="col-md-6">
                                 <div class="media">
                                     <label>E-mail</label>
-                                    <p>info&#64;domain.com</p>
+                                    <p>info&#64;gmail.com</p>
                                 </div>
                                 <div class="media">
                                     <label>Phone</label>
                                     <p>820-885-3321</p>
                                 </div>
-                                <!-- <div class="media">
-                                    <label>Skype</label>
-                                    <p>skype.0404</p>
-                                </div> -->
-                                <!-- <div class="media">
-                                    <label>Freelance</label>
-                                    <p>Available</p>
-                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -71,7 +47,7 @@
         </div>
     </section>
 
-<!-- 
+    <!-- 
 Navbar  -->
 
 
@@ -80,7 +56,7 @@ Navbar  -->
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav w-60"> 
+            <div class="navbar-nav w-60">
                 <a class="nav-item nav-link" href="#">All Courses <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link mx-center" href="#">Completed</a>
                 <a class="nav-item nav-link ml-center" href="#">Pending</a>
@@ -90,290 +66,290 @@ Navbar  -->
 
     <div class="container mt-5 mb-5">
         <div class="row g-2">
-    
+
             <div class="col-md-3">
-    
+
                 <div class="card p-2 py-3 text-center">
-    
+
                     <div class="img mb-2">
-    
+
                         <img src="https://i.imgur.com/LohyFIN.jpg" width="70" class="rounded-circle">
-                        
+
                     </div>
-    
+
                     <h5 class="mb-0">Patey Cruiser</h5>
                     <small>Neurosurgeon</small>
-    
+
                     <div class="ratings mt-2">
-    
+
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
-                        
+
                     </div>
-    
+
                     <div class="mt-4 apointment">
-    
+
                         <button class="btn btn-success text-uppercase">Book Appointment</button>
-                        
+
                     </div>
-    
+
                 </div>
-                
+
             </div>
-    
-    
-    
-    
+
+
+
+
             <div class="col-md-3">
-    
+
                 <div class="card p-2 py-3 text-center">
-    
+
                     <div class="img mb-2">
-    
+
                         <img src="https://i.imgur.com/o5uMfKo.jpg" width="70" class="rounded-circle">
-                        
+
                     </div>
-    
+
                     <h5 class="mb-0">Mario Speedway</h5>
                     <small>Cardiologist</small>
-    
+
                     <div class="ratings mt-2">
-    
+
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
-                        
+
                     </div>
-    
+
                     <div class="mt-4 apointment">
-    
+
                         <button class="btn btn-success text-uppercase">Book Appointment</button>
-                        
+
                     </div>
-    
+
                 </div>
-                
+
             </div>
-    
-    
-    
-    
+
+
+
+
             <div class="col-md-3">
-    
+
                 <div class="card p-2 py-3 text-center">
-    
+
                     <div class="img mb-2">
-    
+
                         <img src="https://i.imgur.com/tmdHXOY.jpg" width="70" class="rounded-circle">
-                        
+
                     </div>
-    
+
                     <h5 class="mb-0">Anna Sthesia</h5>
                     <small>Surgeon</small>
-    
+
                     <div class="ratings mt-2">
-    
+
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
-                        
-                        
+
+
                     </div>
-    
+
                     <div class="mt-4 apointment">
-    
+
                         <button class="btn btn-success text-uppercase">Book Appointment</button>
-                        
+
                     </div>
-    
+
                 </div>
-                
+
             </div>
-    
-    
-    
-    
+
+
+
+
             <div class="col-md-3">
-    
+
                 <div class="card p-2 py-3 text-center">
-    
+
                     <div class="img mb-2">
-    
+
                         <img src="https://i.imgur.com/C4egmYM.jpg" width="70" class="rounded-circle">
-                        
+
                     </div>
-    
+
                     <h5 class="mb-0">Paul Moliv</h5>
                     <small>Dentist</small>
-    
+
                     <div class="ratings mt-2">
-    
+
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
-                       
-                        
+
+
                     </div>
-    
+
                     <div class="mt-4 apointment">
-    
+
                         <button class="btn btn-success text-uppercase">Book Appointment</button>
-                        
+
                     </div>
-    
+
                 </div>
-                
+
             </div>
-    
-    
-    
+
+
+
             <div class="col-md-3">
-    
+
                 <div class="card p-2 py-3 text-center">
-    
+
                     <div class="img mb-2">
-    
+
                         <img src="https://i.imgur.com/0LKZQYM.jpg" width="70" class="rounded-circle">
-                        
+
                     </div>
-    
+
                     <h5 class="mb-0">Anna Maul</h5>
                     <small>Eye Specialist</small>
-    
+
                     <div class="ratings mt-2">
-    
+
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
-                        
+
                     </div>
-    
+
                     <div class="mt-4 apointment">
-    
+
                         <button class="btn btn-success text-uppercase">Book Appointment</button>
-                        
+
                     </div>
-    
+
                 </div>
-                
+
             </div>
-    
-    
+
+
             <div class="col-md-3">
-    
+
                 <div class="card p-2 py-3 text-center">
-    
+
                     <div class="img mb-2">
-    
+
                         <img src="https://i.imgur.com/ZSkeqnd.jpg" width="70" class="rounded-circle">
-                        
+
                     </div>
-    
+
                     <h5 class="mb-0">Gail Forcewind</h5>
                     <small>Urology</small>
-    
+
                     <div class="ratings mt-2">
-    
+
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
-                        
+
                     </div>
-    
+
                     <div class="mt-4 apointment">
-    
+
                         <button class="btn btn-success text-uppercase">Book Appointment</button>
-                        
+
                     </div>
-    
+
                 </div>
-                
+
             </div>
-    
-    
-    
+
+
+
             <div class="col-md-3">
-    
+
                 <div class="card p-2 py-3 text-center">
-    
+
                     <div class="img mb-2">
-    
+
                         <img src="https://i.imgur.com/MZm1LNz.jpg" width="70" class="rounded-circle">
-                        
+
                     </div>
-    
+
                     <h5 class="mb-0">Patey Cruiser</h5>
                     <small>Neurosurgeon</small>
-    
+
                     <div class="ratings mt-2">
-    
+
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
-                        
+
                     </div>
-    
+
                     <div class="mt-4 apointment">
-    
+
                         <button class="btn btn-success text-uppercase">Book Appointment</button>
-                        
+
                     </div>
-    
+
                 </div>
-                
+
             </div>
-    
-    
-    
+
+
+
             <div class="col-md-3">
-    
+
                 <div class="card p-2 py-3 text-center">
-    
+
                     <div class="img mb-2">
-    
+
                         <img src="https://i.imgur.com/HFpxxJz.jpg" width="70" class="rounded-circle">
-                        
+
                     </div>
-    
+
                     <h5 class="mb-0">Patey Cruiser</h5>
                     <small>Neurosurgeon</small>
-    
+
                     <div class="ratings mt-2">
-    
+
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
-                        
+
                     </div>
-    
+
                     <div class="mt-4 apointment">
-    
+
                         <button class="btn btn-success text-uppercase">Book Appointment</button>
-                        
+
                     </div>
-    
+
                 </div>
-                
+
             </div>
-    
-    
-    
-            
-    
-    
-    
-    
-            
+
+
+
+
+
+
+
+
+
         </div>
-           
-    
+
+
     </div>
-    
+
 </body>
