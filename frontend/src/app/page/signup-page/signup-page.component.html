@@ -1,8 +1,5 @@
-<!-- Signup Page-->
 
-
-
-<!-- Signup Page -->
+<!-- Signup Page starts-->
 <section class="">
     <!-- Jumbotron -->
     <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
@@ -18,75 +15,85 @@
                     <div class="card">
                         <div class="card-body py-5 px-md-5">
                             <h3 class="sign_class">Signup</h3>
+                       <!-- Horizontal line -->
+                      <hr class="signup-hr">
 
                             <!-- form starts -->
-
                             <form #registerForm="ngForm">
+
                                 <!-- Name -->
-                                <div class="form-outline mb-4">
-                                    <div class="d-flex align-items-center">
-                                        <label for="form3Example3" class="form-label me-2">Name:</label>
+                                <div class="row mb-4 align-items-center">
+                                    <div class="col-sm-4 text-end">
+                                        <label for="form3Example3" class="form-label">Name:</label>
+                                    </div>
+                                    <div class="col-sm-8">
                                         <input type="text" [(ngModel)]="userData.name" name="name" #fName="ngModel"
                                             id="form3Example3" placeholder="Name" required class="form-control" />
-                                    </div>
-                                    <div class="class-danger" *ngIf="fName.invalid && (fName.touched || fName.dirty)">
-                                        <span *ngIf="fName.errors?.['required']">This is required</span>
+                                        <div class="class-danger" *ngIf="fName.invalid && (fName.touched || fName.dirty)">
+                                            <span *ngIf="fName.errors?.['required']">This is required</span>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <!-- Email input -->
-                                <div class="form-outline mb-4">
-                                    <div class="d-flex align-items-center">
-                                        <label for="form3Example4" class="form-label me-2">Email:</label>
+                                <div class="row mb-4 align-items-center">
+                                    <div class="col-sm-4 text-end">
+                                        <label for="form3Example4" class="form-label">Email:</label>
+                                    </div>
+                                    <div class="col-sm-8">
                                         <input type="email" [(ngModel)]="userData.email"
                                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #fEmail="ngModel" name="email"
                                             id="form3Example4" placeholder="Email" required class="form-control" />
-                                    </div>
-                                    <div class="class-danger" *ngIf="fEmail.invalid && (fEmail.touched || fEmail.dirty)">
-                                        <span *ngIf="fEmail.errors?.['required']">This is required</span>
-                                        <span *ngIf="fEmail.errors?.['pattern']">Email ID not proper</span>
+                                        <div class="class-danger" *ngIf="fEmail.invalid && (fEmail.touched || fEmail.dirty)">
+                                            <span *ngIf="fEmail.errors?.['required']">This is required</span>
+                                            <span *ngIf="fEmail.errors?.['pattern']">Email ID not proper</span>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <!-- Password input -->
-                                <div class="form-outline mb-4">
-                                    <div class="d-flex align-items-center">
-                                        <label for="form3Example5" class="form-label me-2">Password:</label>
+                                <div class="row mb-4 align-items-center">
+                                    <div class="col-sm-4 text-end">
+                                        <label for="form3Example5" class="form-label">Password:</label>
+                                    </div>
+                                    <div class="col-sm-8">
                                         <input type="password" [(ngModel)]="userData.password" #fPassword="ngModel"
                                             name="password" id="form3Example5" placeholder="Password" minlength="8" required
                                             class="form-control" />
-                                    </div>
-                                    <div class="class-danger"
-                                        *ngIf="fPassword.invalid && (fPassword.touched || fPassword.dirty)">
-                                        <span *ngIf="fPassword.errors?.['required']">This is required</span>
-                                        <span *ngIf="fPassword.errors?.['minlength']">Minimum length required 8</span>
+                                        <div class="class-danger" *ngIf="fPassword.invalid && (fPassword.touched || fPassword.dirty)">
+                                            <span *ngIf="fPassword.errors?.['required']">This is required</span>
+                                            <span *ngIf="fPassword.errors?.['minlength']">Minimum length required 8</span>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <!-- Mobile -->
-                                <div class="form-outline mb-4">
-                                    <div class="d-flex align-items-center">
-                                        <label for="form3Example6" class="form-label me-2">Mobile:</label>
+                                <div class="row mb-4 align-items-center">
+                                    <div class="col-sm-4 text-end">
+                                        <label for="form3Example6" class="form-label">Mobile:</label>
+                                    </div>
+                                    <div class="col-sm-8">
                                         <input type="text" [(ngModel)]="userData.mobile" name="mobile" #fMobile="ngModel"
                                             id="form3Example6" placeholder="Mobile" required class="form-control" />
-                                    </div>
-                                    <div class="class-danger"
-                                        *ngIf="fMobile.invalid && (fMobile.touched || fMobile.dirty)">
-                                        <span *ngIf="fMobile.errors?.['required']">This is required</span>
+                                        <div class="class-danger" *ngIf="fMobile.invalid && (fMobile.touched || fMobile.dirty)">
+                                            <span *ngIf="fMobile.errors?.['required']">This is required</span>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <!-- Role -->
-                                <div class="form-outline mb-4">
-    
-                                      
+                                <div class="row mb-4 align-items-center">
+                                    <div class="col-sm-4 text-end">
+                                        <label class="form-label">Role:</label>
+                                    </div>
+                                    <div class="col-sm-8 d-flex align-items-center">
                                         <label class="student me-2">Student</label>
                                         <label class="switch me-2">
                                             <input type="checkbox">
                                             <span class="slider round"></span>
                                         </label>
                                         <label class="mentor">Mentor</label>
-                                
+                                    </div>
                                 </div>
 
                                 <!-- Submit button -->
