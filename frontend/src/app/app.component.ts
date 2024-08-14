@@ -9,7 +9,4 @@ import { ProfilePageComponent } from './page/profile-page/profile-page.component
   imports: [RouterOutlet, CourseListComponent, ProfilePageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
-})
-export class AppComponent {
-  title = 'frontend';
 }
