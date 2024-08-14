@@ -114,3 +114,7 @@
   background: #ddd; /* Adjust color as needed */
   margin: 20px 0; /* Adjust margin as needed */
 }
+
+.input_box_style{
+  float: left;
+}

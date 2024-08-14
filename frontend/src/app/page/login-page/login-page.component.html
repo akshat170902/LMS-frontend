@@ -1,4 +1,3 @@
-
 <!-- Section: Login page starts -->
 <section class="">
   <!-- Jumbotron -->
@@ -15,10 +14,10 @@
         <div class="col-lg-6 mb-5 mb-lg-0">
           <div class="card">
             <div class="card-body py-5 px-md-5">
-              <h3>Login</h3>
+              <h3>Signin</h3>
 
-                <!-- Horizontal line -->
-                <hr class="signin-hr">
+              <!-- Horizontal line -->
+              <hr class="signin-hr">
               <form #loginForm="ngForm">
 
                 <!-- Email input -->
@@ -27,9 +26,13 @@
                     <label for="form3Example3" class="form-label">Email:</label>
                   </div>
                   <div class="col-sm-9">
-                    <input type="email" id="form3Example3" [(ngModel)]="userData.email" #fEmail="ngModel" name="email" placeholder="Email ID" required class="form-control" />
+                    <input type="email" id="form3Example3" [(ngModel)]="userData.email"
+                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #fEmail="ngModel" name="email"
+                      placeholder="Email ID" required class="form-control" />
                     <div class="class-danger" *ngIf="fEmail.invalid && (fEmail.touched || fEmail.dirty)">
-                      <span *ngIf="fEmail.errors?.['required']">This is required</span>
+                      <span class="input_box_style" *ngIf="fEmail.errors?.['required']">This is required</span>
+                      <span class="input_box_style" class="input_box_style" *ngIf="fEmail.errors?.['pattern']">Please
+                        enter valid email-id</span>
                     </div>
                   </div>
                 </div>
@@ -40,10 +43,12 @@
                     <label for="form3Example4" class="form-label">Password:</label>
                   </div>
                   <div class="col-sm-9">
-                    <input type="password" id="form3Example4" [(ngModel)]="userData.password" #fPassword="ngModel" name="password" placeholder="Password" required minlength="8" class="form-control" />
+                    <input type="password" id="form3Example4" [(ngModel)]="userData.password" #fPassword="ngModel"
+                      name="password" placeholder="Password" required minlength="8" class="form-control" />
                     <div class="class-danger" *ngIf="fPassword.invalid && (fPassword.touched || fPassword.dirty)">
-                      <span *ngIf="fPassword.errors?.['required']">This is required</span>
-                      <span *ngIf="fPassword.errors?.['minlength']">Minimum length required is 8</span>
+                      <span class="input_box_style" *ngIf="fPassword.errors?.['required']">This is required</span>
+                      <span class="input_box_style" *ngIf="fPassword.errors?.['minlength']">Minimum length required is
+                        8</span>
                     </div>
                   </div>
                 </div>
@@ -52,15 +57,16 @@
                 <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
                   Sign in
                 </button>
-                 <!-- Cancel button -->
-                <button type="button" data-mdb-button-init data-mdb-ripple-init class="custom_button btn btn-primary btn-block mb-4">
+                <!-- Cancel button -->
+                <button type="button" data-mdb-button-init data-mdb-ripple-init
+                  class="custom_button btn btn-primary btn-block mb-4">
                   Cancel
                 </button>
 
                 <div class="form-check d-flex justify-content-center mb-4">
                   <label>No account?</label>
-                  <a style="padding-left: 10px;" href="#">Signup</a>                 
-                 </div>
+                  <a style="padding-left: 10px;" href="#">Signup</a>
+                </div>
               </form>
             </div>
           </div>

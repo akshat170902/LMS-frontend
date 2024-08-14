@@ -1,4 +1,3 @@
-
 <!-- Signup Page starts-->
 <section class="">
     <!-- Jumbotron -->
@@ -15,11 +14,13 @@
                     <div class="card">
                         <div class="card-body py-5 px-md-5">
                             <h3 class="sign_class">Signup</h3>
-                       <!-- Horizontal line -->
-                      <hr class="signup-hr">
+                            <!-- Horizontal line -->
+                            <hr class="signup-hr">
 
                             <!-- form starts -->
                             <form #registerForm="ngForm">
+                                <!-- <h2>{{registerForm.value | json}}</h2> -->
+                                <!-- <h2>{{userData | json}}</h2> -->
 
                                 <!-- Name -->
                                 <div class="row mb-4 align-items-center">
@@ -29,8 +30,10 @@
                                     <div class="col-sm-8">
                                         <input type="text" [(ngModel)]="userData.name" name="name" #fName="ngModel"
                                             id="form3Example3" placeholder="Name" required class="form-control" />
-                                        <div class="class-danger" *ngIf="fName.invalid && (fName.touched || fName.dirty)">
-                                            <span *ngIf="fName.errors?.['required']">This is required</span>
+                                        <div class="class-danger"
+                                            *ngIf="fName.invalid && (fName.touched || fName.dirty)">
+                                            <span class="input_box_style" *ngIf="fName.errors?.['required']">This is
+                                                required</span>
                                         </div>
                                     </div>
                                 </div>
@@ -42,11 +45,15 @@
                                     </div>
                                     <div class="col-sm-8">
                                         <input type="email" [(ngModel)]="userData.email"
-                                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #fEmail="ngModel" name="email"
-                                            id="form3Example4" placeholder="Email" required class="form-control" />
-                                        <div class="class-danger" *ngIf="fEmail.invalid && (fEmail.touched || fEmail.dirty)">
-                                            <span *ngIf="fEmail.errors?.['required']">This is required</span>
-                                            <span *ngIf="fEmail.errors?.['pattern']">Email ID not proper</span>
+                                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #fEmail="ngModel"
+                                            name="email" id="form3Example4" placeholder="Email" required
+                                            class="form-control" />
+                                        <div class="class-danger"
+                                            *ngIf="fEmail.invalid && (fEmail.touched || fEmail.dirty)">
+                                            <span class="input_box_style" *ngIf="fEmail.errors?.['required']">This is
+                                                required</span>
+                                            <span class="input_box_style" *ngIf="fEmail.errors?.['pattern']">Please
+                                                enter valid email-id</span>
                                         </div>
                                     </div>
                                 </div>
@@ -58,11 +65,14 @@
                                     </div>
                                     <div class="col-sm-8">
                                         <input type="password" [(ngModel)]="userData.password" #fPassword="ngModel"
-                                            name="password" id="form3Example5" placeholder="Password" minlength="8" required
-                                            class="form-control" />
-                                        <div class="class-danger" *ngIf="fPassword.invalid && (fPassword.touched || fPassword.dirty)">
-                                            <span *ngIf="fPassword.errors?.['required']">This is required</span>
-                                            <span *ngIf="fPassword.errors?.['minlength']">Minimum length required 8</span>
+                                            name="password" id="form3Example5" placeholder="Password" minlength="8"
+                                            required class="form-control" />
+                                        <div class="class-danger"
+                                            *ngIf="fPassword.invalid && (fPassword.touched || fPassword.dirty)">
+                                            <span class="input_box_style" *ngIf="fPassword.errors?.['required']">This is
+                                                required</span>
+                                            <span class="input_box_style"
+                                                *ngIf="fPassword.errors?.['minlength']">Minimum length required 8</span>
                                         </div>
                                     </div>
                                 </div>
@@ -73,10 +83,22 @@
                                         <label for="form3Example6" class="form-label">Mobile:</label>
                                     </div>
                                     <div class="col-sm-8">
-                                        <input type="text" [(ngModel)]="userData.mobile" name="mobile" #fMobile="ngModel"
-                                            id="form3Example6" placeholder="Mobile" required class="form-control" />
-                                        <div class="class-danger" *ngIf="fMobile.invalid && (fMobile.touched || fMobile.dirty)">
-                                            <span *ngIf="fMobile.errors?.['required']">This is required</span>
+                                        <input type="text" [(ngModel)]="userData.mobile" name="mobile"
+                                            #fMobile="ngModel" id="form3Example6" placeholder="Mobile" pattern="[0-9]*"
+                                            minlength="10" maxlength="10" required class="form-control" />
+                                        <div class="class-danger"
+                                            *ngIf="fMobile.invalid && (fMobile.touched || fMobile.dirty)">
+                                            <span class="input_box_style" *ngIf="fMobile.errors?.['required']">This is
+                                                required</span>
+                                            <span class="input_box_style" *ngIf="fMobile.errors?.['pattern']">Please
+                                                enter only numeric values</span>
+                                            <span class="input_box_style"
+                                                *ngIf="!fMobile.errors?.['pattern'] && fMobile.errors?.['minlength']">length
+                                                should be 10</span>
+                                            <span class="input_box_style"
+                                                *ngIf="!fMobile.errors?.['pattern'] && fMobile.errors?.['maxlength']">length
+                                                should be 10</span>
+
                                         </div>
                                     </div>
                                 </div>
