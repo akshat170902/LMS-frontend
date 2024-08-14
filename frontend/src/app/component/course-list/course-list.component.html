@@ -1,23 +1,18 @@
-<style>
-    .fixed-card {
-      width: 18rem;
-    }
-    .fixed-image {
-      width: 100%;
-      height: 20rem;
-      object-fit: contain;
-    }
-  </style>
-  
+<!-- <app-course-count 
+  [all]="getAllCourses()" 
+  [pending]="getAllPendingCourses()"
+  [completed]="getAllCompletedCourses()"
+  (radioButtonCustomEvent)="type = $event"></app-course-count> -->
+
   <div class="container">
-    <div class="row">
-      <div class="col-sm-6 col-md-4" *ngFor="let category of categories">
-        <div class="card mb-4 fixed-card">
-          <div class="card-body">
-            <img [src]="category.image" class="card-img-top fixed-image" alt="...">
-            <h5 class="card-title">{{category.title}}</h5>
-            <p class="card-text">{{category.description}}</p>
-            <a href="#" class="btn btn-primary">Buy Now</a>
+    <div class="scrolling-wrapper">
+      <div class="card-container" *ngFor="let category of categories">
+        <div class="card mb-4">
+          <img [src]="category.image" class="card-img-top" alt="...">
+          <div class="card-body d-flex flex-column">
+            <div class="card-title">{{category.title}}</div>
+            <p class="card-text">{{category.description | slice:0:25}}...</p> <!-- Truncate description -->
+            <a href="#" class="btn btn-primary card-button mt-auto">Buy Now</a>
           </div>
         </div>
       </div>

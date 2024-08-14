@@ -10,7 +10,7 @@ export class DataService {
   constructor(private httpClient: HttpClient) { 
   }
   getCategories(type:string) : Observable<any[]>{
-
-    return this.httpClient.get<any[]>("https://fakestoreapi.com/products");
+    this.type=type;
+    return this.httpClient.get<any[]>(  `https://fakestoreapi.com/products/${this.type}`);
   }
 }
