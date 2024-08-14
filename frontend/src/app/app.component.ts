@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { CourseListComponent } from "./component/course-list/course-list.component";
 import { CourseComponent } from "./component/course/course.component";
 
+
 import { LandingPageComponent } from "./page/landing-page/landing-page.component";
 
 @Component({
