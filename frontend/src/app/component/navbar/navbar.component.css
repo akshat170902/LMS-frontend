@@ -1,0 +1,44 @@
+.form-white.input-group>.form-control:focus {
+    border-color: #fff;
+    box-shadow: inset 0 0 0 1px #fff;
+  }
+  .navbar-brand {
+    font-weight: bold;
+}
+.navbar{
+    background-color: #e6ecff;
+}
+.navbar-nav .nav-item .nav-link {
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    text-decoration: underline;
+}
+
+.navbar-nav .nav-item.active .nav-link {
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 0.25rem;
+}
+
+.form-control {
+    width: 80%;
+}
+
+.btn-outline-primary {
+    margin-left: 0.5rem;
+    /* Ensure the button stays to the right of the input */
+}
+
+@media (max-width: 768px) {
+    .form-inline {
+        width: 100%;
+    }
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}

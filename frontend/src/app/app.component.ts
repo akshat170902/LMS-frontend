@@ -6,10 +6,16 @@ import { LoginPageComponent } from './page/login-page/login-page.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { SignupPageComponent } from './page/signup-page/signup-page.component';
 
+
+import { LandingPageComponent } from "./page/landing-page/landing-page.component";
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LoginPageComponent,SignupPageComponent, NavbarComponent],
+
+
+  imports: [RouterOutlet, CourseListComponent, CourseComponent, LandingPageComponent],
+
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
