@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  imagePath: string;
 
+  constructor() {
+    this.imagePath = 'src\app\Assets\landingPage\header.png';
+  }
 }
