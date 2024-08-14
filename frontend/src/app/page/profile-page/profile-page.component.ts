@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from '../../component/navbar/navbar.component';
 import { DataService } from '../../service/data.service';
+import { SidebarComponent } from "../../component/sidebar/sidebar.component";
 
 @Component({
   selector: 'app-profile-page',
   standalone: true,
-  imports: [NavbarComponent],
+  imports: [NavbarComponent, SidebarComponent],
   templateUrl: './profile-page.component.html',
   styleUrl: './profile-page.component.css'
 })
