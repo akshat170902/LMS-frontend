@@ -5,17 +5,14 @@ import { CourseComponent } from "./component/course/course.component";
 import { LoginPageComponent } from './page/login-page/login-page.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { SignupPageComponent } from './page/signup-page/signup-page.component';
-
-
 import { LandingPageComponent } from "./page/landing-page/landing-page.component";
+import { CreateCoursesComponent } from './page/create-courses/create-courses.component';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-
-
-  imports: [RouterOutlet, CourseListComponent, CourseComponent, LandingPageComponent],
-
+  imports: [RouterOutlet, CourseListComponent, CourseComponent, LandingPageComponent,CreateCoursesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
