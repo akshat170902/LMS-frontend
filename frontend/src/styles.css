@@ -12,8 +12,8 @@
 .switch {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
+    width: 34px;
+    height: 20px;
   }
   
   .switch input { 
@@ -37,8 +37,8 @@
   .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
+    height: 12px;
+    width: 12px;
     left: 4px;
     bottom: 4px;
     background-color: white;
@@ -54,7 +54,7 @@
   input:checked + .slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
-    transform: translateX(26px);
+    transform: translateX(14px);
   }
   
   /* Rounded sliders */
@@ -75,31 +75,28 @@
   }
 
  .form-label{
-    padding-right: 10px;
+  font-size: 15px;
+    /* padding-right: 10px; */
     font-family: Georgia, 'Times New Roman', Times, serif;
  }
 
  .form-control{
     display: block;
-    width: 81%;
-    height: calc(1.5em + 0.75rem + 2px);
+    width: 100%;
+    height: calc(1.3em + 0.75rem + 2px);
     padding: 0.375rem 0.75rem;
-    font-size: 1rem;
+    font-size: 0.85rem;
     font-weight: 400;
     line-height: 1.5;
     color: #495057;
     background-color: #fff;
     background-clip: padding-box;
-    border: 1px solid #ced4da;
+    border: 1.3px solid #ced4da;
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
  }
 
- .align-items-center {
-    -ms-flex-align: center !important;
-    align-items: center !important;
-    justify-content: space-between;
-}
+ 
 
 .signup-hr {
   border: 0;
@@ -117,4 +114,7 @@
 
 .input_box_style{
   float: left;
+}
+.mb-4, .my-4 {
+  margin-bottom: 1.1rem !important;
 }
