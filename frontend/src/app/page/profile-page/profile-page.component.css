@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
 
+.align-items-center{
+  align-items: start !important;
+}
+
 
 body{
-    color: #6F8BA4;
+    color: #977e7e;
     margin-top:20px;
 }
 .section {
@@ -10,7 +14,7 @@ body{
     position: relative;
 }
 .gray-bg {
-    background-color: #f5f5f5;
+    background-color: #ffffff;
 }
 img {
     max-width: 100%;
