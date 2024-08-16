@@ -1,0 +1,30 @@
+<div class="query-section">
+    <div class="query-form">
+        <h2>Have a doubt? Ask here!</h2>
+        <form (ngSubmit)="onSubmit()">
+            <textarea [(ngModel)]="queryText" name="queryText" id="queryInput" placeholder="Type your doubt here..." required></textarea>
+            <button type="submit" class="btn btn-submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="toggle-buttons">
+        <button (click)="toggleQueries('answered')" [class.active]="showAnswered" class="btn-toggle">Answered Queries</button>
+        <button (click)="toggleQueries('pending')" [class.active]="!showAnswered" class="btn-toggle">Pending Queries</button>
+    </div>
+
+    <div class="query-list" *ngIf="showAnswered">
+        <h2>Previous Doubts and Answers</h2>
+        <div class="query-item" *ngFor="let query of answeredQueries">
+            <p class="query">Q: {{ query.question }}</p>
+            <p class="answer">A: {{ query.answer }}</p>
+        </div>
+    </div>
+
+    <div class="query-list" *ngIf="!showAnswered">
+        <h2>Pending Doubts</h2>
+        <div class="query-item" *ngFor="let query of pendingQueries">
+            <p class="query">Q: {{ query.question }}</p>
+            <!-- Answer will be provided later -->
+        </div>
+    </div>
+</div>
