@@ -1,0 +1,20 @@
+<div class="card">
+    <div class="card-header">
+      <h2>Query List</h2>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li *ngFor="let query of queries" class="list-group-item">
+        <div><strong>ID:</strong> {{ query.id }}</div>
+        <div><strong>Username:</strong> {{ query.username }}</div>
+        <div><strong>Question:</strong> {{ query.question }}</div>
+        <div *ngIf="query.answer">
+          <strong>Answer:</strong> {{ query.answer }}
+        </div>
+        <div *ngIf="query.mentorName">
+          <strong>Mentor:</strong> {{ query.mentorName }}
+        </div>
+        <button class="btn btn-danger btn-sm mt-2" (click)="removeQuery(query.id)">Remove Query</button>
+      </li>
+    </ul>
+  </div>
+  
