@@ -22,4 +22,8 @@ export class DataService {
   getCourses() : Observable<any[]>{
     return this.httpClient.get<any[]>("https://api.escuelajs.co/api/v1/users")
   }
+
+  getAllCourses() : Observable<any[]>{
+    return this.httpClient.get<any[]>("https://api.escuelajs.co/api/v1/users")
+  }
 }

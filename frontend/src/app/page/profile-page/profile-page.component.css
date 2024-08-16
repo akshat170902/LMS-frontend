@@ -4,6 +4,9 @@
   align-items: start !important;
 }
 
+.about-text{
+  padding-top:  33px;
+}
 
 body{
     color: #977e7e;
