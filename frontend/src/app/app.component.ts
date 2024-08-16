@@ -3,7 +3,6 @@ import { RouterOutlet } from '@angular/router';
 import { CourseListComponent } from "./component/course-list/course-list.component";
 import { ProfilePageComponent } from './page/profile-page/profile-page.component';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
-import { AdminPageComponent } from './page/admin-page/admin-page.component';
 
 
 @Component({

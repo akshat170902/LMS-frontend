@@ -11,26 +11,20 @@
         <h1 class="dashboard-heading">Admin Dashboard</h1>
       </div>
 
-      <!-- Query List Card -->
+      <!-- Feedback List Card -->
       <div class="card shadow-sm mb-4">
         <div class="card-header bg-primary text-white">
-          <h2 class="h5 mb-0">Query List</h2>
+          <h2 class="h5 mb-0">Feedback List</h2>
         </div>
         <ul class="list-group list-group-flush">
-          <li *ngFor="let query of queries" class="list-group-item">
-            <div class="query-item">
-              <div><strong>ID:</strong> {{ query.id }}</div>
-              <div><strong>Username:</strong> {{ query.username }}</div>
-              <div><strong>Question:</strong> {{ query.question }}</div>
-              <div *ngIf="query.answer">
-                <strong>Answer:</strong> {{ query.answer }}
-              </div>
-              <div *ngIf="query.mentorName">
-                <strong>Mentor:</strong> {{ query.mentorName }}
-              </div>
+          <li *ngFor="let feedback of feedbacks" class="list-group-item">
+            <div class="feedback-item">
+              <div><strong>ID:</strong> {{ feedback.id }}</div>
+              <div><strong>Username:</strong> {{ feedback.username }}</div>
+              <div><strong>Description:</strong> {{ feedback.description }}</div>
             </div>
             <div class="text-end">
-              <button class="btn btn-danger btn-sm mt-2" (click)="removeQuery(query.id)">Remove Query</button>
+              <button class="btn btn-danger btn-sm mt-2" (click)="removeFeedback(feedback.id)">Remove Feedback</button>
             </div>
           </li>
         </ul>

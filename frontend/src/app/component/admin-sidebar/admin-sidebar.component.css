@@ -1,0 +1,66 @@
+a {
+    color: black;
+  }
+  a:hover {
+    color: #007bff;
+  }
+
+.list-group-item {
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .list-group-item:hover {
+    background-color: #f8f9fa;
+    color: #007bff;
+  }
+  
+  .list-group-item i {
+    color: #007bff;
+    transition: color 0.3s;
+  }
+  
+  .list-group-item:hover i {
+    color: #0056b3;
+  }
+  .icon_name {
+    margin-left: 5px;
+  }
+  .list-group {
+    margin-top: 10%;
+   
+  } 
+  .dropdown-menu {
+    width: 100%; 
+  }
+  .icon_name {
+    color: black;
+  }
+  .icon_name:hover {
+    background-color: #f8f9fa;
+    color: #007bff;
+  }
+  .dropdown-item {
+    color: black;
+    transition: color 0.3s;
+    padding: 0;
+
+  }
+  .dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #007bff;
+  }
+  .list-group-item i {
+    margin-right: 0.5rem; 
+    font-size: 1.2rem; 
+    color: #2747b0;
+  }
+  .list-group-item {
+    position: relative;
+  }
+  .x {
+    margin-left: 1rem;
+  }
+
+
+  

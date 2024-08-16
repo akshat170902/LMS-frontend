@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminPageComponent } from './admin-page.component';
+import { FeedbackListComponent } from './feedback-list.component';
 
-describe('AdminPageComponent', () => {
-  let component: AdminPageComponent;
-  let fixture: ComponentFixture<AdminPageComponent>;
+describe('FeedbackListComponent', () => {
+  let component: FeedbackListComponent;
+  let fixture: ComponentFixture<FeedbackListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AdminPageComponent]
+      imports: [FeedbackListComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AdminPageComponent);
+    fixture = TestBed.createComponent(FeedbackListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
