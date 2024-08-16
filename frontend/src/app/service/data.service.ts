@@ -6,11 +6,20 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-
+  public type:string="all";
   constructor(private httpClient: HttpClient) { 
   }
-  getCategories() : Observable<any[]>{
+  getCategories(type:string) : Observable<any[]>{
+    this.type=type;
+    return this.httpClient.get<any[]>(  `https://fakestoreapi.com/products/${this.type}`);
+  }
 
-    return this.httpClient.get<any[]>("https://fakestoreapi.com/products");
+  getUser() : Observable<any[]>{
+
+    return this.httpClient.get<any[]>("https://api.escuelajs.co/api/v1/users/1");
+  } 
+
+  getCourses() : Observable<any[]>{
+    return this.httpClient.get<any[]>("https://api.escuelajs.co/api/v1/users")
   }
 }
