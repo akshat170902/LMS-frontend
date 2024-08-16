@@ -1,4 +1,4 @@
-<div class="container-fluid vh-100 d-flex bg-light">
+<div class="container-fluid d-flex bg-light">
     <ul class="list-group w-100 vh-100">
 
         <li class="list-group-item d-flex align-items-center">
@@ -8,16 +8,16 @@
         <!-- Courses Dropdown -->
         <li class="list-group-item d-flex align-items-center">
             <i class="fas fa-book me-3"></i>
-            <a class="icon_name" href="#" (click)="toggleDropdownCourses()">
+            <a class="icon_name" (click)="toggleDropdownCourses()">
                 Courses
             </a>
         </li>
         <ng-container *ngIf="isCourseDropDownOpen">
-            <li class="list-group-item d-flex ">
-                <i class="fas fa-check me-3 x"></i> <a class="dropdown-item" href="#"><span class="icon_name">Completed
-                        Courses</span></a>
+            <li class="list-group-item d-flex align-items-center justify-content-space-between">
+                <i class="fas fa-check me-3 x"></i> <a class="dropdown-item" href="#">Completed
+                        Courses</a>
             </li>
-            <li class="list-group-item d-flex ">
+            <li class="list-group-item d-flex align-items-center justify-content-space-between">
                 <i class="fas fa-clock me-3 x"></i> <a class="dropdown-item" href="#">Pending Courses</a>
             </li>
         </ng-container>
@@ -25,15 +25,15 @@
         <!-- Queries Dropdown -->
         <li class="list-group-item d-flex align-items-center">
             <i class="fas fa-question-circle me-3"></i>
-            <a class="icon_name" href="#" (click)="toggleDropdownQueries()">
+            <a class="icon_name" (click)="toggleDropdownQueries()">
                 Queries
             </a>
         </li>
         <ng-container *ngIf="isQueriesDropDownOpen">
-            <li class="list-group-item d-flex align-items-center">
+            <li class="list-group-item d-flex align-items-center justify-content-space-between">
                 <i class="fas fa-check-circle me-3 x"></i> <a class="dropdown-item" href="#">Answered Queries</a>
             </li>
-            <li class="list-group-item d-flex align-items-center">
+            <li class="list-group-item d-flex align-items-center justify-content-space-between">
                 <i class="fas fa-times-circle me-3 x"></i> <a class="dropdown-item" href="#">Unanswered Queries</a>
             </li>
         </ng-container>
@@ -45,6 +45,5 @@
         <li class="list-group-item d-flex align-items-center">
             <i class="fas fa-comment-dots me-3"></i> <span class="icon_name">Feedbacks</span>
         </li>
-
     </ul>
 </div>
