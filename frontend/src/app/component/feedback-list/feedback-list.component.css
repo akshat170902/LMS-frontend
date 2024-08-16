@@ -1,29 +1,29 @@
 a {
-  color: black;
-}
-a :hover {
-  color: #007bff;
-}
-#sidebar {
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-link {
-  font-size: 1.1rem;
-}
-
-.nav-link.active {
-  background-color: #007bff;
-  color: white;
-  border-radius: 5px;
-}
-
-.nav-link i {
-  margin-right: 0;
-}
-/* Dashboard Heading */
+    color: black;
+  }
+  a :hover {
+    color: #007bff;
+  }
+  #sidebar {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-link {
+    font-size: 1.1rem;
+  }
+  
+  .nav-link.active {
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .nav-link i {
+    margin-right: 0;
+  }
+  /* Dashboard Heading */
 .dashboard-heading {
   font-size: 2.5rem;
   font-weight: bold;
@@ -55,8 +55,8 @@ a :hover {
   background-color: #f8f9fa;
 }
 
-/* Query Item Layout */
-.query-item {
+/* Feedback Item Layout */
+.feedback-item {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;

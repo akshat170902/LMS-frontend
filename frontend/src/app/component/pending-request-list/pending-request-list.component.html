@@ -1,0 +1,60 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar shadow-sm">
+      <app-admin-sidebar></app-admin-sidebar>
+    </nav>
+
+    <!-- Main content -->
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-4 border-bottom">
+        <h1 class="dashboard-heading">Admin Dashboard</h1>
+      </div>
+
+      <!-- Mentors Requests Card -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-primary text-white">
+          <h2 class="h5 mb-0">Mentors Requests</h2>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li *ngFor="let mentor of mentors" class="list-group-item d-flex justify-content-between align-items-center">
+            <span>{{ mentor.name }} ({{ mentor.role }})</span>
+            <div class="admin-button">
+              <span *ngIf="mentor.approved" class="badge badge-approved">Approved</span>
+              <button *ngIf="!mentor.approved" class="btn btn-primary btn-sm" (click)="approveMentor(mentor.id)">
+                Approve
+              </button>
+              <button class="btn btn-danger btn-sm ms-2" (click)="removeMentor(mentor.id)">
+                Remove
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Courses Requests Card -->
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h2 class="h5 mb-0">Courses Requests</h2>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li *ngFor="let course of courses" class="list-group-item">
+            <div class="mb-1"><strong>ID:</strong> {{ course.id }}</div>
+            <div class="mb-1"><strong>Title:</strong> {{ course.title }}</div>
+            <div class="mb-1"><strong>Description:</strong> {{ course.description }}</div>
+            <div class="mb-3"><strong>Mentor ID:</strong> {{ course.mentorId }}</div>
+            <div class="admin-button">
+              <span *ngIf="course.approved" class="badge badge-approved">Approved</span>
+              <button *ngIf="!course.approved" class="btn btn-primary btn-sm" (click)="approveCourse(course.id)">
+                Approve
+              </button>
+              <button class="btn btn-danger btn-sm ms-2" (click)="removeCourse(course.id)">
+                Remove
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </main>
+  </div>
+</div>
