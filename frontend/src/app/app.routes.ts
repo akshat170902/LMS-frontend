@@ -5,6 +5,7 @@ import { SignupPageComponent } from './page/signup-page/signup-page.component';
 import { LoginPageComponent } from './page/login-page/login-page.component';
 import { CoursePageComponent } from './page/course-page/course-page.component';
 import { AllCoursesPageComponent } from './page/all-courses-page/all-courses-page.component';
+import { CourseListComponent } from './component/course-list/course-list.component';
 export const routes : Routes = [
   { path: '', redirectTo: '/landing-page', pathMatch: 'full' }, // Default route
   { path: 'landing-page', component: LandingPageComponent },
@@ -13,6 +14,5 @@ export const routes : Routes = [
   { path: 'signup-page', component: SignupPageComponent },
   { path: 'courses', component: AllCoursesPageComponent },
   { path: 'course/:id', component: CoursePageComponent },
-
   { path: '**', redirectTo: '/landing-page' }, // Wildcard route for a 404 page (optional)
 ];
