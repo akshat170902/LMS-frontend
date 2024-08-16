@@ -1,45 +1,32 @@
-<div class="container ">
-    <div class="">
-        <!-- Image Container -->
-        <div class=" img-container">
-            <img src="path-to-your-image.jpg" alt="Course Image" class="img-fluid">
+<div class="">
+    <div class="course-details">
+      <!-- Image Container -->
+      <div class="img-container">
+        <img [src]="course.image" alt="Course Image" class="img-fluid">
+      </div>
+  
+      <!-- Information Container -->
+      <div class="information">
+        <!-- Title -->
+        <div class="title">
+          <h1>{{ course.title }}</h1>
         </div>
-
-        <!-- Information Container -->
-        <div class=" information">
-            <!-- Title -->
-            <div class="title">
-                <h1>Course Title</h1>
-            </div>
-
-            <!-- Duration -->
-            <div class="duration">
-                <p><strong>Duration:</strong> 4 weeks</p>
-            </div>
-
-            <!-- Prerequisites -->
-            <div class="prerequisites">
-                <p><strong>Prerequisites:</strong> Basic knowledge of HTML and CSS</p>
-            </div>
-
-            <!-- Mentors -->
-            <div class="mentors">
-                <p><strong>Mentors:</strong> John Doe, Jane Smith</p>
-            </div>
-
-            <!-- Description -->
-            <div class="description">
-                <p>
-                    This course will cover advanced topics in web development, including JavaScript frameworks, backend
-                    integration, and performance optimization. By the end of the course, you will be able to build
-                    fully functional web applications.
-                </p>
-            </div>
-
-            <!-- Start Now Button -->
-            <div class="button-start-now">
-                <button type="button" class="btn btn-primary">Start Now</button>
-            </div>
+  
+        <!-- Price -->
+        <div class="price">
+          <p><strong>Price:</strong> ${{ course.price }}</p>
         </div>
+  
+        <!-- Description -->
+        <div class="description">
+          <p>{{ course.description }}</p>
+        </div>
+  
+        <!-- Start Now Button -->
+        <div class="button-start-now">
+          <button type="button" class="btn btn-primary">Start Now</button>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+  
