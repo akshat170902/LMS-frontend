@@ -1,5 +1,3 @@
-
-/* Query Section Styling */
 .query-section {
     width: 100%;
     background: #fff;
@@ -20,7 +18,7 @@
     margin-bottom: 10px;
 }
 
-#queryForm {
+form {
     display: flex;
     flex-direction: column;
 }
@@ -51,6 +49,33 @@
 .btn-submit:active {
     background-color: #162861;
     transform: translateY(0);
+}
+
+.toggle-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.btn-toggle {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    background-color: #ddd;
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-toggle.active {
+    background-color: #2747b0;
+    color: #fff;
+}
+
+.btn-toggle:hover {
+    background-color: #ccc;
 }
 
 .query-list h2 {
