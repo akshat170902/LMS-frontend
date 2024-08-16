@@ -1,0 +1,77 @@
+
+/* Query Section Styling */
+.query-section {
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 30px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.query-form {
+    margin-bottom: 20px;
+}
+
+.query-form h2 {
+    font-size: 1.8rem;
+    color: #2747b0;
+    margin-bottom: 10px;
+}
+
+#queryForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#queryInput {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.btn-submit {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    background-color: #2747b0;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: #1f3a8b;
+    transform: translateY(-2px);
+}
+
+.btn-submit:active {
+    background-color: #162861;
+    transform: translateY(0);
+}
+
+.query-list h2 {
+    font-size: 1.8rem;
+    color: #2747b0;
+    margin-bottom: 10px;
+}
+
+.query-item {
+    background: #f5f5f5;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.query-item .query {
+    font-weight: bold;
+    color: #2747b0;
+}
+
+.query-item .answer {
+    color: #333;
+}

@@ -1,3 +1,4 @@
+/* Container Styling */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -5,23 +6,36 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1s ease-in-out;
+    background: linear-gradient(135deg, #ffffff, #d1d9f1);
 }
 .img-fluid{
-    aspect-ratio: 16/9;
+    aspect-ratio: 1;
 }
-.img-container {
+/* Course Details Section */
+.course-details {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
     width: 100%;
-    margin-bottom: 20px;
+}
+
+.img-container {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    padding: 5%;
 }
 
 .img-container img {
     width: 100%;
     border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
 }
 
@@ -30,27 +44,30 @@
 }
 
 .information {
-    text-align: center;
-    color: #fff;
+    text-align: left;
+    color: #333;
     background: linear-gradient(135deg, #6987e1, #8ea3e6);
     border-radius: 20px;
-    padding: 1%;
+    padding: 20px;
+    width: 40%;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .information .title h1 {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     margin-bottom: 15px;
     animation: slideInFromLeft 1s ease-in-out;
 }
 
 .information .price {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-bottom: 15px;
     animation: slideInFromRight 1s ease-in-out;
 }
 
 .information .description p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 1.8;
     animation: fadeIn 1.5s ease-in-out;
 }
