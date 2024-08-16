@@ -13,6 +13,7 @@ import { FeedbackListComponent } from './component/feedback-list/feedback-list.c
 
 import { CoursePageComponent } from './page/course-page/course-page.component';
 import { AllCoursesPageComponent } from './page/all-courses-page/all-courses-page.component';
+import { CreateCoursesComponent } from './page/create-courses/create-courses.component';
 
 export const routes : Routes = [
   { path: '', redirectTo: '/landing-page', pathMatch: 'full' }, // Default route
@@ -30,6 +31,7 @@ export const routes : Routes = [
   { path: 'courses', component: AllCoursesPageComponent },
   { path: 'course/:id', component: CoursePageComponent },
 
+  {path: 'create-course', component:CreateCoursesComponent},
   { path: '**', redirectTo: '/landing-page' }, // Wildcard route for a 404 page (optional)
   
 ];
