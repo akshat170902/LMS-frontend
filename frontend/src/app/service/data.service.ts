@@ -13,4 +13,13 @@ export class DataService {
     this.type=type;
     return this.httpClient.get<any[]>(  `https://fakestoreapi.com/products/${this.type}`);
   }
+
+  getUser() : Observable<any[]>{
+
+    return this.httpClient.get<any[]>("https://api.escuelajs.co/api/v1/users/1");
+  } 
+
+  getCourses() : Observable<any[]>{
+    return this.httpClient.get<any[]>("https://api.escuelajs.co/api/v1/users")
+  }
 }
