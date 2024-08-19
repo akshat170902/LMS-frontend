@@ -12,33 +12,52 @@
       </div>
 
       <!-- Mentors Requests Card -->
-      <div class="card shadow-sm mb-4">
+      <div class="card shadow-lg mb-4">
         <div class="card-header bg-primary text-white">
           <h2 class="h5 mb-0">Mentors Requests</h2>
         </div>
-        <ul class="list-group list-group-flush">
-          <li *ngFor="let mentor of mentors" class="list-group-item d-flex justify-content-between align-items-center">
-            <span>{{ mentor.name }} ({{ mentor.role }})</span>
-            <div class="admin-button">
-              <span *ngIf="mentor.approved" class="badge badge-approved">Approved</span>
-              <button *ngIf="!mentor.approved" class="btn btn-primary btn-sm" (click)="approveMentor(mentor.id)">
-                Approve
-              </button>
-              <button class="btn btn-danger btn-sm ms-2" (click)="removeMentor(mentor.id)">
-                Remove
-              </button>
-            </div>
-          </li>
-        </ul>
+        <div class="card-body p-0">
+          <table class="table table-striped mb-0">
+            <thead class="table-primary">
+              <tr>
+                <th>Mentor ID</th>
+                <th>Name</th>
+                <th>Courses</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let mentor of mentors">
+                <td>{{ mentor.id }}</td>
+                <td>{{ mentor.name }}</td>
+                <td>{{ mentor.courses.join(', ') }}</td>
+                <td>
+                  <span *ngIf="mentor.approved" class="badge bg-success">Approved</span>
+                  <span *ngIf="!mentor.approved" class="badge bg-danger">Not Approved</span>
+                </td>
+                <td>
+                  <button *ngIf="!mentor.approved" class="btn btn-primary btn-sm" (click)="approveMentor(mentor.id)">
+                    Approve
+                  </button>
+                  <button class="btn btn-danger btn-sm ms-2" (click)="removeMentor(mentor.id)">
+                    Remove
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
+      
 
       <!-- Courses Requests Card -->
-      <div class="card shadow-sm">
+      <div class="card shadow-lg">
         <div class="card-header bg-primary text-white">
           <h2 class="h5 mb-0">Courses Requests</h2>
         </div>
         <ul class="list-group list-group-flush">
-          <li *ngFor="let course of courses" class="list-group-item">
+          <li *ngFor="let course of courses; let i = index" [ngClass]="{'bg-light': i % 2 === 0, 'bg-white': i % 2 !== 0}" class="list-group-item">
             <div class="mb-1"><strong>ID:</strong> {{ course.id }}</div>
             <div class="mb-1"><strong>Title:</strong> {{ course.title }}</div>
             <div class="mb-1"><strong>Description:</strong> {{ course.description }}</div>
@@ -55,6 +74,7 @@
           </li>
         </ul>
       </div>
+      
     </main>
   </div>
 </div>

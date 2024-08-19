@@ -12,12 +12,12 @@
       </div>
 
       <!-- Feedback List Card -->
-      <div class="card shadow-sm mb-4">
+      <div class="card shadow-lg mb-4">
         <div class="card-header bg-primary text-white">
           <h2 class="h5 mb-0">Feedback List</h2>
         </div>
         <ul class="list-group list-group-flush">
-          <li *ngFor="let feedback of feedbacks" class="list-group-item">
+          <li *ngFor="let feedback of feedbacks; let i = index" [ngClass]="{'bg-light': i % 2 === 0, 'bg-white': i % 2 !== 0}" class="list-group-item">
             <div class="feedback-item">
               <div><strong>ID:</strong> {{ feedback.id }}</div>
               <div><strong>Username:</strong> {{ feedback.username }}</div>
@@ -29,6 +29,7 @@
           </li>
         </ul>
       </div>
+      
     </main>
   </div>
 </div>
