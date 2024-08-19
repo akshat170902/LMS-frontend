@@ -8,7 +8,7 @@ import { FooterComponent } from '../../component/footer/footer.component';
 @Component({
   selector: 'app-profile-page',
   standalone: true,
-  imports: [CommonModule, NavbarComponent, SidebarComponent,FooterComponent],  // Add CommonModule here
+  imports: [CommonModule, NavbarComponent, SidebarComponent,FooterComponent,ProfilePageComponent],  // Add CommonModule here
   templateUrl: './profile-page.component.html',
   styleUrls: ['./profile-page.component.css']
 })
