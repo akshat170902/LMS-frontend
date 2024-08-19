@@ -3,11 +3,12 @@ import { NavbarComponent } from '../../component/navbar/navbar.component';
 import { SidebarComponent } from '../../component/sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
 import { DataService } from '../../service/data.service';
+import { FooterComponent } from '../../component/footer/footer.component';
 
 @Component({
   selector: 'app-all-courses-page',
   standalone: true,
-  imports: [NavbarComponent,SidebarComponent,CommonModule],
+  imports: [NavbarComponent,SidebarComponent,CommonModule,FooterComponent],
   templateUrl: './all-courses-page.component.html',
   styleUrl: './all-courses-page.component.css'
 })

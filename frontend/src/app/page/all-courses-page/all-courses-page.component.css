@@ -121,6 +121,7 @@ mark {
     background-color: #010514;
     border-radius: 5px;
     padding: 10px 20px;
+    margin-top: 10px;
 }
 
 .navbar-collapse {
@@ -225,36 +226,27 @@ body{
     padding: 0 15px;
 }
 
-
-
-
-
-.tooltip-container {
-    position: relative;
-    display: inline-block;
+a {
+    color: inherit; /* Inherit the color from the parent element */
+    text-decoration: none; /* Remove underline */
 }
 
-.tooltip-content {
-    visibility: hidden;
-    width: 150px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 5px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    bottom: 100%; /* Position above the image */
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: opacity 0.3s;
+a:hover {
+    color: inherit; /* Ensure the color stays the same on hover */
+    text-decoration: none; /* Ensure the underline is not added back on hover */
 }
 
-.tooltip-container:hover .tooltip-content {
-    visibility: visible;
-    opacity: 1;
-}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
