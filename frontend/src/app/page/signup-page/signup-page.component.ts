@@ -20,7 +20,7 @@ constructor(private dataService: DataService) {
 }
 onSubmit(){
   console.log(this.userData);
-  this.dataService.getLogin(this.userData).subscribe(response => {
+  this.dataService.getSignUp(this.userData).subscribe(response => {
     this.userData = response;
     console.log(response);
   })

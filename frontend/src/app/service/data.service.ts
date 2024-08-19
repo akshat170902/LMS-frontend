@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 import { UserData } from '../models/userData';
+import { LoginModel } from '../models/LoginModel';
 
 @Injectable({
   providedIn: 'root'
@@ -13,13 +14,17 @@ export class DataService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getLogin(userData:UserData){
+  getSignUp(userData:UserData){
     return this.httpClient.post<any>(`http://localhost:8088/users/signup`,userData)
       .pipe(
         catchError(this.handleError)
       );
   }
-
+  getLogin(userData:LoginModel){
+    console.log(userData);
+    return this.httpClient.post<any>(`http://localhost:8088/users/login`,userData, { responseType: 'text' as 'json' });
+      
+  }
   getCoursesByName(name: string): Observable<any> {
     return this.httpClient.get<any>(`https://fakestoreapi.com/products/${name}`)
       .pipe(
