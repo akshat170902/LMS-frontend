@@ -33,29 +33,19 @@
                     <div class="row g-2">
                         <!-- Loop through the users array to display courses -->
                         <div class="col-md-6" *ngFor="let course of courses">
-                            <a href="/profile-page" class="">
-                            <div class="card p-2 py-3 text-center">
-                                <div class="img mb-2">
-                                    <img src="https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg"
-                                        width="100" class="" title="this shows the full details of the course">
+                            <a [routerLink]="['/course', course.id]">
+                                <div class="card p-2 py-3 text-center">
+                                    <div class="img mb-2">
+                                        <img src="https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg"
+                                            width="100" alt="course image">
+                                    </div>
+                                    <h5 class="mb-0">{{course.name}}</h5>
+                                    <small>{{course.mentor}}</small>
+                                    <!-- Other content -->
                                 </div>
-                                <h5 class="mb-0">course name</h5>
-                                <small>mentor</small>
-
-                                <div class="ratings mt-2">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-
-                                <div class="mt-4 apointment">
-                                    <a href="/landing-page"><button class="btn btn-success text-uppercase">Enroll
-                                            Now</button></a>
-                                </div>
-                            </div>
-                        </a>
+                            </a>
                         </div>
+                        
                     </div>
                 </div>
             </div>
