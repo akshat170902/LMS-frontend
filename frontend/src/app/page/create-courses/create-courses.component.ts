@@ -25,5 +25,4 @@ export class CreateCoursesComponent {
     mentors:'' ,
     upload:''
   }
-
 }
