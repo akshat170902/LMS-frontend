@@ -1,3 +1,10 @@
+a {
+    color: black;
+  }
+  a:hover {
+    color: #007bff;
+  }
+
 .list-group-item {
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
@@ -7,10 +14,7 @@
     background-color: #f8f9fa;
     color: #007bff;
   }
-  .sticky{
-    position: sticky;
-    top: 5%;
-  }
+  
   .list-group-item i {
     color: #007bff;
     transition: color 0.3s;
@@ -57,4 +61,6 @@
   .x {
     margin-left: 1rem;
   }
+
+
   

@@ -5,6 +5,7 @@ import { ProfilePageComponent } from './page/profile-page/profile-page.component
 import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { FooterComponent } from './component/footer/footer.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
