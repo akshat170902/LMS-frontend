@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { User } from '../../models/user.model';
-import { UserData } from '../../models/userData';
+import { UserData } from '../../models/UserData';
 import { DataService } from '../../service/data.service';
 
 @Component({
