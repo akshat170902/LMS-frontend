@@ -1,22 +1,23 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-light " >
+<nav class="navbar sticky-top navbar-expand-lg navbar-light ">
     <a class="navbar-brand" href="landing-page">
-        <img class="logo" style="width: 3rem;" src="https://logodix.com/logo/1834118.png" alt="">
+      <img class="logo" style="width: 3rem;" src="https://logodix.com/logo/1834118.png" alt="">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
-
+  
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto"></ul>
-        <form class="form-inline mx-auto w-50 d-flex">
-            <input class="form-control flex-grow-1" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-primary ml-2" type="submit">Search</button>
-        </form>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link btn btn-primary text-white" href="login-page">Login <span class="sr-only">(current)</span></a>
-            </li>
-        </ul>
+      <ul class="navbar-nav mr-auto"></ul>
+      <form class="form-inline mx-auto w-50 d-flex" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+        <input class="form-control flex-grow-1" type="search" placeholder="Search" aria-label="Search" formControlName="name">
+        <button class="btn btn-outline-primary ml-2" type="submit">Search</button>
+      </form>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link btn btn-primary text-white" href="login-page">Login <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
     </div>
-</nav>
+  </nav>
+  

@@ -107,3 +107,6 @@ p a:hover::before {
 p a {
     padding-bottom: 0.5rem;
 }
+.fas{
+    padding-bottom: 0.7rem;
+}

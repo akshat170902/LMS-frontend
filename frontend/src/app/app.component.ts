@@ -10,16 +10,22 @@ import { CreateCoursesComponent } from './page/create-courses/create-courses.com
 import { ProfilePageComponent } from './page/profile-page/profile-page.component';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CourseListComponent, ProfilePageComponent,SidebarComponent,ProfilePageComponent],
+  imports: [
+    RouterOutlet,
+    CourseListComponent,
+    ProfilePageComponent,
+    SidebarComponent,
+    FormsModule,
+    ReactiveFormsModule
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
-
-export class AppComponent{
-  title='frontend';
-
+export class AppComponent {
+  title = 'frontend';
 }
