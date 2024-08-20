@@ -50,13 +50,13 @@ export class AdminService {
 
 
   approveMentor(id: number): Observable<any[]> {
-    return this.httpClient.put<any[]>(`${this.apiUrl}/${id}/approve`, {}, { headers: this.getHeaders() });
+    return this.httpClient.put<any[]>(`http://localhost:8088/users/role/set-approval/true/${id}`, {}, { headers: this.getHeaders() });
   }
 
 
 
   removeMentor(id: number): Observable<any[]> {
-    return this.httpClient.delete<any[]>(`${this.apiUrl}/${id}`, { headers: this.getHeaders() });
+    return this.httpClient.delete<any[]>(`http://localhost:8088/users/${id}`, { headers: this.getHeaders() });
   }
 
 

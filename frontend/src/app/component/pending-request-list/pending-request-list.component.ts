@@ -34,11 +34,15 @@ export class PendingRequestListComponent {
     this.loadCourses();
   }
   approveMentor(id: number): void { 
-    this.adminService.approveMentor(id);
-    // this.loadMentors();
+    this.adminService.approveMentor(id).subscribe(() => {  
+      
+    });
+    this.loadMentors();
   }
   removeMentor(id : number) : void {
-    this.adminService.removeMentor(id);
+    this.adminService.removeMentor(id).subscribe(() => {  
+      
+    });
     this.cdr.detectChanges();
     this.loadMentors();
   }
