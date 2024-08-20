@@ -1,28 +1,44 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  public type:string="all";
-  constructor(private httpClient: HttpClient) { 
+  public type: string = "all";
+
+  private apiUrl = "https://localhost:8088/"
+  constructor(private httpClient: HttpClient) {
   }
-  getCategories(type:string) : Observable<any[]>{
-    this.type=type;
-    return this.httpClient.get<any[]>(  `https://fakestoreapi.com/products/${this.type}`);
+
+  getCoursesByName(name: string): Observable<any> {
+    return this.httpClient.get<any>(`https://fakestoreapi.com/products/${name}`)
+      .pipe(
+        catchError(this.handleError)
+      );
   }
-  getCourseById(id:string) : Observable<any[]>{
-    
-    return this.httpClient.get<any[]>(  `https://fakestoreapi.com/products/${id}`);
+
+
+  private handleError(error: HttpErrorResponse) {
+    return throwError("Something went Wrong");
   }
-  getUser() : Observable<any[]>{
+
+
+  getCategories(type: string): Observable<any[]> {
+    this.type = type;
+    return this.httpClient.get<any[]>(`https://fakestoreapi.com/products/${this.type}`);
+  }
+  getCourseById(id: string): Observable<any[]> {
+
+    return this.httpClient.get<any[]>(`https://fakestoreapi.com/products/${id}`);
+  }
+  getUser(): Observable<any[]> {
 
     return this.httpClient.get<any[]>("https://api.escuelajs.co/api/v1/users/1");
-  } 
+  }
 
-  getCourses() : Observable<any[]>{
+  getCourses(): Observable<any[]> {
     return this.httpClient.get<any[]>("https://api.escuelajs.co/api/v1/users")
   }
 
