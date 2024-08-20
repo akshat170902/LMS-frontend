@@ -23,50 +23,74 @@ export class AdminService {
     });
   }
 
+
+
   getUsers(): Observable<any[]> {
     return this.httpClient.get<any[]>(this.apiUrl, { headers: this.getHeaders() });
   }
+
+
 
   getApprovedMentors(): Observable<any[]> {
     return this.httpClient.get<any[]>(this.apiUrl, { headers: this.getHeaders() });
   }
 
+
+
   getUnApprovedMentors(): Observable<any[]> {
     return this.httpClient.get<any[]>(this.apiUrl, { headers: this.getHeaders() });
   }
+
+
 
   getMentors(): Observable<any[]> {
     return this.httpClient.get<any[]>(this.apiUrl, { headers: this.getHeaders() });
   }
 
+
+
   approveMentor(id: number): Observable<any[]> {
     return this.httpClient.put<any[]>(`${this.apiUrl}/${id}/approve`, {}, { headers: this.getHeaders() });
   }
+
+
 
   removeMentor(id: number): Observable<any[]> {
     return this.httpClient.delete<any[]>(`${this.apiUrl}/${id}`, { headers: this.getHeaders() });
   }
 
+
+
   getQueries(): Observable<Query[]> {
     return this.httpClient.get<Query[]>(`${this.apiUrl}/queries`, { headers: this.getHeaders() });
   }
+
+
 
   removeQuery(id: number): Observable<any[]> {
     return this.httpClient.delete<any[]>(`${this.apiUrl}/queries/${id}`, { headers: this.getHeaders() });
   }
 
+
+
   getFeedbacks(): Observable<Feedback[]> {
     return this.httpClient.get<Feedback[]>(`${this.apiUrl}/feedbacks`, { headers: this.getHeaders() });
   }
+
+
 
   getCourses(): Observable<Course[]> {
     return this.httpClient.get<Course[]>(`${this.coursesUrl}/status/true`, { headers: this.getHeaders() });
   }
 
+
+
   approveCourse(courseId: number): Observable<any[]> {
     return this.httpClient.put<any[]>(`${this.coursesUrl}/${courseId}/true`, {}, { headers: this.getHeaders() });
   }
 
+
+  
   removeCourse(courseId: number): Observable<any[]> {
     return this.httpClient.put<any[]>(`${this.coursesUrl}/${courseId}/false`, {}, { headers: this.getHeaders() });
   }
