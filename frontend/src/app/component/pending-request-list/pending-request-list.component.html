@@ -22,7 +22,7 @@
               <tr>
                 <th>Mentor ID</th>
                 <th>Name</th>
-                <th>Courses</th>
+                <th>Email</th>
                 <th>Status</th>
                 <th>Action</th>
               </tr>
@@ -30,14 +30,14 @@
             <tbody>
               <tr *ngFor="let mentor of mentors">
                 <td>{{ mentor.id }}</td>
-                <td>{{ mentor.name }}</td>
-                <td>{{ mentor.courses.join(', ') }}</td>
+                <td>{{ mentor.fullName }}</td>
+                <td>{{ mentor.email}}</td>
                 <td>
-                  <span *ngIf="mentor.approved" class="badge bg-success">Approved</span>
-                  <span *ngIf="!mentor.approved" class="badge bg-danger">Not Approved</span>
+                  <span *ngIf="mentor.approval" class="badge bg-success">Approved</span>
+                  <span *ngIf="!mentor.approval" class="badge bg-danger">Not Approved</span>
                 </td>
                 <td>
-                  <button *ngIf="!mentor.approved" class="btn btn-primary btn-sm" (click)="approveMentor(mentor.id)">
+                  <button *ngIf="!mentor.approval" class="btn btn-primary btn-sm" (click)="approveMentor(mentor.id)">
                     Approve
                   </button>
                   <button class="btn btn-danger btn-sm ms-2" (click)="removeMentor(mentor.id)">
@@ -58,16 +58,16 @@
         </div>
         <ul class="list-group list-group-flush">
           <li *ngFor="let course of courses; let i = index" [ngClass]="{'bg-light': i % 2 === 0, 'bg-white': i % 2 !== 0}" class="list-group-item">
-            <div class="mb-1"><strong>ID:</strong> {{ course.id }}</div>
-            <div class="mb-1"><strong>Title:</strong> {{ course.title }}</div>
+            <div class="mb-1"><strong>ID:</strong> {{ course.courseId }}</div>
+            <div class="mb-1"><strong>Title:</strong> {{ course.courseName }}</div>
             <div class="mb-1"><strong>Description:</strong> {{ course.description }}</div>
             <div class="mb-3"><strong>Mentor ID:</strong> {{ course.mentorId }}</div>
             <div class="admin-button">
-              <span *ngIf="course.approved" class="badge badge-approved">Approved</span>
-              <button *ngIf="!course.approved" class="btn btn-primary btn-sm" (click)="approveCourse(course.id)">
+              <span *ngIf="course.status" class="badge badge-approved">Approved</span>
+              <button *ngIf="!course.status" class="btn btn-primary btn-sm" (click)="approveCourse(course.courseId)">
                 Approve
               </button>
-              <button class="btn btn-danger btn-sm ms-2" (click)="removeCourse(course.id)">
+              <button class="btn btn-danger btn-sm ms-2" (click)="removeCourse(course.courseId)">
                 Remove
               </button>
             </div>

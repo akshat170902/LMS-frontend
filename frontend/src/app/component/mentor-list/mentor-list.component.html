@@ -31,11 +31,11 @@
                 <tbody>
                   <tr *ngFor="let mentor of mentors">
                     <td>{{ mentor.id }}</td>
-                    <td>{{ mentor.name }}</td>
-                    <td>{{ mentor.courses.join(', ') }}</td>
+                    <td>{{ mentor.fullName }}</td>
+                    <td>{{ mentor.email}}</td>
                     <td>
-                      <span [ngClass]="mentor.approved ? 'badge bg-success' : 'badge bg-danger'">
-                        {{ mentor.approved ? 'Approved' : 'Not Approved' }}
+                      <span [ngClass]="mentor.approval ? 'badge bg-success' : 'badge bg-danger'">
+                        {{ mentor.approval ? 'Approved' : 'Not Approved' }}
                       </span>
                     </td>
                     <td>

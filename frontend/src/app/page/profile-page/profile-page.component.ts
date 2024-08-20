@@ -13,11 +13,7 @@ import { FooterComponent } from '../../component/footer/footer.component';
   styleUrls: ['./profile-page.component.css']
 })
 export class ProfilePageComponent {
-  name: string = 'John Doe';
-  id: string = '123456';
-  email: string = 'john.doe@example.com';
-  contact: string = '+1 234 567 890';
-
+  
   user: any = {};
   courses: any[] = [];
 
@@ -29,7 +25,7 @@ export class ProfilePageComponent {
     });
 
     // Fetch courses data
-    this.dataService.getAllCourses().subscribe(response => {
+    this.dataService.getEnrolledCourses(this.user.id).subscribe(response => {
       this.courses = response;
       console.log(response);
     });

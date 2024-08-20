@@ -3,6 +3,7 @@ import { AdminService } from '../../service/admin.service';
 import { CommonModule } from '@angular/common';
 import { AdminSidebarComponent } from '../admin-sidebar/admin-sidebar.component';
 import { User } from '../../models/user.model';
+import { UserData } from '../../models/UserData';
 @Component({
   selector: 'app-user-list',
   standalone: true,
@@ -11,7 +12,7 @@ import { User } from '../../models/user.model';
   styleUrl: './user-list.component.css'
 })
 export class UserListComponent {
-  users : User[] = [];
+  users : UserData[] = [];
   constructor(private adminService : AdminService) {}
   ngOnInit() : void {
     this.adminService.getUsers().subscribe(data => {
