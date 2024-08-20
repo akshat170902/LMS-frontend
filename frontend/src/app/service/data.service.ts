@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
-import { UserData } from '../models/userData';
+import { UserData } from '../models/UserData';
 import { LoginModel } from '../models/LoginModel';
 
 @Injectable({
