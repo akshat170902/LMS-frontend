@@ -26,7 +26,7 @@ export class DataService {
       
   }
   getCoursesByName(name: string): Observable<any> {
-    return this.httpClient.get<any>(`https://fakestoreapi.com/products/${name}`)
+    return this.httpClient.get<any>(`http://localhost:8084/courses/public/name/${name}`)
       .pipe(
         catchError(this.handleError)
       );
@@ -40,7 +40,7 @@ export class DataService {
 
   getCategories(type: string): Observable<any[]> {
     this.type = type;
-    return this.httpClient.get<any[]>(`http://localhost:8084/courses/status/true${this.type}`);
+    return this.httpClient.get<any[]>(`http://localhost:8084/courses/public/status/true${this.type}`);
   }
   getCourseById(id: string): Observable<any[]> {
 
