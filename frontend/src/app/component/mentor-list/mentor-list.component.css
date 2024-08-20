@@ -54,3 +54,19 @@
 .list-group-item:hover {
   background-color: #f8f9fa;
 }
+.table {
+  width: 100%;
+  margin-bottom: 0;
+}
+.table th, .table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.card-header {
+  padding: 1rem;
+}
+
+.card-body {
+  padding: 0;
+}

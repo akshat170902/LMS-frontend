@@ -12,16 +12,32 @@
       </div>
 
       <!-- All Users Card -->
-      <div class="card shadow-sm mb-4">
+      <div class="card shadow-lg mb-4">
         <div class="card-header bg-primary text-white">
           <h2 class="h5 mb-0">All Users</h2>
         </div>
-        <ul class="list-group list-group-flush">
-          <li *ngFor="let user of users" class="list-group-item">
-            <span>{{ user.name }} ({{ user.role }})</span>
-          </li>
-        </ul>
+        <div class="card-body p-0">
+          <table class="table table-striped mb-0">
+            <thead class="table-primary">
+              <tr>
+                <th>User ID</th>
+                <th>Name</th>
+                <th>Pending Courses</th>
+                <th>Completed Courses</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users">
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.pendingCourses.join(', ') }}</td>
+                <td>{{ user.completedCourses.join(', ') }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
+      
     </main>
   </div>
 </div>

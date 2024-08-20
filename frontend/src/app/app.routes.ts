@@ -32,6 +32,7 @@ export const routes : Routes = [
   { path: 'course/:id', component: CoursePageComponent },
 
   {path: 'create-course', component:CreateCoursesComponent},
+
   { path: '**', redirectTo: '/landing-page' }, // Wildcard route for a 404 page (optional)
   
 ];

@@ -9,12 +9,14 @@ import { LandingPageComponent } from "./page/landing-page/landing-page.component
 import { CreateCoursesComponent } from './page/create-courses/create-courses.component';
 import { ProfilePageComponent } from './page/profile-page/profile-page.component';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
+
   imports: [
     RouterOutlet,
     CourseListComponent,

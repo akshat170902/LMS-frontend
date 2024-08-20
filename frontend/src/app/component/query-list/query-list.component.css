@@ -72,3 +72,10 @@ a :hover {
 #sidebar {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+.bg-light {
+  background-color: #f8f9fa;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
