@@ -1,52 +1,96 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
-import { Query } from '../models/query.model';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Query } from '../models/query.model';
+import { Feedback } from '../models/feedback.model';
+import { Course } from '../models/course.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdminService {
-  private users = [
-    { id: 1, name: 'User One', role: 'User' },
-    { id: 2, name: 'User Two', role: 'User' }
-  ];
 
-  private mentors = [
-    { id: 1, name: 'Mentor One', role: 'Mentor', approved: false },
-    { id: 2, name: 'Mentor Two', role: 'Mentor', approved: false }
-  ];
+  private apiUrl = 'http://localhost:8088/users';
+  private coursesUrl = 'http://localhost:8084/courses';
+  constructor(private httpClient: HttpClient) { }
 
-  private queries : Query[] = [
-    { id: 1, username: 'john_doe', question: 'How do I implement routing in Angular?', mentorName: 'Jane Smith' },
-    { id: 2, username: 'jane_doe', question: 'What is dependency injection?', answer: 'Dependency injection is...', mentorName: 'John Doe' }
-  ]
-
-  constructor() { }
-  getUsers() {
-    return of(this.users);
+  // Method to get headers with JWT token
+  private getHeaders(): HttpHeaders {
+    const token = localStorage.getItem('jwtToken'); // Retrieve the token from localStorage
+    return new HttpHeaders({
+      'Authorization': `Bearer ${token}` // Include the token in the Authorization header
+    });
   }
 
-  getMentors() {
-    return of(this.mentors);
+
+//done
+  getUsers(): Observable<any[]> {
+    return this.httpClient.get<any[]>(this.apiUrl, { headers: this.getHeaders() });
   }
 
-  approveMentor(id: number) {
-    const mentor = this.mentors.find(m => m.id === id);
-    if (mentor) {
-      mentor.approved = true;
-    }
-  }
-  removeMentor(id : number) {
-    this.mentors = this.mentors.filter(m => m.id !== id);
-    //console.log(this.mentors)
+
+//done
+  getApprovedMentors(): Observable<any[]> {
+    return this.httpClient.get<any[]>(`http://localhost:8088/users/role/approval/true`, { headers: this.getHeaders() });
   }
 
-  getQueries():  Observable<Query[]> {
-    return of(this.queries);
+
+//done
+  getUnApprovedMentors(): Observable<any[]> {
+    return this.httpClient.get<any[]>(`http://localhost:8088/users/role/approval/false`, { headers: this.getHeaders() });
   }
-  removeQuery(id: number): void {
-    this.queries = this.queries.filter(q => q.id !== id);
-    console.log(this.queries);
+
+
+//done
+  getMentors(): Observable<any[]> {
+    return this.httpClient.get<any[]>(`http://localhost:8088/users/role/approval/true`, { headers: this.getHeaders() });
+    
+  }
+
+
+//done
+  approveMentor(id: number): Observable<any[]> {
+    return this.httpClient.put<any[]>(`http://localhost:8088/users/role/set-approval/true/${id}`, {}, { headers: this.getHeaders() });
+  }
+
+
+//done
+  removeMentor(id: number): Observable<any[]> {
+    return this.httpClient.delete<any[]>(`http://localhost:8088/users/${id}`, { headers: this.getHeaders() });
+  }
+
+
+//pending
+  getQueries(): Observable<Query[]> {
+    return this.httpClient.get<Query[]>(`${this.apiUrl}/queries`, { headers: this.getHeaders() });
+  }
+
+
+//pending
+  removeQuery(id: number): Observable<any[]> {
+    return this.httpClient.delete<any[]>(`${this.apiUrl}/queries/${id}`, { headers: this.getHeaders() });
+  }
+
+
+//todo
+  getFeedbacks(): Observable<Feedback[]> {
+    return this.httpClient.get<Feedback[]>(`${this.apiUrl}/feedbacks`, { headers: this.getHeaders() });
+  }
+
+//done
+  getCourses(): Observable<Course[]> {
+    return this.httpClient.get<Course[]>(`http://localhost:8084/courses/admin/status/false`, { headers: this.getHeaders() });
+  }
+
+
+//pending
+  approveCourse(courseId: number): Observable<any[]> {
+    return this.httpClient.put<any[]>(`${this.coursesUrl}/admin/${courseId}/true`, {}, { headers: this.getHeaders() });
+  }
+
+
+//pending
+  removeCourse(courseId: number): Observable<any[]> {
+    return this.httpClient.delete<any[]>(`http://localhost:8084/courses/admin/${courseId}`, { headers: this.getHeaders() });
   }
 }

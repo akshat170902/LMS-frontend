@@ -4,11 +4,12 @@ import { AdminService } from '../../service/admin.service';
 import { ChangeDetectorRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Mentor } from '../../models/mentor.model';
+import { AdminSidebarComponent } from '../admin-sidebar/admin-sidebar.component';
 
 @Component({
   selector: 'app-mentor-list',
   standalone: true,
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule,FormsModule,AdminSidebarComponent],
   templateUrl: './mentor-list.component.html',
   styleUrls: ['./mentor-list.component.css'] 
 })
@@ -18,25 +19,23 @@ export class MentorListComponent implements OnInit {
   constructor(private adminService: AdminService,private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
-    this.adminService.getMentors().subscribe(data => {  
-      this.mentors = data;
-      console.log(this.mentors);
-    });
+    this.loadMentors();
     
   }
   loadMentors() : void {
-    this.adminService.getMentors().subscribe(data => {  
+    this.adminService.getApprovedMentors().subscribe((data : Mentor[]) => {  
       this.mentors = data;
       console.log(this.mentors);
     });
   }
 
   approveMentor(id: number): void { 
-    this.adminService.approveMentor(id);
+    
+    this.adminService.approveMentor(id).subscribe();
     this.loadMentors();
   }
   removeMentor(id : number) : void {
-    this.adminService.removeMentor(id);
+    this.adminService.removeMentor(id).subscribe();
     this.cdr.detectChanges();
     this.loadMentors();
   }

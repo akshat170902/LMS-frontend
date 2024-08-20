@@ -2,3 +2,9 @@
     display: flex;
     justify-content: start;
 }
+label{
+    margin-bottom:-0.05rem;
+ }
+ .class-danger{
+    margin-left: 230px;
+}

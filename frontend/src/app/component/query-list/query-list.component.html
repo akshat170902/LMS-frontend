@@ -1,20 +1,41 @@
-<div class="card">
-    <div class="card-header">
-      <h2>Query List</h2>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li *ngFor="let query of queries" class="list-group-item">
-        <div><strong>ID:</strong> {{ query.id }}</div>
-        <div><strong>Username:</strong> {{ query.username }}</div>
-        <div><strong>Question:</strong> {{ query.question }}</div>
-        <div *ngIf="query.answer">
-          <strong>Answer:</strong> {{ query.answer }}
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar shadow-sm">
+      <app-admin-sidebar></app-admin-sidebar>
+    </nav>
+
+    <!-- Main content -->
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-4 border-bottom">
+        <h1 class="dashboard-heading">Admin Dashboard</h1>
+      </div>
+
+      <!-- Query List Card -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-primary text-white">
+          <h2 class="h5 mb-0">Query List</h2>
         </div>
-        <div *ngIf="query.mentorName">
-          <strong>Mentor:</strong> {{ query.mentorName }}
-        </div>
-        <button class="btn btn-danger btn-sm mt-2" (click)="removeQuery(query.id)">Remove Query</button>
-      </li>
-    </ul>
+        <ul class="list-group list-group-flush">
+          <li *ngFor="let query of queries; let i = index" [ngClass]="{'bg-light': i % 2 === 0, 'bg-white': i % 2 !== 0}" class="list-group-item">
+            <div class="query-item">
+              <div><strong>ID:</strong> {{ query.id }}</div>
+              <div><strong>Username:</strong> {{ query.username }}</div>
+              <div><strong>Question:</strong> {{ query.question }}</div>
+              <div *ngIf="query.answer">
+                <strong>Answer:</strong> {{ query.answer }}
+              </div>
+              <div *ngIf="query.mentorName">
+                <strong>Mentor:</strong> {{ query.mentorName }}
+              </div>
+            </div>
+            <div class="text-end">
+              <button class="btn btn-danger btn-sm mt-2" (click)="removeQuery(query.id)">Remove Query</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      
+    </main>
   </div>
-  
+</div>

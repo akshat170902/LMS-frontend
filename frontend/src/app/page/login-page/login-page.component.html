@@ -1,14 +1,11 @@
 <!-- Section: Login page starts -->
 <section class="">
   <!-- Jumbotron -->
-  <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
-    <div class="container" style="max-width: 75%;">
+  <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="height: 600px; background-color: #F3F4F6">
+    <div class="container" style="max-width: 80%; margin-top: 60px;">
       <div class="row gx-lg-5 align-items-center">
         <div class="col-lg-6 mb-5 mb-lg-0">
-          <h1 class="my-5 display-3 fw-bold ls-tight">
-            Learning <br />
-            <span class="text-primary">Management System</span>
-          </h1>
+          <img class="signup_image" alt="lms" src="https://th.bing.com/th/id/OIP.-s1F8xPO4Tn-X64HPfp4gwAAAA?w=312&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"/>
         </div>
 
         <div class="col-lg-6 mb-5 mb-lg-0">
@@ -29,11 +26,12 @@
                     <input type="email" id="form3Example3" [(ngModel)]="userData.email"
                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #fEmail="ngModel" name="email"
                       placeholder="Email ID" required class="form-control" />
-                    <div class="class-danger" *ngIf="fEmail.invalid && (fEmail.touched || fEmail.dirty)">
-                      <span class="input_box_style" *ngIf="fEmail.errors?.['required']">This is required</span>
-                      <span class="input_box_style" class="input_box_style" *ngIf="fEmail.errors?.['pattern']">Please
-                        enter valid email-id</span>
-                    </div>
+                    
+                  </div>
+                  <div class="class-danger" *ngIf="fEmail.invalid && (fEmail.touched || fEmail.dirty)">
+                    <span class="input_box_style" *ngIf="fEmail.errors?.['required']">This is required</span>
+                    <span class="input_box_style" class="input_box_style" *ngIf="fEmail.errors?.['pattern']">Please
+                      enter valid email-id</span>
                   </div>
                 </div>
 
@@ -45,16 +43,17 @@
                   <div class="col-sm-9">
                     <input type="password" id="form3Example4" [(ngModel)]="userData.password" #fPassword="ngModel"
                       name="password" placeholder="Password" required minlength="8" class="form-control" />
-                    <div class="class-danger" *ngIf="fPassword.invalid && (fPassword.touched || fPassword.dirty)">
-                      <span class="input_box_style" *ngIf="fPassword.errors?.['required']">This is required</span>
-                      <span class="input_box_style" *ngIf="fPassword.errors?.['minlength']">Minimum length required is
-                        8</span>
-                    </div>
+                    
+                  </div>
+                  <div class="class-danger" *ngIf="fPassword.invalid && (fPassword.touched || fPassword.dirty)">
+                    <span class="input_box_style" *ngIf="fPassword.errors?.['required']">This is required</span>
+                    <span class="input_box_style" *ngIf="fPassword.errors?.['minlength']">Minimum length required is
+                      8</span>
                   </div>
                 </div>
 
                 <!-- Submit button -->
-                <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
+                <button type="submit" (click)="onLogin()" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
                   Sign in
                 </button>
                 <!-- Cancel button -->

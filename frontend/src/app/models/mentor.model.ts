@@ -1,6 +1,8 @@
 export interface Mentor {
     id: number,
-    name: string,
+    fullName: string,
+    email: string,
     role: string,
-    approved: boolean
+    approval: boolean,
+    contact:string,
 }

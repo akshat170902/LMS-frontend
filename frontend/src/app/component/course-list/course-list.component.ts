@@ -26,7 +26,7 @@ export class CourseListComponent {
 
 
   getAllCourses() {
-    this.dataService.getCategories(this.type).subscribe(response => {
+    this.dataService.getCategories("").subscribe(response => {
       this.categories = response;
       console.log(response);
     })

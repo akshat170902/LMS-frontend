@@ -1,49 +1,48 @@
-<div class="container-fluid d-flex bg-light">
-    <ul class="list-group w-100 vh-100">
+<div class="sidebar-fixed shadow-sm bg-light">
+  <ul class="list-group w-100">
 
-        <li class="list-group-item d-flex align-items-center">
-            <i class="fas fa-home me-3"></i> <span class="icon_name">Home</span>
-        </li>
+    <li class="list-group-item d-flex align-items-center">
+      <i class="fas fa-home me-3"></i> <span class="icon_name">Home</span>
+    </li>
 
-        <!-- Courses Dropdown -->
-        <li class="list-group-item d-flex align-items-center">
-            <i class="fas fa-book me-3"></i>
-            <a class="icon_name" (click)="toggleDropdownCourses()">
-                Courses
-            </a>
-        </li>
-        <ng-container *ngIf="isCourseDropDownOpen">
-            <li class="list-group-item d-flex align-items-center justify-content-space-between">
-                <i class="fas fa-check me-3 x"></i> <a class="dropdown-item" href="#">Completed
-                        Courses</a>
-            </li>
-            <li class="list-group-item d-flex align-items-center justify-content-space-between">
-                <i class="fas fa-clock me-3 x"></i> <a class="dropdown-item" href="#">Pending Courses</a>
-            </li>
-        </ng-container>
+    <!-- Courses Dropdown -->
+    <li class="list-group-item d-flex align-items-center" (mouseover)="toggleDropdownCourses()">
+      <i class="fas fa-book me-3"></i>
+      <a class="icon_name">
+        Courses
+      </a>
+    </li>
+    <ng-container *ngIf="isCourseDropDownOpen">
+      <li class="list-group-item d-flex align-items-center">
+        <i class="fas fa-check me-3 x"></i> <a class="dropdown-item">Completed Courses</a>
+      </li>
+      <li class="list-group-item d-flex align-items-center">
+        <i class="fas fa-clock me-3 x"></i> <a class="dropdown-item">Pending Courses</a>
+      </li>
+    </ng-container>
 
-        <!-- Queries Dropdown -->
-        <li class="list-group-item d-flex align-items-center">
-            <i class="fas fa-question-circle me-3"></i>
-            <a class="icon_name" (click)="toggleDropdownQueries()">
-                Queries
-            </a>
-        </li>
-        <ng-container *ngIf="isQueriesDropDownOpen">
-            <li class="list-group-item d-flex align-items-center justify-content-space-between">
-                <i class="fas fa-check-circle me-3 x"></i> <a class="dropdown-item" href="#">Answered Queries</a>
-            </li>
-            <li class="list-group-item d-flex align-items-center justify-content-space-between">
-                <i class="fas fa-times-circle me-3 x"></i> <a class="dropdown-item" href="#">Unanswered Queries</a>
-            </li>
-        </ng-container>
+    <!-- Queries Dropdown -->
+    <li class="list-group-item d-flex align-items-center" (mouseover)="toggleDropdownQueries()">
+      <i class="fas fa-question-circle me-3"></i>
+      <a class="icon_name">
+        Queries
+      </a>
+    </li>
+    <ng-container *ngIf="isQueriesDropDownOpen">
+      <li class="list-group-item d-flex align-items-center">
+        <i class="fas fa-check-circle me-3 x"></i> <a class="dropdown-item">Answered Queries</a>
+      </li>
+      <li class="list-group-item d-flex align-items-center">
+        <i class="fas fa-times-circle me-3 x"></i> <a class="dropdown-item">Unanswered Queries</a>
+      </li>
+    </ng-container>
 
-        <li class="list-group-item d-flex align-items-center">
-            <i class="fas fa-life-ring me-3"></i> <span class="icon_name">Help and support</span>
-        </li>
+    <li class="list-group-item d-flex align-items-center">
+      <i class="fas fa-life-ring me-3"></i> <span class="icon_name">Help and support</span>
+    </li>
 
-        <li class="list-group-item d-flex align-items-center">
-            <i class="fas fa-comment-dots me-3"></i> <span class="icon_name">Feedbacks</span>
-        </li>
-    </ul>
+    <li class="list-group-item d-flex align-items-center">
+      <i class="fas fa-comment-dots me-3"></i> <span class="icon_name">Feedbacks</span>
+    </li>
+  </ul>
 </div>

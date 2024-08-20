@@ -40,3 +40,17 @@ ng g c navbar
 
 # Bootstrap
 npm i @bootstrap@4.6
+
+
+# How to containerize the spring boot application
+
+- create spring boot application 
+- create Dockerfile 
+- build image 
+- create container 
+- push image on docker hub
+- pull image from docker hub 
+- create container form docker hub image
+
+# How to containerize the angular application
+

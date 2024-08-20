@@ -4,11 +4,12 @@ import { AdminService } from '../../service/admin.service';
 import { ChangeDetectorRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Query } from '../../models/query.model';
+import { AdminSidebarComponent } from '../admin-sidebar/admin-sidebar.component';
 
 @Component({
   selector: 'app-query-list',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule,AdminSidebarComponent],
   templateUrl: './query-list.component.html',
   styleUrl: './query-list.component.css'
 })

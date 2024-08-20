@@ -9,18 +9,18 @@
 
     <section class="section about-section gray-bg" id="about">
         <app-navbar></app-navbar>
-        <div class="container row">
+        <div class=" row">
             <div class="col-md-3">
                 <app-sidebar></app-sidebar>
             </div>
 
             <div class="row align-items-center flex-row-reverse col-md-9">
                 <div class="col-lg-6">
-                    <div class="about-text go-to">
+                    <div class="about-text go-to ">
                         <h3 class="dark-color">{{user.name}}</h3>
                         <h6 class="theme-color lead">
                             <div class="media">
-                                <label>User_Id: </label>
+                                <label>User_Id:</label>
                                 <p>{{user.id}}</p>
                             </div>
                         </h6>
@@ -32,16 +32,16 @@
                                 </div>
                                 <div class="media">
                                     <label>Age:</label>
-                                    <p>22 Yr</p>
-                                </div>
+                                    <p>22 Yr</p> 
+                                 </div>
                                 <div class="media">
                                     <label>E-mail:</label>
                                     <p>{{user.email}}</p>
-                                </div>
-                                <div class="media">
+                                </div> 
+                                 <div class="media">
                                     <label>Phone:</label>
                                     <p>{{user.contact}}</p>
-                                </div>
+                                </div> 
                             </div>
                         </div>
                     </div>
@@ -66,13 +66,15 @@
                 <div class="container mt-5 mb-5">
                     <div class="row g-2">
                         <!-- Loop through the users array to display courses -->
-                        <div class="col-md-3" *ngFor="let course of users">
+                        <div class="col-md-6" *ngFor="let course of courses">
+                            <a href="/course/{{course.id}}">
                             <div class="card p-2 py-3 text-center">
                                 <div class="img mb-2">
-                                    <img src="https://i.imgur.com/LohyFIN.jpg" width="70" class="rounded-circle">
+                                    <img src="https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg"
+                                        width="100" class="" title="this shows the full details of the course">
                                 </div>
-                                <h5 class="mb-0">{{course.name}}</h5>
-                                <small>{{course.specialization}}</small>
+                                <h5 class="mb-0">course name</h5>
+                                <small>mentor</small>
 
                                 <div class="ratings mt-2">
                                     <i class="fa fa-star"></i>
@@ -86,10 +88,12 @@
                                             Now</button></a>
                                 </div>
                             </div>
+                        </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <app-footer></app-footer>
     </section>
 </body>
