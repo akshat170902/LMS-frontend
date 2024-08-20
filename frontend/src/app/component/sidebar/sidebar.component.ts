@@ -11,6 +11,15 @@ import { Component } from '@angular/core';
 export class SidebarComponent {
   isCourseDropDownOpen : boolean = false;
   isQueriesDropDownOpen : boolean = false;
+  userRole: string | null = '';
+  ngOnInit(): void {
+    const user = localStorage.getItem('user');
+    console.log(user)
+    if (user) {
+      const parsedUser = JSON.parse(user);
+      this.userRole = parsedUser.role;
+    }
+  }
   toggleDropdownCourses() {
     this.isCourseDropDownOpen = !this.isCourseDropDownOpen;
   }

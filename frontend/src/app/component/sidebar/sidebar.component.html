@@ -14,10 +14,10 @@
     </li>
     <ng-container *ngIf="isCourseDropDownOpen">
       <li class="list-group-item d-flex align-items-center">
-        <i class="fas fa-check me-3 x"></i> <a class="dropdown-item">Completed Courses</a>
+        <i class="fas fa-check me-3"></i> <a class="dropdown-item">Completed Courses</a>
       </li>
       <li class="list-group-item d-flex align-items-center">
-        <i class="fas fa-clock me-3 x"></i> <a class="dropdown-item">Pending Courses</a>
+        <i class="fas fa-clock me-3"></i> <a class="dropdown-item">Pending Courses</a>
       </li>
     </ng-container>
 
@@ -30,15 +30,25 @@
     </li>
     <ng-container *ngIf="isQueriesDropDownOpen">
       <li class="list-group-item d-flex align-items-center">
-        <i class="fas fa-check-circle me-3 x"></i> <a class="dropdown-item">Answered Queries</a>
+        <i class="fas fa-check-circle me-3"></i> <a class="dropdown-item">Answered Queries</a>
       </li>
       <li class="list-group-item d-flex align-items-center">
-        <i class="fas fa-times-circle me-3 x"></i> <a class="dropdown-item">Unanswered Queries</a>
+        <i class="fas fa-times-circle me-3"></i> <a class="dropdown-item">Unanswered Queries</a>
       </li>
     </ng-container>
 
+    <!-- Conditionally show "Create Course" for Mentors -->
+    <li class="list-group-item d-flex align-items-center" *ngIf="userRole === 'MENTOR'">
+      <i class="fas fa-plus me-3"></i> <span class="icon_name">Create Course</span>
+    </li>
+
+    <!-- Conditionally show "Admin Dashboard" for Admins -->
+    <li class="list-group-item d-flex align-items-center" *ngIf="userRole === 'ADMIN'">
+      <i class="fas fa-cogs me-3"></i> <span class="icon_name">Admin Dashboard</span>
+    </li>
+
     <li class="list-group-item d-flex align-items-center">
-      <i class="fas fa-life-ring me-3"></i> <span class="icon_name">Help and support</span>
+      <i class="fas fa-life-ring me-3"></i> <span class="icon_name">Help and Support</span>
     </li>
 
     <li class="list-group-item d-flex align-items-center">
