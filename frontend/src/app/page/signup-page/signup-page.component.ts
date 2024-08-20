@@ -2,8 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { User } from '../../models/user.model';
-import { UserData } from '../../models/UserData';
-import { DataService } from '../../service/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup-page',
@@ -27,4 +26,22 @@ onSubmit(){
 }
 
   
+
+  constructor(private router: Router) {
+    
+  }
+  navigateToLandingPage(){
+    this.router.navigate(['/landing-page']);
+  }
+
+  navigateToLoginPage(){
+    this.router.navigate(['/login-page']);
+  }
+  userData: any={
+    name:'',
+    email:'',
+    password:'',
+    mobile:''
+  }
+ 
 }

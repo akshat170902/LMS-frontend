@@ -34,8 +34,7 @@
                                                 required</span>
                                         </div>
                                 </div>
-
-                               
+       
 
                                 <!-- Email input -->
                                 <div class="row mb-4 align-items-center">
@@ -122,19 +121,22 @@
 
                                 <!-- Submit button -->
                                 <button type="submit" (click)="onSubmit()" data-mdb-button-init data-mdb-ripple-init
+                                <button type="submit" data-mdb-button-init data-mdb-ripple-init
+                                (click)="navigateToLoginPage()"
                                     class="btn btn-primary btn-block mb-4">
                                     Sign up
                                 </button>
 
                                 <!-- Cancel button -->
                                 <button type="button" data-mdb-button-init data-mdb-ripple-init
+                                (click)="navigateToLandingPage()"
                                     class="custom_button btn btn-secondary btn-block mb-4">
                                     Cancel
                                 </button>
 
                                 <div class="form-check d-flex justify-content-center mb-4">
                                     <label style="font-size: 15px;">Already have an account?</label>
-                                    <a style="padding-left:4px ;font-size:15px;" href="/login-page">Sign In</a>
+                                    <a style="padding-left:4px ;font-size:15px;" href="/login-page">Login</a>
                                 </div>
                             </form>
                         </div>
