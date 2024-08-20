@@ -12,7 +12,6 @@ export class AdminService {
 
   private apiUrl = 'http://localhost:8088/users';
   private coursesUrl = 'http://localhost:8084/courses';
-
   constructor(private httpClient: HttpClient) { }
 
   // Method to get headers with JWT token
@@ -32,19 +31,20 @@ export class AdminService {
 
 
   getApprovedMentors(): Observable<any[]> {
-    return this.httpClient.get<any[]>(this.apiUrl, { headers: this.getHeaders() });
+    return this.httpClient.get<any[]>(`http://localhost:8088/users/role/approval/true`, { headers: this.getHeaders() });
   }
 
 
 
   getUnApprovedMentors(): Observable<any[]> {
-    return this.httpClient.get<any[]>(this.apiUrl, { headers: this.getHeaders() });
+    return this.httpClient.get<any[]>(`http://localhost:8088/users/role/approval/false`, { headers: this.getHeaders() });
   }
 
 
 
   getMentors(): Observable<any[]> {
-    return this.httpClient.get<any[]>(this.apiUrl, { headers: this.getHeaders() });
+    return this.httpClient.get<any[]>(`http://localhost:8088/users/role/approval/true`, { headers: this.getHeaders() });
+    
   }
 
 
@@ -90,7 +90,7 @@ export class AdminService {
   }
 
 
-  
+
   removeCourse(courseId: number): Observable<any[]> {
     return this.httpClient.put<any[]>(`${this.coursesUrl}/${courseId}/false`, {}, { headers: this.getHeaders() });
   }

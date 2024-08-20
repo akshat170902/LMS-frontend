@@ -22,7 +22,7 @@
               <tr>
                 <th>Mentor ID</th>
                 <th>Name</th>
-                <th>Courses</th>
+                <th>Email</th>
                 <th>Status</th>
                 <th>Action</th>
               </tr>
@@ -30,14 +30,14 @@
             <tbody>
               <tr *ngFor="let mentor of mentors">
                 <td>{{ mentor.id }}</td>
-                <td>{{ mentor.name }}</td>
-                <td>{{ mentor.courses.join(', ') }}</td>
+                <td>{{ mentor.fullName }}</td>
+                <td>{{ mentor.email}}</td>
                 <td>
-                  <span *ngIf="mentor.approved" class="badge bg-success">Approved</span>
-                  <span *ngIf="!mentor.approved" class="badge bg-danger">Not Approved</span>
+                  <span *ngIf="mentor.approval" class="badge bg-success">Approved</span>
+                  <span *ngIf="!mentor.approval" class="badge bg-danger">Not Approved</span>
                 </td>
                 <td>
-                  <button *ngIf="!mentor.approved" class="btn btn-primary btn-sm" (click)="approveMentor(mentor.id)">
+                  <button *ngIf="!mentor.approval" class="btn btn-primary btn-sm" (click)="approveMentor(mentor.id)">
                     Approve
                   </button>
                   <button class="btn btn-danger btn-sm ms-2" (click)="removeMentor(mentor.id)">
