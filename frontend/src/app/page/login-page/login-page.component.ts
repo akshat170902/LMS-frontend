@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { DataService } from '../../service/data.service';
+import { LoginModel } from '../../models/LoginModel';
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,6 +21,9 @@ export class LoginPageComponent {
 
   constructor(private dataService: DataService, private router: Router) {
 
+  }
+  navigateToLandingPage(){
+    this.router.navigate(['/landing-page']);
   }
   onLogin() {
     console.log(this.userData);
@@ -41,15 +46,5 @@ export class LoginPageComponent {
         // Optionally, you can add a message to inform the user about the failed login
       }
     });
-
-  constructor(private router: Router) {}
-navigateToLandingPage(){
-  this.router.navigate(['/landing-page']);
-  
-}
-
-  userData: any={
-    email:'',
-    password:''
   }
 }

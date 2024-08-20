@@ -6,7 +6,7 @@
 
     </div>
     <div class="col-md-9">
-        <div class="registration-form">
+        <div class="registration-form" >
             <form #createCourseForm="ngForm">
         
                 <!-- <h3>{{createCourseForm.value | json}}</h3> -->
@@ -98,7 +98,7 @@
                     <button type="button" class="btn btn-block create-account">Create Course</button>
                 </div>
                 <div class="form-group">
-                    <button style="background-color: black;" type="button" class="btn btn-block create-account">Cancel</button>
+                    <button style="background-color: black;" type="button" (click)="navigateToLandingPage()" class="btn btn-block create-account">Cancel</button>
                 </div>
             </form>
         </div>
