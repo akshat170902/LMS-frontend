@@ -10,11 +10,13 @@ import { MentorListComponent } from './component/mentor-list/mentor-list.compone
 import { QueryListComponent } from './component/query-list/query-list.component';
 import { PendingRequestListComponent } from './component/pending-request-list/pending-request-list.component';
 import { FeedbackListComponent } from './component/feedback-list/feedback-list.component';
+import { CompletedCoursesComponent } from './component/completed-courses/completed-courses.component';
+import { PendingCoursesComponent } from './component/pending-courses/pending-courses.component';
+import { EnrolledCoursesComponent } from './component/enrolled-courses/enrolled-courses.component';
 
 import { CoursePageComponent } from './page/course-page/course-page.component';
 import { AllCoursesPageComponent } from './page/all-courses-page/all-courses-page.component';
 import { CreateCoursesComponent } from './page/create-courses/create-courses.component';
-
 export const routes : Routes = [
   { path: '', redirectTo: '/landing-page', pathMatch: 'full' }, // Default route
   { path: 'landing-page', component: LandingPageComponent },
@@ -30,6 +32,9 @@ export const routes : Routes = [
 
   { path: 'courses', component: AllCoursesPageComponent },
   { path: 'course/:id', component: CoursePageComponent },
+  { path: 'courses/completed', component:CompletedCoursesComponent},
+  { path: 'courses/pending', component:PendingCoursesComponent},
+  { path: 'courses/enrolled', component:EnrolledCoursesComponent},
 
   {path: 'create-course', component:CreateCoursesComponent},
 
