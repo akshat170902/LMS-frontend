@@ -17,7 +17,7 @@
           <h2 class="h5 mb-0">Query List</h2>
         </div>
         <ul class="list-group list-group-flush">
-          <li *ngFor="let query of queries" class="list-group-item">
+          <li *ngFor="let query of queries; let i = index" [ngClass]="{'bg-light': i % 2 === 0, 'bg-white': i % 2 !== 0}" class="list-group-item">
             <div class="query-item">
               <div><strong>ID:</strong> {{ query.id }}</div>
               <div><strong>Username:</strong> {{ query.username }}</div>
@@ -35,6 +35,7 @@
           </li>
         </ul>
       </div>
+      
     </main>
   </div>
 </div>

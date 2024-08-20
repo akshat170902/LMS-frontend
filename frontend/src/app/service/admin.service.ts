@@ -11,14 +11,14 @@ import { Course } from '../models/course.model'
 })
 export class AdminService {
   private users = [
-    { id: 1, name: 'User One', role: 'User' },
-    { id: 2, name: 'User Two', role: 'User' }
+    { id: 1, name: 'User One',pendingCourses:['Java','Docker'],completedCourses:['React','Angular'], role: 'User' },
+    { id: 2, name: 'User Two',pendingCourses:['c++','c#'],completedCourses:['.net','Python'], role: 'User' }
   ];
 
   private mentors = [
-    { id: 1, name: 'Mentor One', role: 'Mentor', approved: false },
-    { id: 2, name: 'Mentor Two', role: 'Mentor', approved: false },
-    { id: 3, name: 'Mentor Three', role: 'Mentor', approved: true }
+    { id: 1, name: 'Mentor One',courses: ['Java','Angular'], role: 'Mentor', approved: false },
+    { id: 2, name: 'Mentor Two', courses: ['Java','react'], role: 'Mentor', approved: false },
+    { id: 3, name: 'Mentor Three',courses: ['c++','Python'],  role: 'Mentor', approved: true }
   ];
 
   private queries : Query[] = [

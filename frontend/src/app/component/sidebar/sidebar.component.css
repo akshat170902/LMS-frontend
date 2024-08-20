@@ -1,60 +1,64 @@
-.list-group-item {
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .list-group-item:hover {
-    background-color: #f8f9fa;
-    color: #007bff;
-  }
-  .sticky{
-    position: sticky;
-    top: 5%;
-  }
-  .list-group-item i {
-    color: #007bff;
-    transition: color 0.3s;
-  }
-  
-  .list-group-item:hover i {
-    color: #0056b3;
-  }
-  .icon_name {
-    margin-left: 5px;
-  }
-  .list-group {
-    margin-top: 10%;
-   
-  } 
-  .dropdown-menu {
-    width: 100%; 
-  }
-  .icon_name {
-    color: black;
-  }
-  .icon_name:hover {
-    background-color: #f8f9fa;
-    color: #007bff;
-  }
-  .dropdown-item {
-    color: black;
-    transition: color 0.3s;
-    padding: 0;
+.sidebar-fixed {
+  position: sticky;
+  top: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: #f8f9fa;
+  z-index: 1000;
+  overflow-y: hidden;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
 
-  }
-  .dropdown-item:hover {
-    background-color: #f8f9fa;
-    color: #007bff;
-  }
-  .list-group-item i {
-    margin-right: 0.5rem; 
-    font-size: 1.2rem; 
-    color: #2747b0;
-  }
-  .list-group-item {
-    position: relative;
-  }
-  .x {
-    margin-left: 1rem;
-  }
-  
+.list-group-item {
+  cursor: pointer;
+  transition: background-color 0.5s, color 0.3s;
+}
+
+.list-group-item:hover {
+  background-color: #f8f9fa;
+  color: #007bff;
+}
+
+.list-group-item i {
+  color: #007bff;
+  margin-right: 1rem; /* Increased margin to add more space between icon and name */
+  transition: color 0.5s;
+}
+
+.list-group-item:hover i {
+  color: #0056b3;
+}
+
+.icon_name {
+  margin-left: 5px;
+  color: black;
+  transition: color 0.3s;
+}
+
+.icon_name:hover {
+  color: #007bff;
+}
+
+.dropdown-item {
+  color: black;
+  transition: color 0.5s;
+  padding: 0;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #007bff;
+}
+
+.list-group {
+  margin-top: 10px;
+}
+
+.x {
+  margin-left: 1rem;
+}
+
+/* Indentation for dropdown items */
+.dropdown-item-indent {
+  padding-left: 20px; /* Adjust this value for more or less indentation */
+}

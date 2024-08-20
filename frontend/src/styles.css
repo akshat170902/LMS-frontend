@@ -96,8 +96,6 @@
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
  }
 
- 
-
 .signup-hr {
   border: 0;
   height: 1px;
@@ -105,16 +103,7 @@
   margin: 20px 0; /* Adjust margin as needed */
 }
 
-.signin-hr {
-  border: 0;
-  height: 1px;
-  background: #ddd; /* Adjust color as needed */
-  margin: 20px 0; /* Adjust margin as needed */
-}
 
-.input_box_style{
-  float: left;
-}
 .mb-4, .my-4 {
   margin-bottom: 1.1rem !important;
 }
