@@ -23,75 +23,74 @@ export class AdminService {
   }
 
 
-
+//done
   getUsers(): Observable<any[]> {
     return this.httpClient.get<any[]>(this.apiUrl, { headers: this.getHeaders() });
   }
 
 
-
+//done
   getApprovedMentors(): Observable<any[]> {
     return this.httpClient.get<any[]>(`http://localhost:8088/users/role/approval/true`, { headers: this.getHeaders() });
   }
 
 
-
+//done
   getUnApprovedMentors(): Observable<any[]> {
     return this.httpClient.get<any[]>(`http://localhost:8088/users/role/approval/false`, { headers: this.getHeaders() });
   }
 
 
-
+//done
   getMentors(): Observable<any[]> {
     return this.httpClient.get<any[]>(`http://localhost:8088/users/role/approval/true`, { headers: this.getHeaders() });
     
   }
 
 
-
+//done
   approveMentor(id: number): Observable<any[]> {
     return this.httpClient.put<any[]>(`http://localhost:8088/users/role/set-approval/true/${id}`, {}, { headers: this.getHeaders() });
   }
 
 
-
+//done
   removeMentor(id: number): Observable<any[]> {
     return this.httpClient.delete<any[]>(`http://localhost:8088/users/${id}`, { headers: this.getHeaders() });
   }
 
 
-
+//pending
   getQueries(): Observable<Query[]> {
     return this.httpClient.get<Query[]>(`${this.apiUrl}/queries`, { headers: this.getHeaders() });
   }
 
 
-
+//pending
   removeQuery(id: number): Observable<any[]> {
     return this.httpClient.delete<any[]>(`${this.apiUrl}/queries/${id}`, { headers: this.getHeaders() });
   }
 
 
-
+//todo
   getFeedbacks(): Observable<Feedback[]> {
     return this.httpClient.get<Feedback[]>(`${this.apiUrl}/feedbacks`, { headers: this.getHeaders() });
   }
 
-
-
+//done
   getCourses(): Observable<Course[]> {
-    return this.httpClient.get<Course[]>(`${this.coursesUrl}/status/true`, { headers: this.getHeaders() });
+    return this.httpClient.get<Course[]>(`http://localhost:8084/courses/admin/status/false`, { headers: this.getHeaders() });
   }
 
 
-
+//pending
   approveCourse(courseId: number): Observable<any[]> {
-    return this.httpClient.put<any[]>(`${this.coursesUrl}/${courseId}/true`, {}, { headers: this.getHeaders() });
+    return this.httpClient.put<any[]>(`${this.coursesUrl}/admin/${courseId}/true`, {}, { headers: this.getHeaders() });
   }
 
 
-
+//pending
   removeCourse(courseId: number): Observable<any[]> {
-    return this.httpClient.put<any[]>(`${this.coursesUrl}/${courseId}/false`, {}, { headers: this.getHeaders() });
+    return this.httpClient.delete<any[]>(`http://localhost:8084/courses/admin/${courseId}`, { headers: this.getHeaders() });
   }
 }
