@@ -17,6 +17,7 @@ export class EnrolledCoursesComponent {
   courses:any[]=[];
   ids:any={};
   constructor(private dataService:DataService){
+    
     this.dataService.getAllCourses().subscribe(response =>{
       this.courses=response;
       console.log(response);
