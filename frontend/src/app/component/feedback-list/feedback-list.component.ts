@@ -17,6 +17,7 @@ export class FeedbackListComponent {
   feedbacks : Feedback[] = [];
   constructor(private adminService: AdminService, private cdr: ChangeDetectorRef) { }
 
+
   ngOnInit(): void {
     this.loadFeedbacks();
   }
@@ -28,7 +29,7 @@ export class FeedbackListComponent {
     });
   }
   removeFeedback(id : number) : void{
-    this.adminService.removeFeedback(id);
+    
     this.cdr.detectChanges();
     this.loadFeedbacks();
   }

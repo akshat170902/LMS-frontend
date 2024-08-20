@@ -28,10 +28,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let user of users">
-                <td>{{ user.id }}</td>
-                <td>{{ user.name }}</td>
-                <td>{{ user.pendingCourses.join(', ') }}</td>
-                <td>{{ user.completedCourses.join(', ') }}</td>
+                <td>{{ user.fullName }}</td>
               </tr>
             </tbody>
           </table>

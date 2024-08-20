@@ -40,7 +40,7 @@ export class DataService {
 
   getCategories(type: string): Observable<any[]> {
     this.type = type;
-    return this.httpClient.get<any[]>(`http://localhost:8084/courses${this.type}`);
+    return this.httpClient.get<any[]>(`http://localhost:8084/courses/status/true${this.type}`);
   }
   getCourseById(id: string): Observable<any[]> {
 
