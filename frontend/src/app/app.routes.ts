@@ -14,6 +14,8 @@ import { FeedbackListComponent } from './component/feedback-list/feedback-list.c
 import { CoursePageComponent } from './page/course-page/course-page.component';
 import { AllCoursesPageComponent } from './page/all-courses-page/all-courses-page.component';
 import { CreateCoursesComponent } from './page/create-courses/create-courses.component';
+import { HelpSupportComponent } from './page/help-support/help-support.component';
+import { FeedbackComponent } from './page/feedback/feedback.component';
 
 export const routes : Routes = [
   { path: '', redirectTo: '/landing-page', pathMatch: 'full' }, // Default route
@@ -21,6 +23,8 @@ export const routes : Routes = [
   { path: 'login-page', component: LoginPageComponent },
   { path: 'profile-page', component: ProfilePageComponent },
   { path: 'signup-page', component: SignupPageComponent },
+  {path: 'help-support', component: HelpSupportComponent},
+  {path: 'feedback-page', component: FeedbackComponent},
 
   {path: 'admin-page/all-users',component: UserListComponent},
   {path: 'admin-page/all-queries',component: QueryListComponent},
