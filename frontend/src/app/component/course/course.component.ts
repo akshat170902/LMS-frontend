@@ -1,19 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../service/data.service';
 import { ActivatedRoute } from '@angular/router';
+import { Course } from '../../models/course.model';\
 import { CommonModule } from '@angular/common';
-import { User } from '../../models/user.model';
-import { Course } from '../../models/course.model';
 
 @Component({
   selector: 'app-course',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './course.component.html',
-  styleUrl: './course.component.css'
+  styleUrls: ['./course.component.css'] // Corrected from `styleUrl` to `styleUrls`
 })
 export class CourseComponent implements OnInit {
-  course:any;
+  course: Course = {
+    courseId: 0,
+    courseName: '',
+    mentorId: 0,
+    description: '',
+    status: false,
+    mentorName: ''
+  };
   userLoggedIn : boolean = false;
   isEnrolled: boolean = false;
   courseStatus: 'pending' | 'completed' = 'pending';
@@ -23,14 +29,15 @@ export class CourseComponent implements OnInit {
     private route:ActivatedRoute,
   ){}
 
+
   
 
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params =>{
+    this.route.paramMap.subscribe(params => {
       const id = params.get('id');
-      if(id!=null){
-        this.getCourse(id);
+      if (id) {
+        this.getCourse(id); // Call the getCourse method to fetch the data
       }
       
     });

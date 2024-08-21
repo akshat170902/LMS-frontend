@@ -1,6 +1,6 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-light">
-  <a class="navbar-brand" href="landing-page">
-    <img class="logo" style="width: 3rem;" src="https://logodix.com/logo/1834118.png" alt="">
+  <a class="navbar-brand" routerLink="/landing-page">
+    <img class="logo" style="width: 3rem;" src="https://logodix.com/logo/1834118.png" alt="Logo">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,21 +15,20 @@
       <button class="btn btn-outline-primary ml-2" type="submit">Search</button>
     </form>
     <ul class="navbar-nav ml-auto">
-      <!-- Show Login button if user does not exist in localStorage -->
+      <!-- Show Login button if jwtToken does not exist in localStorage -->
       <li *ngIf="!user" class="nav-item">
-        <a class="nav-link btn btn-primary text-white" href="login-page">Login <span
+        <a class="nav-link btn btn-primary text-white" routerLink="/login-page">Login <span
             class="sr-only">(current)</span></a>
       </li>
 
-      <!-- Show user info and Logout button if user exists in localStorage -->
+      <!-- Show user info and Logout button if jwtToken exists in localStorage -->
       <li *ngIf="user" class="nav-item d-flex align-items-center justify-content-between">
         <a routerLink="/profile-page">
-          <img
-            src="https://www.pngitem.com/pimgs/m/150-1503945_transparent-user-png-default-user-image-png-png.png"
+          <img src="https://www.pngitem.com/pimgs/m/150-1503945_transparent-user-png-default-user-image-png-png.png"
             alt="Profile" class="rounded-circle me-3 x" width="30" height="30"> <!-- Added me-3 for margin -->
         </a>
         <span class="me-4 x">{{ username }}</span> <!-- Added me-4 for margin -->
-        <a class="btn btn-outline-danger ms-3 x" routerLink="/logout"  (click)="logout()">Logout</a> <!-- Added ms-3 for margin -->
+        <a class="btn btn-outline-danger ms-3 x" (click)="logout()">Logout</a> <!-- Added ms-3 for margin -->
       </li>
     </ul>
   </div>

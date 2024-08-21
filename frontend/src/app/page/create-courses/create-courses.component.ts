@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from '../../component/footer/footer.component';
 import { SidebarComponent } from '../../component/sidebar/sidebar.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-courses',
@@ -14,7 +15,12 @@ import { SidebarComponent } from '../../component/sidebar/sidebar.component';
 })
 export class CreateCoursesComponent {
 
+constructor(private router:Router){}
 
+navigateToLandingPage(){
+  this.router.navigate(['/landing-page']);
+ 
+}
   durationOptions: string[] = ['0-3 hours', '3-6 hours', '6-9 hours', 'greater than 9 hours'];
 
   courseData: any={

@@ -11,7 +11,7 @@
         <div class="col-lg-6 mb-5 mb-lg-0">
           <div class="card">
             <div class="card-body py-5 px-md-5">
-              <h3>Sign In</h3>
+              <h3>Login</h3>
 
               <!-- Horizontal line -->
               <hr class="signin-hr">
@@ -54,11 +54,12 @@
 
                 <!-- Submit button -->
                 <button type="submit" (click)="onLogin()" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
-                  Sign in
+                  Login
                 </button>
                 <!-- Cancel button -->
                 <button type="button" data-mdb-button-init data-mdb-ripple-init
-                  class="custom_button btn btn-primary btn-block mb-4">
+                (click)="navigateToLandingPage()"
+                class="custom_button btn btn-primary btn-block mb-4">
                   Cancel
                 </button>
 
