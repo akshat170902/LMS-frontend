@@ -4,5 +4,7 @@ export interface Course {
     mentorId: number,
     description: string,
     status: boolean,
-    mentorName:string
+    mentorName:string,
+    duration:string,
+    url:string
 }
