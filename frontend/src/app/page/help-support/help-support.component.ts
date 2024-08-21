@@ -5,7 +5,7 @@ import { FooterComponent } from '../../component/footer/footer.component';
 @Component({
   selector: 'app-help-support',
   standalone: true,
-  imports: [NavbarComponent,FooterComponent],
+  imports: [NavbarComponent, FooterComponent],
   templateUrl: './help-support.component.html',
   styleUrl: './help-support.component.css'
 })

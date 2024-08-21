@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-feedback',
   standalone: true,
-  imports: [NavbarComponent,FooterComponent,CommonModule,FormsModule],
+  imports: [NavbarComponent, FooterComponent, CommonModule, FormsModule],
   templateUrl: './feedback.component.html',
   styleUrl: './feedback.component.css'
 })

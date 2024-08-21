@@ -10,21 +10,21 @@ import { DataService } from '../../service/data.service';
 @Component({
   selector: 'app-create-courses',
   standalone: true,
-  imports: [NavbarComponent,FormsModule,CommonModule,FooterComponent,SidebarComponent],
+  imports: [NavbarComponent, FormsModule, CommonModule, FooterComponent, SidebarComponent],
   templateUrl: './create-courses.component.html',
   styleUrl: './create-courses.component.css'
 })
 export class CreateCoursesComponent {
 
-constructor(private router:Router,private dataService:DataService){}
+  constructor(private router: Router, private dataService: DataService) { }
 
-navigateToLandingPage(){
-  this.router.navigate(['/landing-page']);
- 
-}
+  navigateToLandingPage() {
+    this.router.navigate(['/landing-page']);
+
+  }
   durationOptions: string[] = ['0-3 weeks', '3-6 weeks', '6-9 weeks', 'greater than 9 weeks'];
 
-  courseData: any={
+  courseData: any = {
     "courseName": "Introduction to Javbbba",
     "mentorId": 101,
     "description": "Learn the basics of Java programming language.",
@@ -35,10 +35,10 @@ navigateToLandingPage(){
 
   }
 
-  
-  onClickSubmit(){
-    this.dataService.createCourse(this.courseData).subscribe(response =>{
-      
+
+  onClickSubmit() {
+    this.dataService.createCourse(this.courseData).subscribe(response => {
+
       console.log(response);
     });
   }

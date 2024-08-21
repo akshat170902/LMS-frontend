@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../../service/data.service';
 import { CommonModule } from '@angular/common';
@@ -14,7 +14,7 @@ import { SidebarComponent } from "../../component/sidebar/sidebar.component";
 export class SearchPageComponent {
   courses: any[] = [];
   searchQuery: string = '';
-  constructor(private route: ActivatedRoute, private dataService: DataService) {}
+  constructor(private route: ActivatedRoute, private dataService: DataService) { }
   ngOnInit(): void {
     // Get the search query from the URL
     this.route.queryParams.subscribe(params => {
@@ -35,5 +35,5 @@ export class SearchPageComponent {
       }
     );
   }
-  
+
 }

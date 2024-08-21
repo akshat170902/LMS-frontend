@@ -22,7 +22,7 @@ export class QueryPageComponent {
   activeAnswerBoxIndex: number | null = null;
   tempAnswer: string = '';
 
-  constructor(private adminService: AdminService, private dataService: DataService) {}
+  constructor(private adminService: AdminService, private dataService: DataService) { }
 
   ngOnInit() {
     this.loadQueries();

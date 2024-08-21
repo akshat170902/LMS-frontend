@@ -10,7 +10,7 @@ describe('HelpSupportComponent', () => {
     await TestBed.configureTestingModule({
       imports: [HelpSupportComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(HelpSupportComponent);
     component = fixture.componentInstance;

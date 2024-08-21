@@ -20,7 +20,7 @@
         
                 <div class="form-group">
                     <label for="title" class="form-label">Title</label>
-                    <input type="text" [(ngModel)]="courseData.title" name="title" #fTitle="ngModel" class="form-control item"
+                    <input type="text" [(ngModel)]="courseData.title" name="courseName" #fTitle="ngModel" class="form-control item"
                         id="username" required placeholder="Title">
                 </div>
         
@@ -62,18 +62,13 @@
         
                 <!-- Prerequisites -->
         
-                <div class="form-group">
-                    <label for="Prerequisites" class="form-label">Prerequisites</label>
-                    <input type="text" [(ngModel)]="courseData.Prerequisites" name="Prerequisites" #fPrerequisites="ngModel"
-                        class="form-control item" id="Prerequisites" placeholder="Prerequisites">
-                </div>
         
                 <!-- mentors -->
         
                 <div class="form-group">
                     <label for="mentors" class="form-label">Mentors</label>
                     <input type="text" [(ngModel)]="courseData.mentors" name="mentors" #fMentors="ngModel"
-                        class="form-control item" id="mentors" required placeholder="Mentors">
+                        class="form-control item" id="mentorName" required placeholder="Mentors">
                 </div>
         
         
@@ -87,7 +82,7 @@
                 <!-- upload file -->
                 <div class="form-group">
                     <label for="upload" class="form-label">Upload file:</label>
-                    <input type="text" [(ngModel)]="courseData.upload" name="upload" class="form-control item" id="upload"
+                    <input type="text" [(ngModel)]="courseData.upload" name="url" class="form-control item" id="upload"
                         placeholder="Upload File">
                 </div>
         

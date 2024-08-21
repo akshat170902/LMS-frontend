@@ -80,7 +80,7 @@ export class DataService {
   setCompleteCourse(userId: number, courseId: number): Observable<any[]> {
     return this.httpClient.put<any[]>(`http://localhost:8098/user-courses/public/completion-status/${userId}/${courseId}/true`, { headers: this.getHeaders() });
   }
-  
+
 
   //todo
 
@@ -91,57 +91,13 @@ export class DataService {
   getEnrolledAndProgressStatus(userId: number, courseId: number): Observable<{ course: Course, doubtList: any[], isEnrolled: boolean, completionStatus: boolean }> {
     return this.httpClient.get<{ course: Course, doubtList: any[], isEnrolled: boolean, completionStatus: boolean }>(`http://localhost:8084/user-courses/public/details/${userId}/${courseId}`, { headers: this.getHeaders() });
   }
-// GET http://localhost:8084/user-courses/public/details/{{userId}}/{{courseId}}
-
-
-// // Check if the user is enrolled in a specific course
-// isUserEnrolled(userId: string, courseId: number): Observable<boolean> {
-//   return this.httpClient.get<boolean>(`${this.apiUrl}/api/v1/user-courses/user/is-enrolled/${userId}/${courseId}`, {
-//     headers: this.getHeaders()
-//   }).pipe(
-//     catchError(this.handleError)
-//   );
-// }
-
-//    // Get course progress for a user
-//    getCourseProgress(userId: string, courseId: number): Observable<'pending' | 'completed'> {
-//     return this.httpClient.get<'pending' | 'completed'>(`${this.apiUrl}/api/v1/user-courses/user/progress/${userId}/${courseId}`, {
-//       headers: this.getHeaders()
-//     }).pipe(
-//       catchError(this.handleError)
-//     );
-//   }
-
-
-//   // Enroll a user in a course
-//   enrollUser(userId: string, courseId: number): Observable<void> {
-//     return this.httpClient.post<void>(`${this.apiUrl}/api/v1/user-courses/user/enroll`, { userId, courseId }, {
-//       headers: this.getHeaders()
-//     }).pipe(
-//       catchError(this.handleError)
-//     );
-//   }
-
-//   // Mark a course as complete for a user
-//   completeCourse(userId: string, courseId: number): Observable<void> {
-//     return this.httpClient.post<void>(`${this.apiUrl}/api/v1/user-courses/user/complete`, { userId, courseId }, {
-//       headers: this.getHeaders()
-//     }).pipe(
-//       catchError(this.handleError)
-//     );
-//   }
-
-
-
-
-
 
   setAnswer(doubtId: number, answer: string): Observable<any[]> {
     return this.httpClient.post<any[]>(`http://localhost:8098/doubts/mentor/${doubtId}`, answer, { headers: this.getHeaders() });
   }
 
-createCourse(course:any): Observable<any[]> {
-  return this.httpClient.post<any[]>(`http://localhost:8098/courses/mentor`, course, { headers: this.getHeaders() });
-}
+  createCourse(course: any): Observable<any[]> {
+    return this.httpClient.post<any[]>(`http://localhost:8098/courses/mentor`, course, { headers: this.getHeaders() });
+  }
 
 }
