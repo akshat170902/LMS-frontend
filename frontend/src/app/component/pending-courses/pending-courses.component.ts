@@ -14,7 +14,7 @@ import { Course } from '../../models/course.model';
   templateUrl: './pending-courses.component.html',
   styleUrls: ['./pending-courses.component.css']
 })
-export class EnrolledCoursesComponent implements OnInit {
+export class PendingCoursesComponent implements OnInit {
   courses: Course[] = [];
   userId: number | null = null;
 
