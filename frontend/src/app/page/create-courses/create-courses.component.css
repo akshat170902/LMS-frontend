@@ -4,8 +4,15 @@ body{
 
 .registration-form{
 	padding: 50px 0;
-}
+    background-image: url('https://th.bing.com/th/id/OIP.3aKs9CZkaxEfJtnjXTjhDwHaEK?w=327&h=187&c=7&r=0&o=5&dpr=1.5&pid=1.7');
+     background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    /* background-attachment: fixed; */
+    /* min-height: 100vh;  */
 
+}
+  
 .btn-group{
     display: flex;
     justify-content: space-between;

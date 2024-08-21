@@ -22,12 +22,13 @@ export class ProfilePageComponent {
     this.dataService.getUser().subscribe(response => {
       this.user = response;
       console.log(response);
+      this.dataService.getEnrolledCourses(this.user.id).subscribe(response => {
+        this.courses = response;
+        console.log(response);
+      });
     });
 
     // Fetch courses data
-    this.dataService.getEnrolledCourses(this.user.id).subscribe(response => {
-      this.courses = response;
-      console.log(response);
-    });
+    
   }
 }
