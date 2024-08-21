@@ -1,36 +1,50 @@
 <app-navbar></app-navbar>
 
 <div class="container">
-  <header class="help-support-header">
-    <h1>Help & Support</h1>
-    <p>We're here to assist you. Find answers to your questions or get in touch with our support team.</p>
-  </header>
-
   <div class="row">
-    <div class="col-md-4">
-      <section class="help-section">
-        <h2>FAQs</h2>
-        <p>Browse our frequently asked questions to find quick answers to common issues.</p>
-        <a class="btn btn-primary" routerLink="/faq">View FAQs</a>
-      </section>
+    <!-- Sidebar -->
+    <div class="col-md-3">
+      <app-sidebar></app-sidebar>
     </div>
-    <div class="col-md-4">
-      <section class="help-section">
-        <h2>Contact Us</h2>
-        <p>Need more help? Reach out to our support team for personalized assistance.</p>
-        <a class="btn btn-primary" routerLink="/contact">Contact Us</a>
-      </section>
-    </div>
-    <div class="col-md-4">
-      <section class="help-section">
-        <h2>Report a Problem</h2>
-        <p>Encountering issues? Let us know and we’ll work to resolve them as quickly as possible.</p>
-        <a class="btn btn-primary" routerLink="/report-problem">Report a Problem</a>
-      </section>
+
+    <!-- Main Content -->
+    <div class="col-md-9">
+      <header class="help-support-header">
+        <h1>Help & Support</h1>
+        <p>We're here to assist you. Find answers to your questions or get in touch with our support team.</p>
+      </header>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card help-card mb-3">
+            <div class="card-body">
+              <h2 class="card-title">FAQs</h2>
+              <p class="card-text">Browse our frequently asked questions to find quick answers to common issues.</p>
+              <a class="btn btn-primary" routerLink="/faq">View FAQs</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="card help-card mb-3">
+            <div class="card-body">
+              <h2 class="card-title">Contact Us</h2>
+              <p class="card-text">Need more help? Reach out to our support team for personalized assistance.</p>
+              <a class="btn btn-primary" routerLink="/contact">Contact Us</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="card help-card">
+            <div class="card-body">
+              <h2 class="card-title">Report a Problem</h2>
+              <p class="card-text">Encountering issues? Let us know and we’ll work to resolve them as quickly as possible.</p>
+              <a class="btn btn-primary" routerLink="/report-problem">Report a Problem</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-  
 </div>
 
 <app-footer></app-footer>

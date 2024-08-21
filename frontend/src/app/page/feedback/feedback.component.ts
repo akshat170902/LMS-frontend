@@ -3,11 +3,12 @@ import { NavbarComponent } from '../../component/navbar/navbar.component';
 import { FooterComponent } from '../../component/footer/footer.component';
 import { FormsModule, NgModel } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { SidebarComponent } from '../../component/sidebar/sidebar.component';
 
 @Component({
   selector: 'app-feedback',
   standalone: true,
-  imports: [NavbarComponent,FooterComponent,CommonModule,FormsModule],
+  imports: [NavbarComponent,FooterComponent,CommonModule,FormsModule,SidebarComponent],
   templateUrl: './feedback.component.html',
   styleUrl: './feedback.component.css'
 })
