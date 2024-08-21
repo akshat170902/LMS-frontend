@@ -2,43 +2,21 @@
 
 
 
-.about-avatar img {
-  width: 200px; /* Set the width you want */
-  height: auto; /* The height will adjust to maintain the aspect ratio */
-  padding-top: 30px;
-}
 
-
-.align-items-center{
-  align-items: start !important;
-}
-
-.about-text{
-  padding-top:  33px;
-}
-
-body{
-    color: #977e7e;
-    margin-top:20px;
-}
-.section {
-    padding: 0px 0;
-    position: relative;
-}
 .gray-bg {
     background-color: #ffffff;
 }
-img {
-    max-width: 100%;
+
+
+.pending{
+  padding-top: 18px;
+  margin-bottom: -47px;
 }
-img {
-    vertical-align: middle;
-    border-style: none;
-}
+
 /* About Me 
 ---------------------*/
 .about-text h3 {
-  font-size: 25px;
+  font-size: 45px;
   font-weight: 700;
   margin: 0 0 6px;
 }
@@ -48,7 +26,6 @@ img {
   }
 }
 .about-text h6 {
-  font-size: 15px;
   font-weight: 600;
   margin-bottom: 15px;
 }
@@ -58,7 +35,7 @@ img {
   }
 }
 .about-text p {
-  font-size: 15px;
+  font-size: 18px;
   max-width: 450px;
 }
 .about-text p mark {
@@ -71,18 +48,7 @@ img {
 }
 .about-list .media {
   padding: 5px 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
 }
-
-@media (min-width: 768px) {
-  .col-md-6 {
-      flex: 0 0 auto;
-      width: 100%;
-  }
-}
-
 .about-list label {
   color: #20247b;
   font-weight: 600;
@@ -92,7 +58,7 @@ img {
 }
 .about-list label:after {
   content: "";
-  position: relative;
+  position: absolute;
   top: 0;
   bottom: 0;
   right: 11px;
@@ -107,18 +73,6 @@ img {
   margin: auto;
   opacity: 0.5;
 }
-
-label::after {
-  content: ''; /* Removes any content inserted by ::after */
-}
-
-.about-list label::after {
-  content: ''; /* Removes the inserted content only for labels inside .about-list */
-}
-
-
-
-
 .about-list p {
   margin: 0;
   font-size: 15px;
@@ -173,6 +127,7 @@ mark {
     background-color: #010514;
     border-radius: 5px;
     padding: 10px 20px;
+    margin-top: 10px;
 }
 
 .navbar-collapse {
@@ -217,17 +172,6 @@ mark {
 }
 
 
-a {
-  color: inherit; /* Inherit the color from the parent element */
-  text-decoration: none; /* Remove underline */
-}
-
-a:hover {
-  color: inherit; /* Ensure the color stays the same on hover */
-  text-decoration: none; /* Ensure the underline is not added back on hover */
-}
-
-
 body {
     font-family: 'Maven Pro', sans-serif
 }
@@ -240,54 +184,6 @@ body{
 
   border-radius: 20px;
 }
-
-.card {
-  padding: 0;  /* Remove internal padding */
-  margin: 0;   /* Remove external margin */
-  overflow: hidden;  /* Ensure content doesn't overflow */
-}
-
-
-.card .img img {
-  width: 100%;        /* Make the image fill the full width */
-  height: auto;       /* Maintain the aspect ratio of the image */
-  object-fit: cover;  /* Cover the entire area, cropping if necessary */
-  border-radius: 0;   /* Remove any rounding on the image */
-  object-fit: cover;
-}
-
-/* .card{
-
-  border:none;
-  border-radius: 10px;
-  transition: all 1s;
-  cursor: pointer;
-} */
-
-.card:hover{
-
-   -webkit-box-shadow: 3px 5px 17px -4px #777777; 
-box-shadow: 3px 5px 17px -4px #777777;
-}
-
-.ratings i {
-
-  color: green;
-}
-
-.apointment button{
-
-  border-radius: 20px;
-  background-color: #eee;
-  color: #000;
-  border-color: #eee;
-  font-size: 13px;
-}
-
-
-
-
-
 
 .card{
 
@@ -321,4 +217,94 @@ box-shadow: 3px 5px 17px -4px #777777;
     position: absolute;
     bottom: 20px;
     width: 100%;
+}
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navbar-nav {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.nav-item {
+    padding: 0 15px;
+}
+
+a {
+    color: inherit; /* Inherit the color from the parent element */
+    text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+    color: inherit; /* Ensure the color stays the same on hover */
+    text-decoration: none; /* Ensure the underline is not added back on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* profile-page.component.css */
+
+/* Adjust the card padding and margin if needed */
+.card {
+    padding: 0;  /* Remove internal padding */
+    margin: 0;   /* Remove external margin */
+    overflow: hidden;  /* Ensure content doesn't overflow */
+}
+
+
+/* profile-page.component.css */
+
+/* Ensure the image fills the card container */
+.card .img img {
+    width: 100%;        /* Make the image fill the full width */
+    height: auto;       /* Maintain the aspect ratio of the image */
+    object-fit: cover;  /* Cover the entire area, cropping if necessary */
+    border-radius: 0;   /* Remove any rounding on the image */
+    object-fit: cover;
+}
+
+
+
+
+.card:hover{
+
+   -webkit-box-shadow: 3px 5px 17px -4px #777777; 
+box-shadow: 3px 5px 17px -4px #777777;
+}
+
+.ratings i {
+
+  color: green;
+}
+
+.apointment button{
+
+  border-radius: 20px;
+  background-color: #eee;
+  color: #000;
+  border-color: #eee;
+  font-size: 13px;
 }

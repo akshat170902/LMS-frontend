@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="scrolling-wrapper">
+      <div class="card-container" *ngFor="let course of courses">
+        <div class="card mb-4">
+          <img [src]="course.image" class="card-img-top" alt="...">
+          <div class="card-body d-flex flex-column">
+            <div class="card-title">{{course.title}}</div>
+            <p class="card-text">{{course.description }}...</p> <!-- Truncate description -->
+            <a href="#" class="btn btn-primary card-button mt-auto">Buy Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
