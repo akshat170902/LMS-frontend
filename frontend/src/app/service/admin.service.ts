@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Query } from '../models/query.model';
 import { Feedback } from '../models/feedback.model';
 import { Course } from '../models/course.model';
+import { Doubt } from '../models/doubt.model';
 
 @Injectable({
   providedIn: 'root'
@@ -96,7 +97,7 @@ export class AdminService {
 
 
   //pending
-  createDoubt(doubt:Query) :Observable<any[]> {
+  createDoubt(doubt:Doubt) :Observable<any[]> {
       return this.httpClient.post<any[]>(`http://localhost:8084/doubts/public/create-doubt`,{doubt}, { headers: this.getHeaders() });
     }
   
