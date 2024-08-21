@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
 
 
-
+.completed{
+  padding-top: 18px;
+  margin-bottom: -47px;
+}
 
 .gray-bg {
     background-color: #ffffff;

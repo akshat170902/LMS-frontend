@@ -32,9 +32,9 @@ export const routes : Routes = [
 
   { path: 'courses', component: AllCoursesPageComponent },
   { path: 'course/:id', component: CoursePageComponent },
-  { path: 'completed/courses', component:CompletedCoursesComponent},
-  { path: 'pending/courses', component:PendingCoursesComponent},
-  { path: 'enrolled/courses', component:EnrolledCoursesComponent},
+  { path: 'courses/completed', component:CompletedCoursesComponent},
+  { path: 'courses/pending', component:PendingCoursesComponent},
+  { path: 'courses/enrolled', component:EnrolledCoursesComponent},
 
   {path: 'create-course', component:CreateCoursesComponent},
 
