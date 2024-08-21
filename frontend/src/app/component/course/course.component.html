@@ -1,32 +1,32 @@
 <div class="">
-    <div class="course-details">
-      <!-- Image Container -->
-      <div class="img-container">
-        <img [src]="course.image" alt="Course Image" class="img-fluid">
+  <div class="course-details">
+    <!-- Image Container -->
+    <div class="img-container">
+      <img [src]="course.image" alt="Course Image" class="img-fluid">
+    </div>
+
+    <!-- Information Container -->
+    <div class="information">
+      <!-- Title -->
+      <div class="title">
+        <h1>{{ course.title }}</h1>
       </div>
-  
-      <!-- Information Container -->
-      <div class="information">
-        <!-- Title -->
-        <div class="title">
-          <h1>{{ course.title }}</h1>
-        </div>
-  
-        <!-- Price -->
-        <div class="price">
-          <p><strong>Price:</strong> ${{ course.price }}</p>
-        </div>
-  
-        <!-- Description -->
-        <div class="description">
-          <p>{{ course.description }}</p>
-        </div>
-  
-        <!-- Start Now Button -->
+
+      <!-- Price -->
+      <div class="price">
+        <p><strong>Price:</strong> ${{ course.price }}</p>
+      </div>
+
+      <!-- Description -->
+      <div class="description">
+        <p>{{ course.description }}</p>
+      </div>
+
+      <!-- Start Now Button -->
         <div class="button-start-now">
           <button type="button" class="btn btn-primary">Start Now</button>
+          <button type="button" class="btn btn-secondary">Enroll Now</button>
         </div>
-      </div>
     </div>
   </div>
-  
+</div>

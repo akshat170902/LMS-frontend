@@ -75,6 +75,9 @@
 .button-start-now {
     margin-top: 25px;
     animation: fadeIn 2s ease-in-out;
+    display: flex;
+    gap: 10px; /* Adds space between buttons */
+    margin-top: 10px;
 }
 
 .button-start-now .btn {
@@ -85,6 +88,7 @@
     border: none;
     border-radius: 8px;
     transition: background 0.3s ease, transform 0.2s ease;
+    flex: 1;
 }
 
 .button-start-now .btn:hover {
@@ -95,6 +99,13 @@
 .button-start-now .btn:active {
     background: linear-gradient(135deg, #162861, #2a4a7b);
     transform: translateY(0);
+}
+
+@media (max-width: 767px) {
+  .buttons-container {
+    flex-direction: column; /* Stack buttons vertically on smaller screens */
+    gap: 5px; /* Adjust gap for smaller screens */
+  }
 }
 
 /* Additional styling for a cohesive look */
