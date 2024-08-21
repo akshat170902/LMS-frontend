@@ -7,12 +7,6 @@
     background-color: #ffffff;
 }
 
-
-.pending{
-  padding-top: 18px;
-  margin-bottom: -47px;
-}
-
 /* About Me 
 ---------------------*/
 .about-text h3 {
@@ -298,6 +292,11 @@ box-shadow: 3px 5px 17px -4px #777777;
 .ratings i {
 
   color: green;
+}
+
+.enrolled{
+  padding-top: 18px;
+  margin-bottom: -47px;
 }
 
 .apointment button{

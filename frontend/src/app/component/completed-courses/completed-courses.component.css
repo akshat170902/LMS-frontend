@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+
+
+.completed{
+  padding-top: 18px;
+  margin-bottom: -47px;
+}
+
+.gray-bg {
+    background-color: #ffffff;
+}
+
+/* About Me 
+---------------------*/
+.about-text h3 {
+  font-size: 45px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+@media (max-width: 767px) {
+  .about-text h3 {
+    font-size: 35px;
+  }
+}
+.about-text h6 {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+@media (max-width: 767px) {
+  .about-text h6 {
+    font-size: 18px;
+  }
+}
+.about-text p {
+  font-size: 18px;
+  max-width: 450px;
+}
+.about-text p mark {
+  font-weight: 600;
+  color: #20247b;
+}
+
+.about-list {
+  padding-top: 10px;
+}
+.about-list .media {
+  padding: 5px 0;
+}
+.about-list label {
+  color: #20247b;
+  font-weight: 600;
+  width: 88px;
+  margin: 0;
+  position: relative;
+}
+.about-list label:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 11px;
+  width: 1px;
+  height: 12px;
+  background: #20247b;
+  -moz-transform: rotate(15deg);
+  -o-transform: rotate(15deg);
+  -ms-transform: rotate(15deg);
+  -webkit-transform: rotate(15deg);
+  transform: rotate(15deg);
+  margin: auto;
+  opacity: 0.5;
+}
+.about-list p {
+  margin: 0;
+  font-size: 15px;
+}
+
+@media (max-width: 991px) {
+  .about-avatar {
+    margin-top: 30px;
+  }
+}
+
+.about-section .counter {
+  padding: 22px 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+}
+.about-section .counter .count-data {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.about-section .counter .count {
+  font-weight: 700;
+  color: #20247b;
+  margin: 0 0 5px;
+}
+.about-section .counter p {
+  font-weight: 600;
+  margin: 0;
+}
+mark {
+    background-image: linear-gradient(rgba(252, 83, 86, 0.6), rgba(252, 83, 86, 0.6));
+    background-size: 100% 3px;
+    background-repeat: no-repeat;
+    background-position: 0 bottom;
+    background-color: transparent;
+    padding: 0;
+    color: currentColor;
+}
+.theme-color {
+    color: #c7bdbd;
+}
+.dark-color {
+    color: #20247b;
+}
+
+
+
+
+/* Navbar Customization */
+.navbar {
+    background-color: #010514;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+
+.navbar-collapse {
+    justify-content: center;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navbar-nav .nav-link {
+    color: #b7b7b7;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px 15px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #dedbdb;
+    background-color: #383a3e;
+    border-radius: 5px;
+}
+
+.navbar-nav .nav-link.active {
+    color: #dedbdb;
+    font-weight: 600;
+    background-color: #383a3e;
+    border-radius: 5px;
+}
+
+.navbar-nav .nav-link:active {
+    color: #dedbdb;
+    background-color: #494c50;
+}
+
+.navbar-nav .nav-link.disabled {
+    color: #5a5d64;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+
+body {
+    font-family: 'Maven Pro', sans-serif
+}
+
+body{
+  background-color: #eee;
+}
+
+.add{
+
+  border-radius: 20px;
+}
+
+.card{
+
+  border:none;
+  border-radius: 10px;
+  transition: all 1s;
+  cursor: pointer;
+}
+
+.custom-card-height {
+    height: 400px; /* Adjust this value to your desired height */
+}
+
+.custom-card-height .img {
+    height: 60%; /* Adjust the image container height */
+    overflow: hidden;
+}
+
+
+.custom-card-height .img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Ensures the image covers the entire container without stretching */
+}
+
+.custom-card-height h5 {
+    margin-top: 10px;
+}
+
+.custom-card-height .apointment {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navbar-nav {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.nav-item {
+    padding: 0 15px;
+}
+
+a {
+    color: inherit; /* Inherit the color from the parent element */
+    text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+    color: inherit; /* Ensure the color stays the same on hover */
+    text-decoration: none; /* Ensure the underline is not added back on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* profile-page.component.css */
+
+/* Adjust the card padding and margin if needed */
+.card {
+    padding: 0;  /* Remove internal padding */
+    margin: 0;   /* Remove external margin */
+    overflow: hidden;  /* Ensure content doesn't overflow */
+}
+
+
+/* profile-page.component.css */
+
+/* Ensure the image fills the card container */
+.card .img img {
+    width: 100%;        /* Make the image fill the full width */
+    height: auto;       /* Maintain the aspect ratio of the image */
+    object-fit: cover;  /* Cover the entire area, cropping if necessary */
+    border-radius: 0;   /* Remove any rounding on the image */
+    object-fit: cover;
+}
+
+
+
+
+.card:hover{
+
+   -webkit-box-shadow: 3px 5px 17px -4px #777777; 
+box-shadow: 3px 5px 17px -4px #777777;
+}
+
+.ratings i {
+
+  color: green;
+}
+
+.apointment button{
+
+  border-radius: 20px;
+  background-color: #eee;
+  color: #000;
+  border-color: #eee;
+  font-size: 13px;
+}
