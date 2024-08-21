@@ -34,19 +34,27 @@ export class PendingRequestListComponent {
     this.loadCourses();
   }
   approveMentor(id: number): void { 
-    this.adminService.approveMentor(id);
-    // this.loadMentors();
+    this.adminService.approveMentor(id).subscribe(() => {  
+      
+    });
+    this.loadMentors();
   }
   removeMentor(id : number) : void {
-    this.adminService.removeMentor(id);
+    this.adminService.removeMentor(id).subscribe(() => {  
+      
+    });
     this.cdr.detectChanges();
     this.loadMentors();
   }
   approveCourse(id : number) : void {
-    this.adminService.approveCourse(id);
+    this.adminService.approveCourse(id).subscribe(()=>{
+
+    });
   }
   removeCourse(id : number) : void {
-    this.adminService.removeCourse(id);
+    this.adminService.removeCourse(id).subscribe(()=>{
+      
+    });
     this.cdr.detectChanges();
   }
 }

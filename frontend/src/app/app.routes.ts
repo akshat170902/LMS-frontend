@@ -17,12 +17,16 @@ import { EnrolledCoursesComponent } from './component/enrolled-courses/enrolled-
 import { CoursePageComponent } from './page/course-page/course-page.component';
 import { AllCoursesPageComponent } from './page/all-courses-page/all-courses-page.component';
 import { CreateCoursesComponent } from './page/create-courses/create-courses.component';
+import { QueryPageComponent } from './page/query-page/query-page.component';
+import { SearchPageComponent } from './page/search-page/search-page.component';
+
 export const routes : Routes = [
   { path: '', redirectTo: '/landing-page', pathMatch: 'full' }, // Default route
   { path: 'landing-page', component: LandingPageComponent },
   { path: 'login-page', component: LoginPageComponent },
   { path: 'profile-page', component: ProfilePageComponent },
   { path: 'signup-page', component: SignupPageComponent },
+  { path: 'query-page', component: QueryPageComponent },
 
   {path: 'admin-page/all-users',component: UserListComponent},
   {path: 'admin-page/all-queries',component: QueryListComponent},
@@ -37,6 +41,7 @@ export const routes : Routes = [
   { path: 'courses/enrolled', component:EnrolledCoursesComponent},
 
   {path: 'create-course', component:CreateCoursesComponent},
+  { path: 'search', component: SearchPageComponent },
 
   { path: '**', redirectTo: '/landing-page' }, // Wildcard route for a 404 page (optional)
   

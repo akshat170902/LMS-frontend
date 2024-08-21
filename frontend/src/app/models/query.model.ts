@@ -1,7 +1,7 @@
 export interface Query {
-    id: number;
-    username: string;
+    doubtId: number;
+    userId: string;
     question: string;
-    answer?: string; 
-    mentorName?: string; 
+    answers: string; 
+    courseId:string;
   }
