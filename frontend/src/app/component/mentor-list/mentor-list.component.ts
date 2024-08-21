@@ -30,11 +30,12 @@ export class MentorListComponent implements OnInit {
   }
 
   approveMentor(id: number): void { 
-    this.adminService.approveMentor(id);
+    
+    this.adminService.approveMentor(id).subscribe();
     this.loadMentors();
   }
   removeMentor(id : number) : void {
-    this.adminService.removeMentor(id);
+    this.adminService.removeMentor(id).subscribe();
     this.cdr.detectChanges();
     this.loadMentors();
   }

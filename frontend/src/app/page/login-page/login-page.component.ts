@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DataService } from '../../service/data.service';
 import { LoginModel } from '../../models/LoginModel';
@@ -12,17 +12,27 @@ import { Router } from '@angular/router';
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.css'
 })
-export class LoginPageComponent {
+export class LoginPageComponent implements OnInit {
   userData: LoginModel = {
-    email: 'akshat1@gmail.com',
+    email: 'akshatgarg@gmail.com',
     password: '12345678'
   }
+public loading=false;
+
 
 
   constructor(private dataService: DataService, private router: Router) {
 
   }
+
+  ngOnInit(): void {
+    
+  }
+
+
+
   onLogin() {
+    
     console.log(this.userData);
     this.dataService.getLogin(this.userData).subscribe({
       next: (response: string) => {
@@ -30,8 +40,13 @@ export class LoginPageComponent {
         // Store the JWT token in localStorage
         localStorage.setItem('jwtToken', response);
         console.log('JWT Token stored in localStorage');
+
         // Navigate to the landing page
         this.router.navigate(['/landing-page']);
+
+        localStorage.setItem('user', response);
+        console.log('User stored in localStorage');
+
       },
       error: (error) => {
         console.error('Login error:', error);
