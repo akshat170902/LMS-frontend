@@ -15,37 +15,37 @@ export class NavbarComponent {
   searchForm: FormGroup;
   user: any = null;
   username: string = '';
-
   constructor(private fb: FormBuilder, private dataService: DataService, private router: Router) {
     this.searchForm = this.fb.group({
       name: ['']
     });
   }
-
   ngOnInit(): void {
     this.loadUser();
   }
 
   loadUser(): void {
-    const userData = localStorage.getItem('jwtToken');
+    const userData = localStorage.getItem('user');
     if (userData) {
       try {
-        const user = JSON.parse(atob(userData.split('.')[1])); // Decode JWT payload
+        const user = JSON.parse(userData);
         this.user = user;
         this.username = user.name;
       } catch (e) {
-        console.error('Failed to parse user data from JWT token:', e);
-        localStorage.removeItem('jwtToken'); // Clear invalid token
+        console.error('Failed to parse user data from localStorage:', e);
+        localStorage.removeItem('user'); // Clear invalid user data
       }
     }
   }
 
   logout(): void {
-    localStorage.removeItem('jwtToken'); // Remove JWT token from localStorage
-    this.router.navigate(['/']); // Redirect to home or login page
+    localStorage.removeItem('user'); // Remove user data from localStorage
+    this.router.navigate(['/']); // Redirect to login page
   }
 
-  onSubmit(): void {
+
+
+  onSubmit() {
     if (this.searchForm.valid) {
       const name = this.searchForm.get("name")?.value;
       this.router.navigate(['/search'], { queryParams: { name } });

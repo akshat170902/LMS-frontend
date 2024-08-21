@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 import { UserData } from '../models/UserData';
 import { LoginModel } from '../models/LoginModel';
+import { Course } from '../models/course.model';
 
 @Injectable({
   providedIn: 'root'
@@ -56,9 +57,9 @@ export class DataService {
 
 
   //pending
-  getCourseById(id: string): Observable<any[]> {
+  getCourseById(id: string): Observable<any> {
 
-    return this.httpClient.get<any[]>(`http://localhost:8084/courses/public/${id}`);
+    return this.httpClient.get<any>(`http://localhost:8098/courses/public/${id}`);
   }
   //done
   getUser(): Observable<any[]> {
@@ -70,13 +71,25 @@ export class DataService {
     return this.httpClient.get<any[]>("http://localhost:8084/courses/public/status/true")
   }
 //done
-  getEnrolledCourses(id:number) :Observable<any[]>{
-    return this.httpClient.get<any[]>( `http://localhost:8084/user-courses/public/enrolled-courses/${id}`,{headers: this.getHeaders() });
+  getEnrolledCourses(userId:number) :Observable<any[]>{
+    return this.httpClient.get<any[]>( `http://localhost:8084/user-courses/public/enrolled-courses/${userId}`,{headers: this.getHeaders() });
   }
 //todo
   setCompleteCourse(userId:number,courseId:number):Observable<any[]>{
     return this.httpClient.put<any[]>( `http://localhost:8084/user-courses/public/completion-status/${userId}/${courseId}/true`,{headers: this.getHeaders() });
   }
+
+  //todo
+
+  setEnrollCourse(userId:number,courseId:number):Observable<any[]>{
+    return this.httpClient.post<any[]>( `http://localhost:8084/user-courses/public/enroll/${userId}/${courseId}`,{headers: this.getHeaders() });
+  }
+
+  getEnrolledStatus(userId:number,courseId:number):Observable<any[]>{
+    return this.httpClient.get<any[]>( `http://localhost:8084/user-courses/public/details/${userId}/${courseId}`,{headers: this.getHeaders() });
+  }
+
+
 
 
 
