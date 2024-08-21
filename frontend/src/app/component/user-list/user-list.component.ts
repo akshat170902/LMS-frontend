@@ -4,10 +4,11 @@ import { CommonModule } from '@angular/common';
 import { AdminSidebarComponent } from '../admin-sidebar/admin-sidebar.component';
 import { User } from '../../models/user.model';
 import { UserData } from '../../models/UserData';
+import { NavbarComponent } from "../navbar/navbar.component";
 @Component({
   selector: 'app-user-list',
   standalone: true,
-  imports: [CommonModule,AdminSidebarComponent],
+  imports: [CommonModule, AdminSidebarComponent, NavbarComponent],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.css'
 })

@@ -6,11 +6,12 @@ import { FormsModule } from '@angular/forms';
 import { Mentor } from '../../models/mentor.model';
 import { AdminSidebarComponent } from '../admin-sidebar/admin-sidebar.component';
 import { Course } from '../../models/course.model';
+import { NavbarComponent } from "../navbar/navbar.component";
 
 @Component({
   selector: 'app-pending-request-list',
   standalone: true,
-  imports: [CommonModule,FormsModule,AdminSidebarComponent],
+  imports: [CommonModule, FormsModule, AdminSidebarComponent, NavbarComponent],
   templateUrl: './pending-request-list.component.html',
   styleUrl: './pending-request-list.component.css'
 })
