@@ -11,7 +11,7 @@ describe('ProfilePageComponent', () => {
     await TestBed.configureTestingModule({
       imports: [ProfilePageComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ProfilePageComponent);
     component = fixture.componentInstance;

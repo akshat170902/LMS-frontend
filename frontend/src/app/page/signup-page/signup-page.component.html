@@ -34,8 +34,7 @@
                                                 required</span>
                                         </div>
                                 </div>
-
-                               
+       
 
                                 <!-- Email input -->
                                 <div class="row mb-4 align-items-center">
@@ -113,7 +112,7 @@
                                     <div class="col-sm-8 d-flex align-items-center">
                                         <label style="font-size: 15px;" class="student me-2">Student</label>
                                         <label class="switch me-2">
-                                            <input type="checkbox">
+                                            <input type="checkbox" [(ngModel)]="isMentor" (change)="onRoleToggle()">
                                             <span class="slider round"></span>
                                         </label>
                                         <label style="font-size: 15px;" class="mentor">Mentor</label>
@@ -128,13 +127,14 @@
 
                                 <!-- Cancel button -->
                                 <button type="button" data-mdb-button-init data-mdb-ripple-init
+                                (click)="navigateToLandingPage()"
                                     class="custom_button btn btn-secondary btn-block mb-4">
                                     Cancel
                                 </button>
 
                                 <div class="form-check d-flex justify-content-center mb-4">
                                     <label style="font-size: 15px;">Already have an account?</label>
-                                    <a style="padding-left:4px ;font-size:15px;" href="/login-page">Sign In</a>
+                                    <a style="padding-left:4px ;font-size:15px;" href="/login-page">Login</a>
                                 </div>
                             </form>
                         </div>

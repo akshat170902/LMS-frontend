@@ -1,4 +1,7 @@
 <div class="container-fluid">
+  <app-navbar></app-navbar>
+  <ngx-loading [show]="isLoading"></ngx-loading>
+  
   <div class="row">
     <!-- Sidebar -->
     <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar shadow-sm">
@@ -17,20 +20,20 @@
           <h2 class="h5 mb-0">Query List</h2>
         </div>
         <ul class="list-group list-group-flush">
-          <li *ngFor="let query of queries; let i = index" [ngClass]="{'bg-light': i % 2 === 0, 'bg-white': i % 2 !== 0}" class="list-group-item">
+          <li *ngFor="let query of queries; let i = index" 
+              [ngClass]="{'bg-light': i % 2 === 0, 'bg-white': i % 2 !== 0}" 
+              class="list-group-item">
             <div class="query-item">
-              <div><strong>ID:</strong> {{ query.id }}</div>
-              <div><strong>Username:</strong> {{ query.username }}</div>
+              <div><strong>ID:</strong> {{ query.doubtId }}</div>
+              <div><strong>Username:</strong> {{ query.userId }}</div>
               <div><strong>Question:</strong> {{ query.question }}</div>
-              <div *ngIf="query.answer">
-                <strong>Answer:</strong> {{ query.answer }}
-              </div>
-              <div *ngIf="query.mentorName">
-                <strong>Mentor:</strong> {{ query.mentorName }}
+              
+              <div *ngIf="query.answers">
+                <strong>Answer:</strong> {{ query.answers }}
               </div>
             </div>
             <div class="text-end">
-              <button class="btn btn-danger btn-sm mt-2" (click)="removeQuery(query.id)">Remove Query</button>
+              <button class="btn btn-danger btn-sm mt-2" (click)="removeQuery(query.doubtId)">Remove Query</button>
             </div>
           </li>
         </ul>

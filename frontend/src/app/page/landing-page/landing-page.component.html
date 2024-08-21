@@ -1,8 +1,21 @@
-
 <app-navbar></app-navbar>
-<app-header></app-header>
+<!-- <div>
+    {{isloggedIn}}
+</div> -->
+<div *ngIf="isloggedIn" class="row">
+    <div class="col-md-3">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-md-9">
+        <app-header></app-header>
+        <app-course-list></app-course-list>
+    </div>
+</div>
 
-<app-course-list ></app-course-list>
+<div *ngIf="!isloggedIn">
+    <app-header></app-header>
+    <app-course-list></app-course-list>
+</div>
 
 <!-- <app-course-list  [type]="all"></app-course-list>
 <app-course-list  [type]="pending"></app-course-list>

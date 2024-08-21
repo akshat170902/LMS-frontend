@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Query } from '../models/query.model';
 import { Feedback } from '../models/feedback.model';
 import { Course } from '../models/course.model';
+import { Doubt } from '../models/doubt.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ import { Course } from '../models/course.model';
 export class AdminService {
 
   private apiUrl = 'http://localhost:8088/users';
-  private coursesUrl = 'http://localhost:8084/courses';
+  private coursesUrl = 'http://localhost:8098/courses';
   constructor(private httpClient: HttpClient) { }
 
   // Method to get headers with JWT token
@@ -23,74 +24,81 @@ export class AdminService {
   }
 
 
-//done
+  //done
   getUsers(): Observable<any[]> {
     return this.httpClient.get<any[]>(this.apiUrl, { headers: this.getHeaders() });
   }
 
 
-//done
+  //done
   getApprovedMentors(): Observable<any[]> {
     return this.httpClient.get<any[]>(`http://localhost:8088/users/role/approval/true`, { headers: this.getHeaders() });
   }
 
 
-//done
+  //done
   getUnApprovedMentors(): Observable<any[]> {
     return this.httpClient.get<any[]>(`http://localhost:8088/users/role/approval/false`, { headers: this.getHeaders() });
   }
 
 
-//done
+  //done
   getMentors(): Observable<any[]> {
     return this.httpClient.get<any[]>(`http://localhost:8088/users/role/approval/true`, { headers: this.getHeaders() });
-    
+
   }
 
 
-//done
+  //done
   approveMentor(id: number): Observable<any[]> {
     return this.httpClient.put<any[]>(`http://localhost:8088/users/role/set-approval/true/${id}`, {}, { headers: this.getHeaders() });
   }
 
 
-//done
+  //done
   removeMentor(id: number): Observable<any[]> {
     return this.httpClient.delete<any[]>(`http://localhost:8088/users/${id}`, { headers: this.getHeaders() });
   }
 
 
-//pending
+  //done
   getQueries(): Observable<Query[]> {
-    return this.httpClient.get<Query[]>(`${this.apiUrl}/queries`, { headers: this.getHeaders() });
+    return this.httpClient.get<Query[]>(`http://localhost:8098/doubts/admin/all-doubts`, { headers: this.getHeaders() });
   }
 
 
-//pending
+  //done
   removeQuery(id: number): Observable<any[]> {
-    return this.httpClient.delete<any[]>(`${this.apiUrl}/queries/${id}`, { headers: this.getHeaders() });
+    return this.httpClient.delete<any[]>(` http://localhost:8098/doubts/admin/${id}`, { headers: this.getHeaders() });
   }
 
 
-//todo
+  //todo
   getFeedbacks(): Observable<Feedback[]> {
     return this.httpClient.get<Feedback[]>(`${this.apiUrl}/feedbacks`, { headers: this.getHeaders() });
   }
 
-//done
+  //done
   getCourses(): Observable<Course[]> {
-    return this.httpClient.get<Course[]>(`http://localhost:8084/courses/admin/status/false`, { headers: this.getHeaders() });
+    return this.httpClient.get<Course[]>(`http://localhost:8098/courses/admin/status/false`, { headers: this.getHeaders() });
   }
 
 
-//pending
+  //pending
   approveCourse(courseId: number): Observable<any[]> {
-    return this.httpClient.put<any[]>(`${this.coursesUrl}/admin/${courseId}/true`, {}, { headers: this.getHeaders() });
+    return this.httpClient.put<any[]>(`http://localhost:8098/courses/admin/true/${courseId}`, {}, { headers: this.getHeaders() });
   }
 
 
-//pending
+  //pending
   removeCourse(courseId: number): Observable<any[]> {
-    return this.httpClient.delete<any[]>(`http://localhost:8084/courses/admin/${courseId}`, { headers: this.getHeaders() });
+    return this.httpClient.delete<any[]>(`http://localhost:8098/courses/admin/${courseId}`, { headers: this.getHeaders() });
   }
+
+
+  //done
+  createDoubt(doubt: Doubt): Observable<any[]> {
+    return this.httpClient.post<any[]>(`http://localhost:8098/doubts/public/create-doubt`, doubt, { headers: this.getHeaders() });
+  }
+
 }

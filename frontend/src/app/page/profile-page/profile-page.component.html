@@ -17,7 +17,7 @@
             <div class="row align-items-center flex-row-reverse col-md-9">
                 <div class="col-lg-6">
                     <div class="about-text go-to ">
-                        <h3 class="dark-color">{{user.name}}</h3>
+                        <h3 class="dark-color">{{user.fullName}}</h3>
                         <h6 class="theme-color lead">
                             <div class="media">
                                 <label>User_Id:</label>
@@ -32,16 +32,16 @@
                                 </div>
                                 <div class="media">
                                     <label>Age:</label>
-                                    <p>22 Yr</p> 
-                                 </div>
+                                    <p>22 Yr</p>
+                                </div>
                                 <div class="media">
                                     <label>E-mail:</label>
                                     <p>{{user.email}}</p>
-                                </div> 
-                                 <div class="media">
+                                </div>
+                                <div class="media">
                                     <label>Phone:</label>
                                     <p>{{user.contact}}</p>
-                                </div> 
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -56,9 +56,8 @@
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav w-60">
-                            <a class="nav-item nav-link" href="#">All Courses <span class="sr-only">(current)</span></a>
-                            <a class="nav-item nav-link mx-center" href="#">Completed</a>
-                            <a class="nav-item nav-link ml-center" href="#">Pending</a>
+                            <div class="nav-item nav-link">Enrolled Courses <span class="sr-only">(current)</span></div>
+
                         </div>
                     </div>
                 </nav>
@@ -68,27 +67,20 @@
                         <!-- Loop through the users array to display courses -->
                         <div class="col-md-6" *ngFor="let course of courses">
                             <a href="/course/{{course.id}}">
-                            <div class="card p-2 py-3 text-center">
-                                <div class="img mb-2">
-                                    <img src="https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg"
-                                        width="100" class="" title="this shows the full details of the course">
-                                </div>
-                                <h5 class="mb-0">course name</h5>
-                                <small>mentor</small>
+                                <div class="card p-2 py-3 text-center">
+                                    <div class="img mb-2">
+                                        <img src="https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg"
+                                            width="100" class="" title="this shows the full details of the course">
+                                    </div>
+                                    <h5 class="mb-0">course name</h5>
+                                    <small>mentor</small>
 
-                                <div class="ratings mt-2">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
+                                    <div class="mt-4 apointment">
+                                        <a href="/landing-page"><button class="btn btn-success text-uppercase">Enroll
+                                                Now</button></a>
+                                    </div>
                                 </div>
-
-                                <div class="mt-4 apointment">
-                                    <a href="/landing-page"><button class="btn btn-success text-uppercase">Enroll
-                                            Now</button></a>
-                                </div>
-                            </div>
-                        </a>
+                            </a>
                         </div>
                     </div>
                 </div>

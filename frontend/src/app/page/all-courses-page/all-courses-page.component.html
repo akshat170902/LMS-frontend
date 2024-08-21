@@ -20,14 +20,15 @@
                 <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav w-100">
-                            <a class="nav-item nav-link" href="#">All Courses <span class="sr-only">(current)</span></a>
-                            <a class="nav-item nav-link mx-center" href="#">Enrolled Courses</a>
-                            <a class="nav-item nav-link ml-center" href="#">Completed</a>
-                            <a class="nav-item nav-link ml-center" href="#">Pending</a>
+                            <a class="nav-item nav-link" href="courses">All Courses <span
+                                    class="sr-only">(current)</span></a>
+                            <a class="nav-item nav-link mx-center" href="courses/enrolled">Enrolled Courses</a>
+                            <a class="nav-item nav-link ml-center" href="courses/completed">Completed</a>
+                            <a class="nav-item nav-link ml-center" href="courses/pending">Pending</a>
                         </div>
                     </div>
                 </nav>
-            
+
 
                 <div class="container mt-5 mb-5">
                     <div class="row g-2">
@@ -40,12 +41,18 @@
                                             width="100" alt="course image">
                                     </div>
                                     <h5 class="mb-0">{{course.name}}</h5>
-                                    <small>{{course.mentor}}</small>
+                                    <small>description</small>
+                                    <small>mentor-id</small>
+
+                                    <div class="mt-4 apointment">
+                                        <a href="/landing-page"><button class="btn btn-success text-uppercase">Enroll
+                                                Now</button></a>
+                                    </div>
                                     <!-- Other content -->
                                 </div>
                             </a>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>

@@ -2,47 +2,75 @@
   <ul class="list-group w-100">
 
     <li class="list-group-item d-flex align-items-center">
-      <i class="fas fa-home me-3"></i> <span class="icon_name">Home</span>
+      <a [routerLink]="['/Landing-page']">
+
+        <i class="fas fa-home me-3"></i> <span class="icon_name">Home</span>
+      </a>
     </li>
 
     <!-- Courses Dropdown -->
-    <li class="list-group-item d-flex align-items-center" (mouseover)="toggleDropdownCourses()">
-      <i class="fas fa-book me-3"></i>
-      <a class="icon_name">
-        Courses
-      </a>
-    </li>
-    <ng-container *ngIf="isCourseDropDownOpen">
+    <div class="course-dropdown" (mouseover)="toggleDropdownCourses(true)"
+    (mouseleave)="toggleDropdownCourses(false)">
       <li class="list-group-item d-flex align-items-center">
-        <i class="fas fa-check me-3 x"></i> <a class="dropdown-item">Completed Courses</a>
+        <i class="fas fa-book me-3"></i>
+        <a class="icon_name" >
+          Courses
+        </a>
       </li>
-      <li class="list-group-item d-flex align-items-center">
-        <i class="fas fa-clock me-3 x"></i> <a class="dropdown-item">Pending Courses</a>
-      </li>
-    </ng-container>
+      <ng-container *ngIf="isCourseDropDownOpen">
+        <li class="list-group-item d-flex align-items-center">
+          <i class="fas fa-check me-3 x"></i> <a class="dropdown-item" [routerLink]="['/courses/enrolled']">Enrolled Courses</a>
+        </li>
+        <li class="list-group-item d-flex align-items-center">
+          <i class="fas fa-clock me-3 x"></i> <a class="dropdown-item" [routerLink]="['/courses/pending']" >Pending Courses</a>
+        </li>
+        <li class="list-group-item d-flex align-items-center">
+          <i class="fas fa-check me-3 x"></i> <a class="dropdown-item" [routerLink]="['/courses/completed']" >Completed Courses</a>
+        </li>
+      </ng-container>
+    </div>
 
     <!-- Queries Dropdown -->
-    <li class="list-group-item d-flex align-items-center" (mouseover)="toggleDropdownQueries()">
-      <i class="fas fa-question-circle me-3"></i>
-      <a class="icon_name">
-        Queries
+    <div class="queries-dropdown" (mouseover)="toggleDropdownQueries(true)" (mouseleave) = "toggleDropdownQueries(false)">
+      <li class="list-group-item d-flex align-items-center">
+        <i class="fas fa-question-circle me-3"></i>
+        <a class="icon_name">
+          Queries
+        </a>
+      </li>
+      <ng-container *ngIf="isQueriesDropDownOpen">
+        <li class="list-group-item d-flex align-items-center">
+          <i class="fas fa-check-circle me-3 x"></i> <a class="dropdown-item" [routerLink]="['/query-page']">Answered Queries</a>
+        </li>
+        <li class="list-group-item d-flex align-items-center">
+          <i class="fas fa-times-circle me-3 x"></i> <a class="dropdown-item" [routerLink]="['/query-page']">Unanswered Queries</a>
+        </li>
+      </ng-container>
+  
+    </div>
+    
+    <!-- Conditionally show "Create Course" for Mentors -->
+    <li class="list-group-item d-flex align-items-center" *ngIf="userRole === 'MENTOR'">
+      <a [routerLink]="['/create-course']">
+
+      <i class="fas fa-plus me-3"></i> <span class="icon_name">Create Course</span>
       </a>
     </li>
-    <ng-container *ngIf="isQueriesDropDownOpen">
-      <li class="list-group-item d-flex align-items-center">
-        <i class="fas fa-check-circle me-3 x"></i> <a class="dropdown-item">Answered Queries</a>
-      </li>
-      <li class="list-group-item d-flex align-items-center">
-        <i class="fas fa-times-circle me-3 x"></i> <a class="dropdown-item">Unanswered Queries</a>
-      </li>
-    </ng-container>
 
-    <li class="list-group-item d-flex align-items-center">
-      <i class="fas fa-life-ring me-3"></i> <span class="icon_name">Help and support</span>
+    <!-- Conditionally show "Admin Dashboard" for Admins -->
+    <li class="list-group-item d-flex align-items-center" *ngIf="userRole === 'ADMIN'">
+      <a [routerLink]="['/admin-page/all-users']">
+
+        <i class="fas fa-cogs me-3"></i> <span class="icon_name">Admin Dashboard</span>
+      </a>
     </li>
 
     <li class="list-group-item d-flex align-items-center">
-      <i class="fas fa-comment-dots me-3"></i> <span class="icon_name">Feedbacks</span>
+      <a [routerLink]="['/help-support']"><i class="fas fa-life-ring me-3"></i> <span class="icon_name">Help and Support</span></a>
+    </li>
+
+    <li class="list-group-item d-flex align-items-center">
+      <a [routerLink]="['/feedback-page']"><i class="fas fa-comment-dots me-3"></i> <span class="icon_name">Feedbacks</span></a>
     </li>
   </ul>
 </div>

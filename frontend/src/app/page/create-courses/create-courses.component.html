@@ -6,7 +6,7 @@
 
     </div>
     <div class="col-md-9">
-        <div class="registration-form">
+        <div class="registration-form" >
             <form #createCourseForm="ngForm">
         
                 <!-- <h3>{{createCourseForm.value | json}}</h3> -->
@@ -20,7 +20,7 @@
         
                 <div class="form-group">
                     <label for="title" class="form-label">Title</label>
-                    <input type="text" [(ngModel)]="courseData.title" name="title" #fTitle="ngModel" class="form-control item"
+                    <input type="text" [(ngModel)]="courseData.title" name="courseName" #fTitle="ngModel" class="form-control item"
                         id="username" required placeholder="Title">
                 </div>
         
@@ -32,7 +32,7 @@
                 <div class="form-group">
                     <label for="description" class="form-label">Description</label>
                     <textarea class="form-control" [(ngModel)]="courseData.description" #fDescription="ngModel"
-                        name="description" id="description" placeholder="Description of the course" minlength="120" required
+                        name="description" id="description" placeholder="Description of the course" minlength="10" required
                         rows="3"></textarea>
                 </div>
         
@@ -62,18 +62,13 @@
         
                 <!-- Prerequisites -->
         
-                <div class="form-group">
-                    <label for="Prerequisites" class="form-label">Prerequisites</label>
-                    <input type="text" [(ngModel)]="courseData.Prerequisites" name="Prerequisites" #fPrerequisites="ngModel"
-                        class="form-control item" id="Prerequisites" placeholder="Prerequisites">
-                </div>
         
                 <!-- mentors -->
         
                 <div class="form-group">
                     <label for="mentors" class="form-label">Mentors</label>
                     <input type="text" [(ngModel)]="courseData.mentors" name="mentors" #fMentors="ngModel"
-                        class="form-control item" id="mentors" required placeholder="Mentors">
+                        class="form-control item" id="mentorName" required placeholder="Mentors">
                 </div>
         
         
@@ -87,7 +82,7 @@
                 <!-- upload file -->
                 <div class="form-group">
                     <label for="upload" class="form-label">Upload file:</label>
-                    <input type="text" [(ngModel)]="courseData.upload" name="upload" class="form-control item" id="upload"
+                    <input type="text" [(ngModel)]="courseData.upload" name="url" class="form-control item" id="upload"
                         placeholder="Upload File">
                 </div>
         
@@ -95,10 +90,10 @@
                 <!-- buttons -->
         
                 <div class="form-group">
-                    <button type="button" class="btn btn-block create-account">Create Course</button>
+                    <button type="button" class="btn btn-block create-account" (click)="onClickSubmit()">Create Course</button>
                 </div>
                 <div class="form-group">
-                    <button style="background-color: black;" type="button" class="btn btn-block create-account">Cancel</button>
+                    <button style="background-color: black;" type="button" (click)="navigateToLandingPage()" class="btn btn-block create-account">Cancel</button>
                 </div>
             </form>
         </div>

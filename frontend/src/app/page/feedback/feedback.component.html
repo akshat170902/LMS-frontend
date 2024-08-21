@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <header class="feedback-header">
+    <h1>We Value Your Feedback</h1>
+    <p>Your insights help us improve our services. Please share your thoughts with us.</p>
+  </header>
+
+  <div class="feedback-form-container">
+    <form (ngSubmit)="onSubmit()" class="feedback-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" [(ngModel)]="feedback.name" required class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" [(ngModel)]="feedback.email" required class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Feedback</label>
+        <textarea id="message" name="message" [(ngModel)]="feedback.message" required rows="5"
+          class="form-control"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit Feedback</button>
+    </form>
+  </div>
+
+</div>
+
+<app-footer></app-footer>

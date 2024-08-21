@@ -14,5 +14,5 @@ import { FooterComponent } from "../../component/footer/footer.component";
   styleUrl: './course-page.component.css'
 })
 export class CoursePageComponent {
-    
+
 }
