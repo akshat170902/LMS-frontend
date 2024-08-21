@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, throwError } from 'rxjs';
+import { catchError, Observable, throwError, map } from 'rxjs';
 import { UserData } from '../models/UserData';
 import { LoginModel } from '../models/LoginModel';
 import { Course } from '../models/course.model';
@@ -13,8 +13,7 @@ export class DataService {
   public type: string = "all";
 
   private apiUrl = "https://localhost:8088/"
-  constructor(private httpClient: HttpClient) {
-  }
+  constructor(private httpClient: HttpClient) {}
 
 
   // Method to get headers with JWT token
@@ -60,7 +59,7 @@ export class DataService {
 
 
   //pending
-  getCourseById(id: string): Observable<any> {
+  getCourseById(id: number): Observable<any> {
 
     return this.httpClient.get<any>(`http://localhost:8098/courses/public/${id}`);
   }
@@ -81,6 +80,7 @@ export class DataService {
   setCompleteCourse(userId: number, courseId: number): Observable<any[]> {
     return this.httpClient.put<any[]>(`http://localhost:8084/user-courses/public/completion-status/${userId}/${courseId}/true`, { headers: this.getHeaders() });
   }
+  
 
   //todo
 
@@ -88,9 +88,52 @@ export class DataService {
     return this.httpClient.post<any[]>(`http://localhost:8084/user-courses/public/enroll/${userId}/${courseId}`, { headers: this.getHeaders() });
   }
 
-  getEnrolledStatus(userId: number, courseId: number): Observable<any[]> {
-    return this.httpClient.get<any[]>(`http://localhost:8084/user-courses/public/details/${userId}/${courseId}`, { headers: this.getHeaders() });
+  getEnrolledAndProgressStatus(userId: number, courseId: number): Observable<{ course: Course, doubtList: any[], isEnrolled: boolean, completionStatus: boolean }> {
+    return this.httpClient.get<{ course: Course, doubtList: any[], isEnrolled: boolean, completionStatus: boolean }>(`http://localhost:8084/user-courses/public/details/${userId}/${courseId}`, { headers: this.getHeaders() });
   }
+// GET http://localhost:8084/user-courses/public/details/{{userId}}/{{courseId}}
+
+
+// // Check if the user is enrolled in a specific course
+// isUserEnrolled(userId: string, courseId: number): Observable<boolean> {
+//   return this.httpClient.get<boolean>(`${this.apiUrl}/api/v1/user-courses/user/is-enrolled/${userId}/${courseId}`, {
+//     headers: this.getHeaders()
+//   }).pipe(
+//     catchError(this.handleError)
+//   );
+// }
+
+//    // Get course progress for a user
+//    getCourseProgress(userId: string, courseId: number): Observable<'pending' | 'completed'> {
+//     return this.httpClient.get<'pending' | 'completed'>(`${this.apiUrl}/api/v1/user-courses/user/progress/${userId}/${courseId}`, {
+//       headers: this.getHeaders()
+//     }).pipe(
+//       catchError(this.handleError)
+//     );
+//   }
+
+
+//   // Enroll a user in a course
+//   enrollUser(userId: string, courseId: number): Observable<void> {
+//     return this.httpClient.post<void>(`${this.apiUrl}/api/v1/user-courses/user/enroll`, { userId, courseId }, {
+//       headers: this.getHeaders()
+//     }).pipe(
+//       catchError(this.handleError)
+//     );
+//   }
+
+//   // Mark a course as complete for a user
+//   completeCourse(userId: string, courseId: number): Observable<void> {
+//     return this.httpClient.post<void>(`${this.apiUrl}/api/v1/user-courses/user/complete`, { userId, courseId }, {
+//       headers: this.getHeaders()
+//     }).pipe(
+//       catchError(this.handleError)
+//     );
+//   }
+
+
+
+
 
 
   setAnswer(doubtId:number,answer:string): Observable<any[]> {

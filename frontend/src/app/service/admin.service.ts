@@ -96,7 +96,7 @@ export class AdminService {
   }
 
 
-  //pending
+  //done
   createDoubt(doubt:Doubt) :Observable<any[]> {
       return this.httpClient.post<any[]>(`http://localhost:8084/doubts/public/create-doubt`,doubt, { headers: this.getHeaders() });
     }
