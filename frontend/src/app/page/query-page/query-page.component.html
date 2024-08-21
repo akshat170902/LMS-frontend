@@ -1,0 +1,31 @@
+<body>
+    <section class="section about-section gray-bg" id="about">
+        <app-navbar></app-navbar>
+        <div class="row mx-0"> <!-- Removed unnecessary margins -->
+            <div class="col-md-3 sidebar"> <!-- Removed padding for a tighter fit -->
+                <app-sidebar></app-sidebar>
+            </div>
+            <div class="col-md-9 query-card  ms-sm-auto px-md-4">
+                <div class="card shadow-lg mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h2 class="h5 mb-0">Queries</h2>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li *ngFor="let query of queries; let i = index" [ngClass]="{'bg-light': i % 2 === 0, 'bg-white': i % 2 !== 0}" class="list-group-item">
+                            <div class="query-item">
+                                <div><strong>Question:</strong> {{ query.question }}</div>
+                                <div *ngIf="query.answer">
+                                    <strong>Answer:</strong> {{ query.answer }}
+                                </div>
+                                <div *ngIf="query.mentorName">
+                                    <strong>Mentor:</strong> {{ query.mentorName }}
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <app-footer></app-footer>
+    </section>
+</body>

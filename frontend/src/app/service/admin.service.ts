@@ -62,13 +62,13 @@ export class AdminService {
 
 //pending
   getQueries(): Observable<Query[]> {
-    return this.httpClient.get<Query[]>(`${this.apiUrl}/queries`, { headers: this.getHeaders() });
+    return this.httpClient.get<Query[]>(`http://localhost:8084/doubts/admin/all-doubts`, { headers: this.getHeaders() });
   }
 
 
 //pending
   removeQuery(id: number): Observable<any[]> {
-    return this.httpClient.delete<any[]>(`${this.apiUrl}/queries/${id}`, { headers: this.getHeaders() });
+    return this.httpClient.delete<any[]>(` http://localhost:8084/doubts/admin/${id}`, { headers: this.getHeaders() });
   }
 
 

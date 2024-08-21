@@ -6,39 +6,55 @@
     </li>
 
     <!-- Courses Dropdown -->
-    <li class="list-group-item d-flex align-items-center" (mouseover)="toggleDropdownCourses()">
-      <i class="fas fa-book me-3"></i>
-      <a class="icon_name">
-        Courses
-      </a>
-    </li>
-    <ng-container *ngIf="isCourseDropDownOpen">
+    <div class="course-dropdown" (mouseover)="toggleDropdownCourses(true)"
+    (mouseleave)="toggleDropdownCourses(false)">
       <li class="list-group-item d-flex align-items-center">
-        <i class="fas fa-check me-3 x"></i> <a class="dropdown-item">Completed Courses</a>
+        <i class="fas fa-book me-3"></i>
+        <a class="icon_name">
+          Courses
+        </a>
       </li>
-      <li class="list-group-item d-flex align-items-center">
-        <i class="fas fa-clock me-3 x"></i> <a class="dropdown-item">Pending Courses</a>
-      </li>
-    </ng-container>
+      <ng-container *ngIf="isCourseDropDownOpen">
+        <li class="list-group-item d-flex align-items-center">
+          <i class="fas fa-check me-3 x"></i> <a class="dropdown-item">Completed Courses</a>
+        </li>
+        <li class="list-group-item d-flex align-items-center">
+          <i class="fas fa-clock me-3 x"></i> <a class="dropdown-item">Pending Courses</a>
+        </li>
+      </ng-container>
+    </div>
 
     <!-- Queries Dropdown -->
-    <li class="list-group-item d-flex align-items-center" (mouseover)="toggleDropdownQueries()">
-      <i class="fas fa-question-circle me-3"></i>
-      <a class="icon_name">
-        Queries
-      </a>
+    <div class="queries-dropdown" (mouseover)="toggleDropdownQueries(true)" (mouseleave) = "toggleDropdownQueries(false)">
+      <li class="list-group-item d-flex align-items-center">
+        <i class="fas fa-question-circle me-3"></i>
+        <a class="icon_name">
+          Queries
+        </a>
+      </li>
+      <ng-container *ngIf="isQueriesDropDownOpen">
+        <li class="list-group-item d-flex align-items-center">
+          <i class="fas fa-check-circle me-3 x"></i> <a class="dropdown-item">Answered Queries</a>
+        </li>
+        <li class="list-group-item d-flex align-items-center">
+          <i class="fas fa-times-circle me-3 x"></i> <a class="dropdown-item">Unanswered Queries</a>
+        </li>
+      </ng-container>
+  
+    </div>
+    
+    <!-- Conditionally show "Create Course" for Mentors -->
+    <li class="list-group-item d-flex align-items-center" *ngIf="userRole === 'MENTOR'">
+      <i class="fas fa-plus me-3"></i> <span class="icon_name">Create Course</span>
     </li>
-    <ng-container *ngIf="isQueriesDropDownOpen">
-      <li class="list-group-item d-flex align-items-center">
-        <i class="fas fa-check-circle me-3 x"></i> <a class="dropdown-item">Answered Queries</a>
-      </li>
-      <li class="list-group-item d-flex align-items-center">
-        <i class="fas fa-times-circle me-3 x"></i> <a class="dropdown-item">Unanswered Queries</a>
-      </li>
-    </ng-container>
+
+    <!-- Conditionally show "Admin Dashboard" for Admins -->
+    <li class="list-group-item d-flex align-items-center" *ngIf="userRole === 'ADMIN'">
+      <i class="fas fa-cogs me-3"></i> <span class="icon_name">Admin Dashboard</span>
+    </li>
 
     <li class="list-group-item d-flex align-items-center">
-      <i class="fas fa-life-ring me-3"></i> <span class="icon_name">Help and support</span>
+      <i class="fas fa-life-ring me-3"></i> <span class="icon_name">Help and Support</span>
     </li>
 
     <li class="list-group-item d-flex align-items-center">
