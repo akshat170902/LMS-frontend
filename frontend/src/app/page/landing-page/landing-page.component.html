@@ -1,7 +1,4 @@
 <app-navbar></app-navbar>
-<!-- <div>
-    {{isloggedIn}}
-</div> -->
 
     <div *ngIf="isloggedIn" class="row">
         <div class="col-md-3">
@@ -9,14 +6,15 @@
         </div>
         <div class="col-md-9">
             <app-header></app-header>
+            <app-course-list></app-course-list>
         </div>
     </div>
 
-    <div *ngIf="!isloggedIn">
-        <app-header></app-header>
-    </div>
-
+<div *ngIf="!isloggedIn">
+    <app-header></app-header>
     <app-course-list></app-course-list>
+</div>
+
 
     <!-- <app-course-list  [type]="all"></app-course-list>
 <app-course-list  [type]="pending"></app-course-list>

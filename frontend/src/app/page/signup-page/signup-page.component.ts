@@ -24,6 +24,12 @@ constructor(private dataService: DataService,private router: Router) {
 navigateToLandingPage(){
   this.router.navigate(['/landing-page']);
 }
+
+navigateToLoginPage(){
+this.router.navigate(['/login-page']);
+}
+
+
 onSubmit(){
   this.userData.role=this.isMentor?"MENTOR":"STUDENT";
 
@@ -31,6 +37,8 @@ onSubmit(){
   this.dataService.getSignUp(this.userData).subscribe(response => {
     this.userData = response;
     console.log(response);
+    // Redirecting to the login page after successful signup
+    this.navigateToLoginPage();
   })
 }
 onRoleToggle(){
