@@ -86,7 +86,7 @@ export class AdminService {
 
 //pending
   approveCourse(courseId: number): Observable<any[]> {
-    return this.httpClient.put<any[]>(`${this.coursesUrl}/admin/${courseId}/true`, {}, { headers: this.getHeaders() });
+    return this.httpClient.put<any[]>(`http://localhost:8084/courses/admin/true/${courseId}`, {}, { headers: this.getHeaders() });
   }
 
 

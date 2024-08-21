@@ -13,7 +13,7 @@ export class DataService {
   public type: string = "all";
 
   private apiUrl = "https://localhost:8088/"
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
 
 
   // Method to get headers with JWT token
@@ -91,17 +91,17 @@ export class DataService {
     return this.httpClient.get<any[]>(`http://localhost:8084/user-courses/public/details/${userId}/${courseId}`, { headers: this.getHeaders() });
   }
 
-// Check if the user is enrolled in a specific course
-isUserEnrolled(userId: string, courseId: number): Observable<boolean> {
-  return this.httpClient.get<boolean>(`${this.apiUrl}/api/v1/user-courses/user/is-enrolled/${userId}/${courseId}`, {
-    headers: this.getHeaders()
-  }).pipe(
-    catchError(this.handleError)
-  );
-}
+  // Check if the user is enrolled in a specific course
+  isUserEnrolled(userId: string, courseId: number): Observable<boolean> {
+    return this.httpClient.get<boolean>(`${this.apiUrl}/api/v1/user-courses/user/is-enrolled/${userId}/${courseId}`, {
+      headers: this.getHeaders()
+    }).pipe(
+      catchError(this.handleError)
+    );
+  }
 
-   // Get course progress for a user
-   getCourseProgress(userId: string, courseId: number): Observable<'pending' | 'completed'> {
+  // Get course progress for a user
+  getCourseProgress(userId: string, courseId: number): Observable<'pending' | 'completed'> {
     return this.httpClient.get<'pending' | 'completed'>(`${this.apiUrl}/api/v1/user-courses/user/progress/${userId}/${courseId}`, {
       headers: this.getHeaders()
     }).pipe(
@@ -133,8 +133,8 @@ isUserEnrolled(userId: string, courseId: number): Observable<boolean> {
 
 
 
-  setAnswer(doubtId:number,answer:string): Observable<any[]> {
-    return this.httpClient.post<any[]>(`http://localhost:8084/doubts/mentor/${doubtId}`,answer, { headers: this.getHeaders() });
+  setAnswer(doubtId: number, answer: string): Observable<any[]> {
+    return this.httpClient.post<any[]>(`http://localhost:8084/doubts/mentor/${doubtId}`, answer, { headers: this.getHeaders() });
   }
 
 
