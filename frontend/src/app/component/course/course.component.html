@@ -30,13 +30,12 @@
 
       <!-- Start Now Button -->
       <div class="button-start-now">
-        <button *ngIf="!userLoggedIn" type="button" class="btn btn-primary" (click)="enrollInCourse()">Enroll Now</button>
-  
-        <span *ngIf="userLoggedIn && isEnrolled && courseStatus === 'completed'" class="btn btn-secondary">Enrolled</span>
-  
-        <button *ngIf="userLoggedIn && isEnrolled && courseStatus === 'pending'" type="button" class="btn btn-success" (click)="markAsComplete()">Mark as Complete</button>
-  
         <button *ngIf="userLoggedIn && !isEnrolled" type="button" class="btn btn-primary" (click)="enrollInCourse()">Enroll Now</button>
+  
+        <span *ngIf="userLoggedIn && isEnrolled " class="btn btn-secondary">Enrolled</span>
+  
+        <button *ngIf="userLoggedIn && isEnrolled && !courseStatus" type="button" class="btn btn-success" (click)="markAsComplete()">Mark as Complete</button>
+  
       </div>
   
     </div>

@@ -8,9 +8,9 @@ import { QueryComponent } from '../query/query.component';
 @Component({
   selector: 'app-course',
   standalone: true,
-  imports: [CommonModule,QueryComponent],
+  imports: [CommonModule, QueryComponent],
   templateUrl: './course.component.html',
-  styleUrls: ['./course.component.css'] // Corrected from `styleUrl` to `styleUrls`
+  styleUrls: ['./course.component.css']
 })
 export class CourseComponent implements OnInit {
   course: Course = {
@@ -20,122 +20,90 @@ export class CourseComponent implements OnInit {
     description: '',
     status: false,
     mentorName: '',
-    duration:'',
-    url:''
+    duration: '',
+    url: ''
   };
-  userLoggedIn : boolean = false;
+  userLoggedIn: boolean = false;
   isEnrolled: boolean = false;
-  courseStatus: 'pending' | 'completed' = 'pending';
+  courseStatus: boolean = false; // Changed to boolean to reflect the correct status
 
   answeredQueries: any[] = [];
   pendingQueries: any[] = [];
 
   constructor(
-    private dataService:DataService,
-    private route:ActivatedRoute,
-  ){}
-
-
-  
-
+    private dataService: DataService,
+    private route: ActivatedRoute,
+  ) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       const id = params.get('id');
       if (id) {
-        this.getCourse(Number(id)); // Call the getCourse method to fetch the data
+        this.getCourse(Number(id));
       }
-      
     });
     this.checkUserLoggedIn();
   }
 
   checkUserLoggedIn(): void {
     const token = localStorage.getItem('jwtToken');
-    this.userLoggedIn = !!token; // Check if token exists
+    this.userLoggedIn = !!token;
 
-    if (this.userLoggedIn) {
-      const userId = localStorage.getItem('userId'); // Assuming userId is stored in localStorage
-      if (userId && this.course) {
-        this.checkEnrollmentStatus(userId, this.course.courseId);
+    if (this.userLoggedIn && this.course.courseId) {
+      const userId = localStorage.getItem('userId');
+      if (userId) {
+        this.checkEnrollmentAndCompletionStatus(userId, this.course.courseId);
       }
     }
   }
 
-
-
-
-
-
-
   getCourse(id: number): void {
     this.dataService.getCourseById(id).subscribe(
       response => {
-        console.log('Response:', response); // Log response for debugging
-        this.course = response.course; // Adjust as per your API response structure
+        console.log('Response:', response);
+        this.course = response.course;
         this.answeredQueries = response.DoubtList.filter((doubt: any) => doubt.answers && doubt.answers.trim() !== '');
         this.pendingQueries = response.DoubtList.filter((doubt: any) => !doubt.answers || doubt.answers.trim() === '');
 
         if (this.userLoggedIn) {
           const userId = localStorage.getItem('userId');
           if (userId) {
-            this.checkEnrollmentStatus(userId, id);
+            this.checkEnrollmentAndCompletionStatus(userId, id);
           }
         }
       },
       error => {
-        console.error('Error fetching course:', error); // Log errors for debugging
+        console.error('Error fetching course:', error);
       }
     );
-  } 
+  }
 
-
-  checkEnrollmentStatus(userId: string, courseId: number): void {
-    this.dataService.isUserEnrolled(userId, courseId).subscribe(enrolled => {
-      this.isEnrolled = enrolled;
-      if (enrolled) {
-        this.getCourseProgress(userId, courseId);
+  checkEnrollmentAndCompletionStatus(userId: string, courseId: number): void {
+    this.dataService.getEnrolledAndProgressStatus(Number(userId), courseId).subscribe(response => {
+      this.isEnrolled = response.isEnrolled;
+      if (this.isEnrolled) {
+        this.courseStatus = response.completionStatus;
       }
     });
   }
-
-
-
-
-  getCourseProgress(userId: string, courseId: number): void {
-    this.dataService.getCourseProgress(userId, courseId).subscribe(status => {
-      this.courseStatus = status;
-    });
-  }
-
-
-
 
 
   enrollInCourse(): void {
     const userId = localStorage.getItem('userId');
     if (userId && this.course) {
-      this.dataService.enrollUser(userId, this.course.courseId).subscribe(() => {
+      this.dataService.setEnrollCourse(Number(userId), this.course.courseId).subscribe(() => {
         this.isEnrolled = true;
-        this.courseStatus = 'pending';
+        this.courseStatus = false; // Set to false when first enrolling, meaning 'in progress'
       });
     }
-  }
-
-
-
-  startCourse(): void {
-    console.log('Starting course...');
   }
 
   markAsComplete(): void {
     const userId = localStorage.getItem('userId');
     if (userId && this.course) {
-      this.dataService.completeCourse(userId, this.course.courseId).subscribe(() => {
-        this.courseStatus = 'completed';
+      this.dataService.setCompleteCourse(Number(userId), this.course.courseId).subscribe(() => {
+        this.courseStatus = true; // Set to true when the course is marked as complete
       });
     }
   }
-
-
 }
