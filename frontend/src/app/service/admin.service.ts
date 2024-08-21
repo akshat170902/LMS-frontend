@@ -12,7 +12,7 @@ import { Doubt } from '../models/doubt.model';
 export class AdminService {
 
   private apiUrl = 'http://localhost:8088/users';
-  private coursesUrl = 'http://localhost:8084/courses';
+  private coursesUrl = 'http://localhost:8098/courses';
   constructor(private httpClient: HttpClient) { }
 
   // Method to get headers with JWT token
@@ -63,13 +63,13 @@ export class AdminService {
 
 //done
   getQueries(): Observable<Query[]> {
-    return this.httpClient.get<Query[]>(`http://localhost:8084/doubts/admin/all-doubts`, { headers: this.getHeaders() });
+    return this.httpClient.get<Query[]>(`http://localhost:8098/doubts/admin/all-doubts`, { headers: this.getHeaders() });
   }
 
 
 //done
   removeQuery(id: number): Observable<any[]> {
-    return this.httpClient.delete<any[]>(` http://localhost:8084/doubts/admin/${id}`, { headers: this.getHeaders() });
+    return this.httpClient.delete<any[]>(` http://localhost:8098/doubts/admin/${id}`, { headers: this.getHeaders() });
   }
 
 
@@ -80,13 +80,13 @@ export class AdminService {
 
 //done
   getCourses(): Observable<Course[]> {
-    return this.httpClient.get<Course[]>(`http://localhost:8084/courses/admin/status/false`, { headers: this.getHeaders() });
+    return this.httpClient.get<Course[]>(`http://localhost:8098/courses/admin/status/false`, { headers: this.getHeaders() });
   }
 
 
 //pending
   approveCourse(courseId: number): Observable<any[]> {
-    return this.httpClient.put<any[]>(`http://localhost:8084/courses/admin/true/${courseId}`, {}, { headers: this.getHeaders() });
+    return this.httpClient.put<any[]>(`http://localhost:8098/courses/admin/true/${courseId}`, {}, { headers: this.getHeaders() });
   }
 
 
@@ -98,7 +98,7 @@ export class AdminService {
 
   //done
   createDoubt(doubt:Doubt) :Observable<any[]> {
-      return this.httpClient.post<any[]>(`http://localhost:8084/doubts/public/create-doubt`,doubt, { headers: this.getHeaders() });
+      return this.httpClient.post<any[]>(`http://localhost:8098/doubts/public/create-doubt`,doubt, { headers: this.getHeaders() });
     }
   
 }
