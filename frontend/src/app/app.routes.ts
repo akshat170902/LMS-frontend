@@ -15,6 +15,7 @@ import { CoursePageComponent } from './page/course-page/course-page.component';
 import { AllCoursesPageComponent } from './page/all-courses-page/all-courses-page.component';
 import { CreateCoursesComponent } from './page/create-courses/create-courses.component';
 import { QueryPageComponent } from './page/query-page/query-page.component';
+import { SearchPageComponent } from './page/search-page/search-page.component';
 
 export const routes : Routes = [
   { path: '', redirectTo: '/landing-page', pathMatch: 'full' }, // Default route
@@ -34,6 +35,7 @@ export const routes : Routes = [
   { path: 'course/:id', component: CoursePageComponent },
 
   {path: 'create-course', component:CreateCoursesComponent},
+  { path: 'search', component: SearchPageComponent },
 
   { path: '**', redirectTo: '/landing-page' }, // Wildcard route for a 404 page (optional)
   

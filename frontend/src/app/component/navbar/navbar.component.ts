@@ -7,7 +7,7 @@ import { Router, RouterLink } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [ReactiveFormsModule,CommonModule,RouterLink],
+  imports: [ReactiveFormsModule, CommonModule, RouterLink],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
@@ -15,7 +15,7 @@ export class NavbarComponent {
   searchForm: FormGroup;
   user: any = null;
   username: string = '';
-  constructor(private fb: FormBuilder, private dataService: DataService,private router : Router) {
+  constructor(private fb: FormBuilder, private dataService: DataService, private router: Router) {
     this.searchForm = this.fb.group({
       name: ['']
     });
@@ -48,14 +48,7 @@ export class NavbarComponent {
   onSubmit() {
     if (this.searchForm.valid) {
       const name = this.searchForm.get("name")?.value;
-      this.dataService.getCoursesByName(name).subscribe(
-        (data: any) => {
-          console.log("Search Results ", data);
-        },
-        (error: any) => {
-          console.log("There was an error: ", error);
-        }
-      );
+      this.router.navigate(['/search'], { queryParams: { name } });
     }
   }
 }
