@@ -1,8 +1,9 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, throwError } from 'rxjs';
+import { catchError, Observable, throwError, map } from 'rxjs';
 import { UserData } from '../models/UserData';
 import { LoginModel } from '../models/LoginModel';
+import { Course } from '../models/course.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,7 @@ export class DataService {
   public type: string = "all";
 
   private apiUrl = "https://localhost:8088/"
-  constructor(private httpClient: HttpClient) {
-  }
+  constructor(private httpClient: HttpClient) {}
 
   
   // Method to get headers with JWT token
@@ -74,4 +74,45 @@ export class DataService {
   getEnrolledCourses(id:number) :Observable<any[]>{
     return this.httpClient.get<any[]>( `http://localhost:8084/api/v1/user-courses/user/get-course/${id}`,{headers: this.getHeaders() });
   }
+
+// Check if the user is enrolled in a specific course
+isUserEnrolled(userId: string, courseId: string): Observable<boolean> {
+  return this.httpClient.get<boolean>(`${this.apiUrl}/api/v1/user-courses/user/is-enrolled/${userId}/${courseId}`, {
+    headers: this.getHeaders()
+  }).pipe(
+    catchError(this.handleError)
+  );
+}
+
+   // Get course progress for a user
+   getCourseProgress(userId: string, courseId: string): Observable<'pending' | 'completed'> {
+    return this.httpClient.get<'pending' | 'completed'>(`${this.apiUrl}/api/v1/user-courses/user/progress/${userId}/${courseId}`, {
+      headers: this.getHeaders()
+    }).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+
+  // Enroll a user in a course
+  enrollUser(userId: string, courseId: string): Observable<void> {
+    return this.httpClient.post<void>(`${this.apiUrl}/api/v1/user-courses/user/enroll`, { userId, courseId }, {
+      headers: this.getHeaders()
+    }).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  // Mark a course as complete for a user
+  completeCourse(userId: string, courseId: string): Observable<void> {
+    return this.httpClient.post<void>(`${this.apiUrl}/api/v1/user-courses/user/complete`, { userId, courseId }, {
+      headers: this.getHeaders()
+    }).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+
+
+
 }
