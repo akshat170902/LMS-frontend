@@ -71,7 +71,18 @@ img {
 }
 .about-list .media {
   padding: 5px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
+
+@media (min-width: 768px) {
+  .col-md-6 {
+      flex: 0 0 auto;
+      width: 100%;
+  }
+}
+
 .about-list label {
   color: #20247b;
   font-weight: 600;
@@ -81,7 +92,7 @@ img {
 }
 .about-list label:after {
   content: "";
-  position: absolute;
+  position: relative;
   top: 0;
   bottom: 0;
   right: 11px;
@@ -96,6 +107,18 @@ img {
   margin: auto;
   opacity: 0.5;
 }
+
+label::after {
+  content: ''; /* Removes any content inserted by ::after */
+}
+
+.about-list label::after {
+  content: ''; /* Removes the inserted content only for labels inside .about-list */
+}
+
+
+
+
 .about-list p {
   margin: 0;
   font-size: 15px;
