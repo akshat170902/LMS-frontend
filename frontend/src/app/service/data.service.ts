@@ -69,9 +69,15 @@ export class DataService {
   getAllCourses() : Observable<any[]>{
     return this.httpClient.get<any[]>("http://localhost:8084/courses/public/status/true")
   }
-
-  //cors error
+//done
   getEnrolledCourses(id:number) :Observable<any[]>{
-    return this.httpClient.get<any[]>( `http://localhost:8084/api/v1/user-courses/user/get-course/${id}`,{headers: this.getHeaders() });
+    return this.httpClient.get<any[]>( `http://localhost:8084/user-courses/public/enrolled-courses/${id}`,{headers: this.getHeaders() });
   }
+//todo
+  setCompleteCourse(userId:number,courseId:number):Observable<any[]>{
+    return this.httpClient.put<any[]>( `http://localhost:8084/user-courses/public/completion-status/${userId}/${courseId}/true`,{headers: this.getHeaders() });
+  }
+
+
+
 }
