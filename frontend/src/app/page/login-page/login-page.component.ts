@@ -24,11 +24,13 @@ public loading=false;
   constructor(private dataService: DataService, private router: Router) {
 
   }
+  navigateToLandingPage(){
+    this.router.navigate(['/landing-page']);
+  }
 
   ngOnInit(): void {
     
   }
-
 
 
   onLogin() {
