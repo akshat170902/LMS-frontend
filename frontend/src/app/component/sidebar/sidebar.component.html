@@ -2,7 +2,10 @@
   <ul class="list-group w-100">
 
     <li class="list-group-item d-flex align-items-center">
-      <i class="fas fa-home me-3"></i> <span class="icon_name">Home</span>
+      <a [routerLink]="['/Landing-page']">
+
+        <i class="fas fa-home me-3"></i> <span class="icon_name">Home</span>
+      </a>
     </li>
 
     <!-- Courses Dropdown -->
@@ -10,16 +13,19 @@
     (mouseleave)="toggleDropdownCourses(false)">
       <li class="list-group-item d-flex align-items-center">
         <i class="fas fa-book me-3"></i>
-        <a class="icon_name">
+        <a class="icon_name" >
           Courses
         </a>
       </li>
       <ng-container *ngIf="isCourseDropDownOpen">
         <li class="list-group-item d-flex align-items-center">
-          <i class="fas fa-check me-3 x"></i> <a class="dropdown-item">Completed Courses</a>
+          <i class="fas fa-check me-3 x"></i> <a class="dropdown-item" [routerLink]="['/courses/enrolled']">Enrolled Courses</a>
         </li>
         <li class="list-group-item d-flex align-items-center">
-          <i class="fas fa-clock me-3 x"></i> <a class="dropdown-item">Pending Courses</a>
+          <i class="fas fa-clock me-3 x"></i> <a class="dropdown-item" [routerLink]="['/courses/pending']" >Pending Courses</a>
+        </li>
+        <li class="list-group-item d-flex align-items-center">
+          <i class="fas fa-check me-3 x"></i> <a class="dropdown-item" [routerLink]="['/courses/Completed']" >Completed Courses</a>
         </li>
       </ng-container>
     </div>
@@ -34,7 +40,7 @@
       </li>
       <ng-container *ngIf="isQueriesDropDownOpen">
         <li class="list-group-item d-flex align-items-center">
-          <i class="fas fa-check-circle me-3 x"></i> <a class="dropdown-item">Answered Queries</a>
+          <i class="fas fa-check-circle me-3 x"></i> <a class="dropdown-item" [routerLink]="['/courses/completed']">Answered Queries</a>
         </li>
         <li class="list-group-item d-flex align-items-center">
           <i class="fas fa-times-circle me-3 x"></i> <a class="dropdown-item">Unanswered Queries</a>
