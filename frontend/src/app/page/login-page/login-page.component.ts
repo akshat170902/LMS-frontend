@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 })
 export class LoginPageComponent {
   userData: LoginModel = {
-    email: 'akshat1@gmail.com',
+    email: 'akshatgarg@gmail.com',
     password: '12345678'
   }
 
@@ -33,8 +33,13 @@ export class LoginPageComponent {
         // Store the JWT token in localStorage
         localStorage.setItem('jwtToken', response);
         console.log('JWT Token stored in localStorage');
+
         // Navigate to the landing page
         this.router.navigate(['/landing-page']);
+
+        localStorage.setItem('user', response);
+        console.log('User stored in localStorage');
+
       },
       error: (error) => {
         console.error('Login error:', error);
