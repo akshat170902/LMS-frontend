@@ -30,7 +30,7 @@ export class NavbarComponent {
       try {
         const user = JSON.parse(userData);
         this.user = user;
-        this.username = user.name;
+        this.username = user.fullName;
       } catch (e) {
         console.error('Failed to parse user data from localStorage:', e);
         localStorage.removeItem('user'); // Clear invalid user data
@@ -39,7 +39,8 @@ export class NavbarComponent {
   }
 
   logout(): void {
-    localStorage.removeItem('user'); // Remove user data from localStorage
+    localStorage.removeItem('user');
+    localStorage.removeItem('jwtToken'); // Remove user data from localStorage
     this.router.navigate(['/']); // Redirect to login page
   }
 
