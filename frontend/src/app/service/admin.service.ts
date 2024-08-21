@@ -60,13 +60,13 @@ export class AdminService {
   }
 
 
-//pending
+//done
   getQueries(): Observable<Query[]> {
     return this.httpClient.get<Query[]>(`http://localhost:8084/doubts/admin/all-doubts`, { headers: this.getHeaders() });
   }
 
 
-//pending
+//done
   removeQuery(id: number): Observable<any[]> {
     return this.httpClient.delete<any[]>(` http://localhost:8084/doubts/admin/${id}`, { headers: this.getHeaders() });
   }
@@ -91,6 +91,13 @@ export class AdminService {
 
 //pending
   removeCourse(courseId: number): Observable<any[]> {
-    return this.httpClient.delete<any[]>(`http://localhost:8084/courses/admin/${courseId}`, { headers: this.getHeaders() });
+    return this.httpClient.delete<any[]>(`http://localhost:8098/courses/admin/${courseId}`, { headers: this.getHeaders() });
   }
+
+
+  //pending
+  createDoubt(doubt:Query) :Observable<any[]> {
+      return this.httpClient.post<any[]>(`http://localhost:8084/doubts/public/create-doubt`,{doubt}, { headers: this.getHeaders() });
+    }
+  
 }
