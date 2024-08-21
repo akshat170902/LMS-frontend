@@ -21,14 +21,16 @@ navigateToLandingPage(){
   this.router.navigate(['/landing-page']);
  
 }
-  durationOptions: string[] = ['0-3 hours', '3-6 hours', '6-9 hours', 'greater than 9 hours'];
+  durationOptions: string[] = ['0-3 weeks', '3-6 weeks', '6-9 weeks', 'greater than 9 weeks'];
 
   courseData: any={
-    title:'',
+    courseName:'',
     description:'',
     duration:'',
-    Prerequisites:'',
-    mentors:'' ,
-    upload:''
+    mentorName:'',
+    url:'',
+    status:false,
+    mentorId:0,
+
   }
 }
