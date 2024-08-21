@@ -10,9 +10,10 @@
         <a [routerLink]="['/course', category.courseId]">
 
           <div class="card mb-4">
-            <img [src]="" class="card-img-top" alt="...">
+            <img [src]="category.url" class="card-img-top" alt="...">
             <div class="card-body d-flex flex-column">
               <div class="card-title">{{category.courseName}}</div>
+              <div class="card-text">{{category.mentorName}}</div>
               <p class="card-text">{{category.description | slice:0:25}}...</p> <!-- Truncate description -->
               <a href="#" class="btn btn-primary card-button mt-auto">Enroll Now</a>
             </div>

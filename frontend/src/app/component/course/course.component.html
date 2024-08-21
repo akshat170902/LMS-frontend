@@ -23,6 +23,11 @@
         <p>{{ course.description }}</p>
       </div>
 
+      <div class="description">
+        <strong>Duration</strong>
+        <p>{{ course.duration }}</p>
+      </div>
+
       <!-- Start Now Button -->
       <div class="button-start-now">
         <button *ngIf="!userLoggedIn" type="button" class="btn btn-primary" (click)="enrollInCourse()">Enroll Now</button>
@@ -34,7 +39,6 @@
         <button *ngIf="userLoggedIn && !isEnrolled" type="button" class="btn btn-primary" (click)="enrollInCourse()">Enroll Now</button>
       </div>
   
-
     </div>
   </div>
 </div>

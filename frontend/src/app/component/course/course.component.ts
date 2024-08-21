@@ -18,7 +18,9 @@ export class CourseComponent implements OnInit {
     mentorId: 0,
     description: '',
     status: false,
-    mentorName: ''
+    mentorName: '',
+    duration:'',
+    url:''
   };
   userLoggedIn : boolean = false;
   isEnrolled: boolean = false;

@@ -133,6 +133,9 @@ isUserEnrolled(userId: string, courseId: number): Observable<boolean> {
 
 
 
+  setAnswer(doubtId:number,answer:string): Observable<any[]> {
+    return this.httpClient.post<any[]>(`http://localhost:8084/doubts/mentor/${doubtId}`,answer, { headers: this.getHeaders() });
+  }
 
 
 
