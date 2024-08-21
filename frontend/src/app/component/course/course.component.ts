@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../service/data.service';
 import { ActivatedRoute } from '@angular/router';
 import { Course } from '../../models/course.model';
+import { QueryComponent } from '../query/query.component';
 
 @Component({
   selector: 'app-course',
   standalone: true,
-  imports: [],
+  imports: [QueryComponent],
   templateUrl: './course.component.html',
   styleUrls: ['./course.component.css'] // Corrected from `styleUrl` to `styleUrls`
 })
@@ -20,10 +21,13 @@ export class CourseComponent implements OnInit {
     mentorName: ''
   };
 
+  answeredQueries: any[] = [];
+  pendingQueries: any[] = [];
+
   constructor(
     private dataService: DataService,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -39,10 +43,13 @@ export class CourseComponent implements OnInit {
       response => {
         console.log('Response:', response); // Ensure the response is correctly logged
         this.course = response.course; // Assign the nested course object to the component's course property
+        this.answeredQueries = response.DoubtList.filter((doubt: any) => doubt.answers && doubt.answers.trim() !== '');
+        this.pendingQueries = response.DoubtList.filter((doubt: any) => !doubt.answers || doubt.answers.trim() === '');
       },
       error => {
         console.error('Error fetching course:', error); // Log any errors for debugging
       }
     );
+
   }
 }
