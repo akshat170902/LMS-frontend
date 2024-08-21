@@ -14,15 +14,15 @@
                         [ngClass]="{'bg-light': i % 2 === 0, 'bg-white': i % 2 !== 0}" class="list-group-item py-3">
                         <div class="query-item">
                             <div><strong>Question:</strong> {{ query.question }}</div>
-                            <div *ngIf="query.answer">
-                                <strong>Answer:</strong> {{ query.answer }}
+                            <div *ngIf="query.answers">
+                                <strong>Answer:</strong> {{ query.answers }}
                             </div>
-                            <div *ngIf="query.mentorName">
-                                <strong>Mentor:</strong> {{ query.mentorName }}
+                            <div *ngIf="query.doubtId">
+                                <strong>Mentor:</strong> {{ query.doubtId }}
                             </div>
 
                             <!-- Show Answer option if there's no answer and user is a mentor -->
-                            <div *ngIf="!query.answer && userRole === 'MENTOR'" class="mt-2">
+                            <div *ngIf="!query.answers && (userRole === 'ADMIN' || userRole === 'MENTOR')" class="mt-2">
                                 <button class="btn btn-outline-primary"
                                     (click)="toggleAnswerBox(i)">Answer</button>
 
@@ -30,7 +30,7 @@
                                 <div *ngIf="activeAnswerBoxIndex === i" class="mt-3">
                                     <textarea [(ngModel)]="tempAnswer" class="form-control mb-2"
                                         placeholder="Type your answer here..."></textarea>
-                                    <button class="btn btn-success" (click)="submitAnswer(query, i)">Submit Answer</button>
+                                    <button class="btn btn-success" (click)="submitAnswer(query.doubtId,tempAnswer)">Submit Answer</button>
                                 </div>
                             </div>
                         </div>

@@ -5,11 +5,12 @@ import { ChangeDetectorRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Feedback } from '../../models/feedback.model';
 import { AdminSidebarComponent } from '../admin-sidebar/admin-sidebar.component';
+import { NavbarComponent } from "../navbar/navbar.component";
 
 @Component({
   selector: 'app-feedback-list',
   standalone: true,
-  imports: [AdminSidebarComponent,CommonModule,FormsModule],
+  imports: [AdminSidebarComponent, CommonModule, FormsModule, NavbarComponent],
   templateUrl: './feedback-list.component.html',
   styleUrl: './feedback-list.component.css'
 })

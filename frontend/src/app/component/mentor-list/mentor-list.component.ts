@@ -5,11 +5,12 @@ import { ChangeDetectorRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Mentor } from '../../models/mentor.model';
 import { AdminSidebarComponent } from '../admin-sidebar/admin-sidebar.component';
+import { NavbarComponent } from "../navbar/navbar.component";
 
 @Component({
   selector: 'app-mentor-list',
   standalone: true,
-  imports: [CommonModule,FormsModule,AdminSidebarComponent],
+  imports: [CommonModule, FormsModule, AdminSidebarComponent, NavbarComponent],
   templateUrl: './mentor-list.component.html',
   styleUrls: ['./mentor-list.component.css'] 
 })

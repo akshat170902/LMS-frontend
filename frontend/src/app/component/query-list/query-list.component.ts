@@ -6,11 +6,12 @@ import { FormsModule } from '@angular/forms';
 import { Query } from '../../models/query.model';
 import { AdminSidebarComponent } from '../admin-sidebar/admin-sidebar.component';
 import { NgxLoadingModule } from 'ngx-loading';
+import { NavbarComponent } from "../navbar/navbar.component";
 
 @Component({
   selector: 'app-query-list',
   standalone: true,
-  imports: [CommonModule, FormsModule, AdminSidebarComponent, NgxLoadingModule],
+  imports: [CommonModule, FormsModule, AdminSidebarComponent, NgxLoadingModule, NavbarComponent],
   templateUrl: './query-list.component.html',
   styleUrls: ['./query-list.component.css']
 })

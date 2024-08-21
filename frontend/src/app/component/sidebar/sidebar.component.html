@@ -51,12 +51,18 @@
     
     <!-- Conditionally show "Create Course" for Mentors -->
     <li class="list-group-item d-flex align-items-center" *ngIf="userRole === 'MENTOR'">
+      <a [routerLink]="['/create-course']">
+
       <i class="fas fa-plus me-3"></i> <span class="icon_name">Create Course</span>
+      </a>
     </li>
 
     <!-- Conditionally show "Admin Dashboard" for Admins -->
     <li class="list-group-item d-flex align-items-center" *ngIf="userRole === 'ADMIN'">
-      <i class="fas fa-cogs me-3"></i> <span class="icon_name">Admin Dashboard</span>
+      <a [routerLink]="['/admin-page/all-users']">
+
+        <i class="fas fa-cogs me-3"></i> <span class="icon_name">Admin Dashboard</span>
+      </a>
     </li>
 
     <li class="list-group-item d-flex align-items-center">
