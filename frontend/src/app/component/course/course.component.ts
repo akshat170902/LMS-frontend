@@ -3,11 +3,12 @@ import { DataService } from '../../service/data.service';
 import { ActivatedRoute } from '@angular/router';
 import { Course } from '../../models/course.model';
 import { CommonModule } from '@angular/common';
+import { QueryComponent } from '../query/query.component';
 
 @Component({
   selector: 'app-course',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,QueryComponent],
   templateUrl: './course.component.html',
   styleUrls: ['./course.component.css'] // Corrected from `styleUrl` to `styleUrls`
 })
@@ -25,6 +26,9 @@ export class CourseComponent implements OnInit {
   userLoggedIn : boolean = false;
   isEnrolled: boolean = false;
   courseStatus: 'pending' | 'completed' = 'pending';
+
+  answeredQueries: any[] = [];
+  pendingQueries: any[] = [];
 
   constructor(
     private dataService:DataService,
@@ -64,18 +68,26 @@ export class CourseComponent implements OnInit {
 
 
 
-  getCourse(id:number):void{
-    this.dataService.getCourseById(id).subscribe(data=>{
-      this.course=data;
-      if (this.userLoggedIn) {
-        const userId = localStorage.getItem('userId');
-        if (userId) {
-          this.checkEnrollmentStatus(userId, id);
-        }
-      }
-    });
-  }
+  getCourse(id: number): void {
+    this.dataService.getCourseById(id).subscribe(
+      response => {
+        console.log('Response:', response); // Log response for debugging
+        this.course = response.course; // Adjust as per your API response structure
+        this.answeredQueries = response.DoubtList.filter((doubt: any) => doubt.answers && doubt.answers.trim() !== '');
+        this.pendingQueries = response.DoubtList.filter((doubt: any) => !doubt.answers || doubt.answers.trim() === '');
 
+        if (this.userLoggedIn) {
+          const userId = localStorage.getItem('userId');
+          if (userId) {
+            this.checkEnrollmentStatus(userId, id);
+          }
+        }
+      },
+      error => {
+        console.error('Error fetching course:', error); // Log errors for debugging
+      }
+    );
+  } 
 
 
   checkEnrollmentStatus(userId: string, courseId: number): void {

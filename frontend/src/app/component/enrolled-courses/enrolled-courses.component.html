@@ -25,19 +25,18 @@
                     <div class="row g-2">
                         <!-- Loop through the users array to display courses -->
                         <div class="col-md-6" *ngFor="let course of courses">
-                            <a [routerLink]="['/course', course.id]">
+                            <a [routerLink]="['/course', course.courseId]">
                                 <div class="card p-2 py-3 text-center">
                                     <div class="img mb-2">
-                                        <img src="https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg"
+                                        <img src={{course.url}}
                                             width="100" alt="course image">
                                     </div>
-                                    <h5 class="mb-0">{{course.name}}</h5>
-                                    <small>description</small>
-                                    <small>mentor-id</small>
+                                    <h5 class="mb-0">{{course.courseName}}</h5>
+                                    <small>Mentor-id</small>{{course.mentorName}}
+                                    <small>Description</small>{{course.description}}
 
                                     <div class="mt-4 apointment">
-                                         <a href="/landing-page"><button class="btn btn-success text-uppercase">Enroll
-                                                Now</button></a>
+                                         <a href="/landing-page"><button class="btn btn-success text-uppercase">Details</button></a>
                                     </div>
                                     <!-- Other content -->
                                 </div>
