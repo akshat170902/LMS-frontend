@@ -20,11 +20,11 @@ export class SidebarComponent {
       this.userRole = parsedUser.role;
     }
   }
-  toggleDropdownCourses() {
-    this.isCourseDropDownOpen = !this.isCourseDropDownOpen;
+  toggleDropdownCourses(value : boolean)  {
+    this.isCourseDropDownOpen = value;
   }
-  toggleDropdownQueries() {
-    this.isQueriesDropDownOpen = !this.isQueriesDropDownOpen;
+  toggleDropdownQueries(value : boolean) {
+    this.isQueriesDropDownOpen = value;
   }
 }
 
