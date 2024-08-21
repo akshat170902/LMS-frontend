@@ -1,38 +1,44 @@
 <div class="">
-    <div class="course-details">
-      <!-- Image Container -->
-      <div class="img-container">
-        <img [src]="course" alt="Course Image" class="img-fluid">
+  <div class="course-details">
+    <!-- Image Container -->
+    <div class="img-container">
+      <img [src]="course" alt="Course Image" class="img-fluid">
+    </div>
+
+    <!-- Information Container -->
+    <div class="information">
+      <!-- Title -->
+      <div class="title">
+        <h1>{{ course.courseName }}</h1>
+      </div>
+
+      <!-- Price -->
+      <div class="price">
+        <p><strong>Mentor Name:</strong> {{ course.mentorName }}</p>
+      </div>
+
+      <!-- Description -->
+      <div class="description">
+        <strong>Description</strong>
+        <p>{{ course.description }}</p>
+      </div>
+
+      <div class="description">
+        <strong>Duration</strong>
+        <p>{{ course.duration }}</p>
+      </div>
+
+      <!-- Start Now Button -->
+      <div class="button-start-now">
+        <button *ngIf="!userLoggedIn" type="button" class="btn btn-primary" (click)="enrollInCourse()">Enroll Now</button>
+  
+        <span *ngIf="userLoggedIn && isEnrolled && courseStatus === 'completed'" class="btn btn-secondary">Enrolled</span>
+  
+        <button *ngIf="userLoggedIn && isEnrolled && courseStatus === 'pending'" type="button" class="btn btn-success" (click)="markAsComplete()">Mark as Complete</button>
+  
+        <button *ngIf="userLoggedIn && !isEnrolled" type="button" class="btn btn-primary" (click)="enrollInCourse()">Enroll Now</button>
       </div>
   
-      <!-- Information Container -->
-      <div class="information">
-        <!-- Title -->
-        <div class="title">
-          <h1>{{ course.courseName }}</h1>
-        </div>
-  
-        <!-- Price -->
-        <div class="price">
-          <p><strong>Mentor Name:</strong> {{ course.mentorName }}</p>
-        </div>
-  
-        <!-- Description -->
-        <div class="description">
-          <strong>Description</strong>
-          <p>{{ course.description }}</p>
-        </div>
-  
-        <div class="description">
-          <strong>Duration</strong>
-          <p>{{ course.duration }}</p>
-        </div>
-  
-        <!-- Start Now Button -->
-        <div class="button-start-now">
-          <button type="button" class="btn btn-primary">Start Now</button>
-        </div>
-      </div>
     </div>
   </div>
   <app-query 
