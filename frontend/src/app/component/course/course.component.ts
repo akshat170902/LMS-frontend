@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../service/data.service';
 import { ActivatedRoute } from '@angular/router';
-import { Course } from '../../models/course.model';\
+import { Course } from '../../models/course.model';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -37,7 +37,7 @@ export class CourseComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       const id = params.get('id');
       if (id) {
-        this.getCourse(id); // Call the getCourse method to fetch the data
+        this.getCourse(Number(id)); // Call the getCourse method to fetch the data
       }
       
     });
@@ -51,7 +51,7 @@ export class CourseComponent implements OnInit {
     if (this.userLoggedIn) {
       const userId = localStorage.getItem('userId'); // Assuming userId is stored in localStorage
       if (userId && this.course) {
-        this.checkEnrollmentStatus(userId, this.course.id);
+        this.checkEnrollmentStatus(userId, this.course.courseId);
       }
     }
   }
@@ -62,7 +62,7 @@ export class CourseComponent implements OnInit {
 
 
 
-  getCourse(id:string):void{
+  getCourse(id:number):void{
     this.dataService.getCourseById(id).subscribe(data=>{
       this.course=data;
       if (this.userLoggedIn) {
@@ -76,7 +76,7 @@ export class CourseComponent implements OnInit {
 
 
 
-  checkEnrollmentStatus(userId: string, courseId: string): void {
+  checkEnrollmentStatus(userId: string, courseId: number): void {
     this.dataService.isUserEnrolled(userId, courseId).subscribe(enrolled => {
       this.isEnrolled = enrolled;
       if (enrolled) {
@@ -88,7 +88,7 @@ export class CourseComponent implements OnInit {
 
 
 
-  getCourseProgress(userId: string, courseId: string): void {
+  getCourseProgress(userId: string, courseId: number): void {
     this.dataService.getCourseProgress(userId, courseId).subscribe(status => {
       this.courseStatus = status;
     });
@@ -101,7 +101,7 @@ export class CourseComponent implements OnInit {
   enrollInCourse(): void {
     const userId = localStorage.getItem('userId');
     if (userId && this.course) {
-      this.dataService.enrollUser(userId, this.course.id).subscribe(() => {
+      this.dataService.enrollUser(userId, this.course.courseId).subscribe(() => {
         this.isEnrolled = true;
         this.courseStatus = 'pending';
       });
@@ -117,7 +117,7 @@ export class CourseComponent implements OnInit {
   markAsComplete(): void {
     const userId = localStorage.getItem('userId');
     if (userId && this.course) {
-      this.dataService.completeCourse(userId, this.course.id).subscribe(() => {
+      this.dataService.completeCourse(userId, this.course.courseId).subscribe(() => {
         this.courseStatus = 'completed';
       });
     }
