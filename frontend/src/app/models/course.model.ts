@@ -1,7 +1,8 @@
 export interface Course {
-    id: number,
-    title: string,
+    courseId: number,
+    courseName: string,
     mentorId: number,
     description: string,
-    approved: boolean
+    status: boolean,
+    mentorName:string
 }
