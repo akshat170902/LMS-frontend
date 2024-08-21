@@ -107,3 +107,18 @@
 .mb-4, .my-4 {
   margin-bottom: 1.1rem !important;
 }
+
+/* toasts */
+.no-animation {
+  transition: none !important;
+  opacity: 1 !important;
+}
+
+.no-animation.toast {
+  transform: none !important;
+}
+
+.no-animation.toast-top-right {
+  top: 12px !important;
+  right: 12px !important;
+}
