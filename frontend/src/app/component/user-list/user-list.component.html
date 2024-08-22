@@ -23,14 +23,20 @@
               <tr>
                 <th>User ID</th>
                 <th>Name</th>
-                <th>Pending Courses</th>
+                <th>Number</th>
                 <th>Completed Courses</th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let user of users">
                 <td>{{ user.fullName }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.contact }}</td>
+                <td>{{ user.role }}</td>
+
+
               </tr>
+              
             </tbody>
           </table>
         </div>
