@@ -19,7 +19,7 @@
       </li>
       <ng-container *ngIf="isCourseDropDownOpen">
         <li class="list-group-item d-flex align-items-center">
-          <i class="fas fa-check me-3 x"></i> <a class="dropdown-item" [routerLink]="['/courses/enrolled']">Enrolled Courses</a>
+          <i class="fas fa-check-circle me-3 x"></i> <a class="dropdown-item" [routerLink]="['/courses/enrolled']">Enrolled Courses</a>
         </li>
         <li class="list-group-item d-flex align-items-center">
           <i class="fas fa-clock me-3 x"></i> <a class="dropdown-item" [routerLink]="['/courses/pending']" >Pending Courses</a>
@@ -34,18 +34,18 @@
     <div class="queries-dropdown" (mouseover)="toggleDropdownQueries(true)" (mouseleave) = "toggleDropdownQueries(false)">
       <li class="list-group-item d-flex align-items-center">
         <i class="fas fa-question-circle me-3"></i>
-        <a class="icon_name">
+        <a class="icon_name" [routerLink]="['/query-page']">
           Queries
         </a>
       </li>
-      <ng-container *ngIf="isQueriesDropDownOpen">
+      <!-- <ng-container *ngIf="isQueriesDropDownOpen">
         <li class="list-group-item d-flex align-items-center">
           <i class="fas fa-check-circle me-3 x"></i> <a class="dropdown-item" [routerLink]="['/query-page']">Answered Queries</a>
         </li>
         <li class="list-group-item d-flex align-items-center">
           <i class="fas fa-times-circle me-3 x"></i> <a class="dropdown-item" [routerLink]="['/query-page']">Unanswered Queries</a>
         </li>
-      </ng-container>
+      </ng-container> -->
   
     </div>
     
