@@ -19,8 +19,8 @@
                 <hr class="signup-hr">
         
                 <div class="form-group">
-                    <label for="title" class="form-label">Title</label>
-                    <input type="text" [(ngModel)]="courseData.title" name="courseName" #fTitle="ngModel" class="form-control item"
+                    <label for="courseName"class="form-label">Course Name</label>
+                    <input type="text" [(ngModel)]="courseData.courseName" name="courseName" #fTitle="ngModel" class="form-control item"
                         id="username" required placeholder="Title">
                 </div>
         
@@ -40,7 +40,7 @@
                     <span class="input_box_style" *ngIf="fDescription.errors?.['required']">This is
                         required</span>
                     <span class="input_box_style" *ngIf="fDescription.errors?.['minlength']">Description should have at least
-                        120 characters</span>
+                        10 characters</span>
                 </div>
         
                 <!-- duration -->
@@ -67,7 +67,7 @@
         
                 <div class="form-group">
                     <label for="mentors" class="form-label">Mentors</label>
-                    <input type="text" [(ngModel)]="courseData.mentors" name="mentors" #fMentors="ngModel"
+                    <input type="text" [(ngModel)]="courseData.mentorName" name="mentors" #fMentors="ngModel"
                         class="form-control item" id="mentorName" required placeholder="Mentors">
                 </div>
         
@@ -82,7 +82,7 @@
                 <!-- upload file -->
                 <div class="form-group">
                     <label for="upload" class="form-label">Upload file:</label>
-                    <input type="text" [(ngModel)]="courseData.upload" name="url" class="form-control item" id="upload"
+                    <input type="text" [(ngModel)]="courseData.url" name="url" class="form-control item" id="upload"
                         placeholder="Upload File">
                 </div>
         

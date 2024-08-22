@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { DataService } from '../../service/data.service';
 import { LoginModel } from '../../models/LoginModel';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+
 import { HttpHeaders } from '@angular/common/http';
 @Component({
   selector: 'app-login-page',
@@ -21,7 +23,7 @@ export class LoginPageComponent implements OnInit {
 
 
 
-  constructor(private dataService: DataService, private router: Router) {
+  constructor(private dataService: DataService, private router: Router,private toastr: ToastrService) {
 
   }
   navigateToLandingPage() {
@@ -39,7 +41,9 @@ export class LoginPageComponent implements OnInit {
       next: (response: string) => {
         console.log(response);
         // Store the JWT token in localStorage
+       
         localStorage.setItem('jwtToken', response);
+        this.toastr.success('Login successful!', 'Success');
         console.log('JWT Token stored in localStorage');
 
 
@@ -63,6 +67,7 @@ export class LoginPageComponent implements OnInit {
 
       },
       error: (error) => {
+        this.toastr.error('Login failed. Please try again.', 'Error');
         console.error('Login error:', error);
         // Clear userData
         this.userData = {

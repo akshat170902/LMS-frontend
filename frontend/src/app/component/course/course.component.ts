@@ -38,6 +38,7 @@ export class CourseComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       const id = params.get('id');
+      this.course.courseId=Number(id);
       if (id) {
         this.getCourse(Number(id));
       }

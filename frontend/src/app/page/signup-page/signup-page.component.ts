@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
   styleUrl: './signup-page.component.css'
 })
 export class SignupPageComponent {
-userData:UserData={fullName:"akshat",email:"akshat@gmail.com",password:"12345678",contactNumber:9876543210,role:'STUDENT'};
+userData:UserData={fullName:"akshat",email:"akshat@gmail.com",password:"12345678",contact:9876543210,role:'STUDENT'};
  
 isMentor:boolean=false;
 
@@ -24,6 +24,12 @@ constructor(private dataService: DataService,private router: Router) {
 navigateToLandingPage(){
   this.router.navigate(['/landing-page']);
 }
+
+navigateToLoginPage(){
+this.router.navigate(['/login-page']);
+}
+
+
 onSubmit(){
   this.userData.role=this.isMentor?"MENTOR":"STUDENT";
 
@@ -31,6 +37,8 @@ onSubmit(){
   this.dataService.getSignUp(this.userData).subscribe(response => {
     this.userData = response;
     console.log(response);
+    // Redirecting to the login page after successful signup
+    this.navigateToLoginPage();
   })
 }
 onRoleToggle(){

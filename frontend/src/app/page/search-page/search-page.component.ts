@@ -4,6 +4,7 @@ import { DataService } from '../../service/data.service';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from "../../component/navbar/navbar.component";
 import { SidebarComponent } from "../../component/sidebar/sidebar.component";
+import { Course } from '../../models/course.model';
 @Component({
   selector: 'app-search-page',
   standalone: true,
@@ -12,7 +13,7 @@ import { SidebarComponent } from "../../component/sidebar/sidebar.component";
   styleUrl: './search-page.component.css'
 })
 export class SearchPageComponent {
-  courses: any[] = [];
+  courses: Course[] = [];
   searchQuery: string = '';
   constructor(private route: ActivatedRoute, private dataService: DataService) { }
   ngOnInit(): void {
